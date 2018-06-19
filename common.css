@@ -114,7 +114,7 @@ p {
 }
 
 footer {
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 footer p {
@@ -125,4 +125,8 @@ footer p {
 
 footer img {
     margin-top: 1em;
+}
+
+.icon-octocat object {
+    width: 2em;
 }
