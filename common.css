@@ -113,6 +113,10 @@ p {
     border-radius: 8px;
 }
 
+footer {
+    padding-bottom: 10px;
+}
+
 footer p {
     margin-top: 1.5em;
     font-family: sans-serif;
