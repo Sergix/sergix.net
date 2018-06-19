@@ -1,0 +1,30 @@
+.jumbotron {
+    padding-bottom: 15rem;
+    padding-top: 15rem;
+}
+
+.jumbotron div {
+    background: url("/img/jumbotron-icon.png");
+    background-repeat: no-repeat;
+    background-size: 200px;
+}
+
+.jumbotron h2 {
+    color: #fff;
+    margin-bottom: -0.2em;
+    text-align: center;
+    font-family: "Mosk Thin";
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.jumbotron h1 {
+    color: #fff;
+    font-family: "Adamas";
+    margin-top: 2em;
+    color: #fff;
+}
+
+.info .dev-text {
+    padding: 0 3em 0 3em;
+}

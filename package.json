@@ -1,0 +1,16 @@
+{
+  "name": "sergix_website",
+  "version": "1.0.0",
+  "description": "Official Sergix project website.",
+  "author": "Peyton McGinnis <sergix@outlook.com>",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "layzr.js": "^2.2.2",
+    "npm": "^5.7.1",
+    "page-accelerator": "^0.1.1",
+    "snapsvg": "^0.5.1"
+  }
+}

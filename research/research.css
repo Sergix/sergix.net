@@ -1,0 +1,47 @@
+.jumbotron h1 {
+    color: #333;
+    font-size: 4rem;
+    padding: 2em 0 1em 0;
+    font-family: "Mosk Thin", Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: "Axis";
+    font-size: 3.5rem;
+}
+
+p {
+    font-size: 2.5rem;
+}
+
+.jumbotron {
+    background-color: #ddd;
+    background-size: cover;
+}
+
+.jumbotron .row {
+    padding: 2em;
+}
+
+.subheading {
+    padding: 1em;
+}
+
+.disabled {
+    color: #444;
+    text-decoration: none;
+}
+
+.disabled:hover {
+    color: #444;
+    text-decoration: none;
+}
+
+.disabled:active {
+    color: #444;
+    text-decoration: none;
+}
+
+.dev-text {
+    text-align: center;
+}

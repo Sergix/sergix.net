@@ -1,0 +1,9 @@
+/*
+*
+* original script by Sergix
+* https://sergix7440.github.io
+* 
+* code held under the GNU Public License
+*
+* (c) Sergix 2017
+*/

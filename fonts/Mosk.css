@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Mosk Regular";
+    src: url("ttf/Mosk-Normal-400.ttf");
+}
+
+@font-face {
+    font-family: "Mosk Bold";
+    src: url("ttf/Mosk-Bold-700.ttf");
+}
+
+@font-face {
+    font-family: "Mosk SemiBold";
+    src: url("ttf/Mosk-Semi-Bold-600.ttf");
+}
+
+@font-face {
+    font-family: "Mosk Medium";
+    src: url("ttf/Mosk-Medium-500.ttf");
+}
+
+@font-face {
+    font-family: "Mosk ExtraBold";
+    src: url("ttf/Mosk-Extra-Bold-800.ttf");
+}
+
+@font-face {
+    font-family: "Mosk UltraBold";
+    src: url("ttf/Mosk-Ultra-Bold-900.ttf");
+}
+
+@font-face {
+    font-family: "Mosk Light";
+    src: url("ttf/Mosk-Light-300.ttf");
+}
+
+@font-face {
+    font-family: "Mosk ExtraLight";
+    src: url("ttf/Mosk-Extra-Light-200.ttf");
+}
+
+@font-face {
+    font-family: "Mosk Thin";
+    src: url("ttf/Mosk-Thin-100.ttf");
+}
