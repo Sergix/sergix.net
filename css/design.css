@@ -23,24 +23,25 @@
 }
 
 .jumbotron h1 {
-    width: 10%;
     color: #fff;
     font-size: 6rem;
     padding: 2em 0 1em 0em;
-    font-family: 'Mosk Regular', Helvetica, sans-serif;
+    font-family: 'Novecento Medium', Helvetica, sans-serif;
     text-align: center;
 }
 
 .jumbotron {
-    /*background-image: url('/img/jumbotron-design.png');*/
-    background-size: cover;
+  padding-bottom: 10em;
 }
 
 .image-info h2 {
-    font-family: 'Mosk Light';
-    font-size: 18pt;
-    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 2rem;
     color: #fff;
+}
+
+#images {
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {

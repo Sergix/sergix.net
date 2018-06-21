@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Novecento Regular";
+    src: url("otf/Novecentosanswide-Normal.otf");
+}
+
+@font-face {
+    font-family: "Novecento Bold";
+    src: url("otf/Novecentosanswide-Bold.otf");
+}
+
+@font-face {
+    font-family: "Novecento ExtraBold";
+    src: url("otf/Novecentosanswide-DemiBold.otf");
+}
+
+@font-face {
+    font-family: "Novecento Medium";
+    src: url("otf/Novecentosanswide-Medium.otf");
+}
+
+@font-face {
+    font-family: "Novecento Light";
+    src: url("otf/Novecentosanswide-Light.otf");
+}
+
+@font-face {
+    font-family: "Novecento Book";
+    src: url("otf/Novecentosanswide-Book.otf");
+}

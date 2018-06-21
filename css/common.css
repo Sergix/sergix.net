@@ -1,0 +1,119 @@
+/*
+Color Palette
+- navy/slate blue: #2b2944
+- darker ^: #1b1f2a
+- gold"ish": #d2cc28
+- mint: #2be772
+
+*/
+
+.row {
+    margin-right: 0px !important;
+}
+
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: linear-gradient(#6ac3cb, #6bcba2);
+}
+
+h2 {
+    color: #2b2944;
+}
+
+p {
+    font-size: 1.5rem;
+    font-family: "Roboto";
+}
+
+a, a:hover, a:active {
+    text-decoration: none;
+}
+
+.navbar {
+    /* background-color: #fefefe; */
+    border-radius: 0px;
+    width: 100%;
+    height: 8em;
+}
+
+.navbar-brand {
+    position: relative;
+    top: 4em;
+    left: 50%;
+    margin-left: -4em;
+}
+
+.navbar-brand object {
+    pointer-events: none;
+    width: 7em;
+}
+
+.jumbotron {
+    padding-top: 5rem;
+    background: none;
+}
+
+.dev-text h2 {
+    color: #2b2944;
+    font-family: "Novecento ExtraBold";
+    font-size: 4rem;
+    margin-top: 3em;
+}
+
+.info-section {
+    padding: 3em;
+}
+
+.info-section h3 {
+    color: #ff2194;
+    font-size: 2.5rem;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+}
+
+.info, .project-images {
+    padding: 5%;
+}
+
+.project-images {
+    padding-top: 0;
+}
+
+.project-images .dev-text {
+    padding: 0 3em 4em 3em;
+}
+
+.project-images .row figure {
+    margin-top: 1em;
+}
+
+.project-images .row figure img {
+    width: 100%;
+
+    border: 1px solid #bbb;
+    border-radius: 8px;
+}
+
+footer {
+    padding: 50px;
+    background-color: #fff;
+}
+
+footer p {
+    font-family: "Dual", sans-serif;
+    font-size: 1.5rem;
+}
+
+footer img {
+    margin-top: 1em;
+}
+
+.icon-octocat object {
+    pointer-events: none;
+    width: 2em;
+}
