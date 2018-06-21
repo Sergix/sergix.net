@@ -7,9 +7,9 @@ Color Palette
 
 */
 
-.row {
+/* .row {
     margin-right: 0px !important;
-}
+} */
 
 * {
     text-rendering: optimizeLegibility;
@@ -18,6 +18,7 @@ Color Palette
 }
 
 body {
+    display: none;
     background: linear-gradient(#6ac3cb, #6bcba2);
 }
 

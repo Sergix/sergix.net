@@ -22,16 +22,17 @@
   padding: 10px;
 }
 
+.jumbotron {
+  padding-bottom: 15em;
+  padding-top: 0;
+}
+
 .jumbotron h1 {
     color: #fff;
     font-size: 6rem;
     padding: 2em 0 1em 0em;
     font-family: 'Novecento Medium', Helvetica, sans-serif;
     text-align: center;
-}
-
-.jumbotron {
-  padding-bottom: 10em;
 }
 
 .image-info h2 {
