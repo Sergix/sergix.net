@@ -11,9 +11,13 @@
     box-shadow: 0px 8px 8px #222;
 }
 
+.section-title {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 .section-title a {
     margin-top: -90px;
-    margin-right: 0;
 }
 
 .section-title a h1 {
@@ -32,7 +36,6 @@
     text-justify: inter-character;
     padding: 20px; */
 
-    margin-right: 0;
     padding: 20px;
     padding-top: 15px;
     z-index: 1;
