@@ -1,15 +1,13 @@
 /*
 Color Palette
+
+[!] OLD [!]
 - navy/slate blue: #2b2944
 - darker ^: #1b1f2a
 - gold"ish": #d2cc28
 - mint: #2be772
 
 */
-
-/* .row {
-    margin-right: 0px !important;
-} */
 
 * {
     text-rendering: optimizeLegibility;
@@ -18,6 +16,7 @@ Color Palette
 }
 
 body {
+    overflow-x: hidden;
     display: none;
     background: linear-gradient(#6ac3cb, #6bcba2);
 }
