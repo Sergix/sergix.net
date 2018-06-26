@@ -21,7 +21,7 @@
 
 .section-title a h1 {
     font-family: 'Novecento Bold';
-    font-size: 23pt;
+    font-size: 2em;
     color: white;
     position: relative;
     background-color: #000;
@@ -51,7 +51,7 @@
 
 .projects a h2 {
     font-family: 'Roboto Slab';
-    font-size: 4rem;
+    font-size: 3em;
     color: #000;
     background-color: #fff;
     padding: 20px 20px 20px 30px;
