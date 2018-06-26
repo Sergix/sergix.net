@@ -21,6 +21,27 @@ SCROLLBAR STYLING (!)
     margin-right: 0;
 }
 
+html::-webkit-scrollbar {
+    width: 6px;
+}
+
+html::-webkit-scrollbar * {
+    background: #fff;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background:#999 !important;
+}
+
+html::-webkit-scrollbar-track-piece:start {
+    background: transparent url('/img/scrollbar-track.png') repeat-y !important;
+}
+
+html::-webkit-scrollbar-track-piece:end {
+    background: transparent url('/img/scrollbar-track.png') repeat-y !important;
+}
+
 * {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -28,9 +49,10 @@ SCROLLBAR STYLING (!)
 }
 
 body {
-    overflow-x: hidden;
     display: none;
     background: #fefefe;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 h2 {

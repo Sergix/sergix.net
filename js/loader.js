@@ -35,12 +35,22 @@
 
     if ( /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) && localStorage.getItem('no-notif') === null) {
         var xhr_mobile = new XMLHttpRequest();
-        xhr_mobile.open('GET', '/html/mobile-notif.html');
+        xhr_mobile.open('GET', '/html/mobile.html');
         xhr_mobile.send(null);
 
         xhr_mobile.onreadystatechange = function () {
             if (xhr_mobile.readyState === 4 && xhr_mobile.status === 200) {
-                document.getElementsByTagName('body')[0].insertAdjacentHTML("afterbegin", xhr_mobile.responseText);
+                document.getElementsByTagName('head')[0].insertAdjacentHTML("beforeend", xhr_mobile.responseText);
+            }
+        }
+
+        var xhr_mobile_notif = new XMLHttpRequest();
+        xhr_mobile_notif.open('GET', '/html/mobile-notif.html');
+        xhr_mobile_notif.send(null);
+
+        xhr_mobile_notif.onreadystatechange = function () {
+            if (xhr_mobile_notif.readyState === 4 && xhr_mobile_notif.status === 200) {
+                document.getElementsByTagName('body')[0].insertAdjacentHTML("afterbegin", xhr_mobile_notif.responseText);
             }
         }
     }
