@@ -22,7 +22,7 @@ Color Palette
 body {
     overflow-x: hidden;
     display: none;
-    background: linear-gradient(#6ac3cb, #6bcba2);
+    background: #fefefe;
 }
 
 h2 {
@@ -36,6 +36,29 @@ p {
 
 a, a:hover, a:active {
     text-decoration: none;
+}
+
+.mobile-notif {
+    background: #fdff9b;
+    position: fixed;
+    color: #000;
+    margin-top: -10px;
+    margin-left: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.mobile-notif h3 {
+    font-size: 0.9em;
+}
+
+.mobile-notif a {
+    top: 1vh;
+    position: fixed;
+}
+
+.mobile-notif a object {
+    pointer-events: none;
 }
 
 .navbar {
@@ -109,8 +132,9 @@ footer {
 }
 
 footer p {
-    font-family: "Dual", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.5rem;
+    margin-left: -15px;
 }
 
 footer img {

@@ -1,0 +1,18 @@
+<!-- AJAX Loader -->
+<!-- Mobile Notification -->
+
+<script type="text/javascript">
+
+function close_notif(e) {
+    
+    console.log('here');
+}
+
+</script>
+
+<section class="mobile-notif row col-xs-8 col-md-12">
+    <h3 class="col-xs-11 text-left">We noticed you're using mobile! Why not add us to your homescreen for quick access?</h3>
+    <a href="#" onclick="document.getElementsByClassName('mobile-notif')[0].style.display = 'none';localStorage.setItem('no-notif', 'true');">
+        <object width="16" height="16" type="image/svg+xml" data="/img/x-circle.svg"></object>
+    </a>
+</section>
