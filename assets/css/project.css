@@ -21,7 +21,7 @@ main {
 
 .project-info {
 	position: fixed;
-	margin-top: 10vh;
+	bottom: 25%;
 	margin-left: 50px;
 	width: 100%;
 }
@@ -49,6 +49,7 @@ main {
 	color: #000;
 	font-family: "Roboto Mono";
 	text-decoration: underline;
+	clear: both;
 }
 
 .project-info a:hover {
@@ -73,7 +74,6 @@ main {
 /* iPhone X */
 @media (max-width: 767px) and (min-height: 768px) {
 	.project-info {
-		margin-top: 20vh;
 	}
 }
 
@@ -88,7 +88,6 @@ main {
 	
 	.project-info {
 		margin-left: 20vw;
-		margin-top: 20vh;
 	}
 	
 	.project-info h2 {
@@ -122,7 +121,6 @@ main {
 	
 	.project-info {
 		margin-left: 20vw;
-		margin-top: 10vh;
 	}
 	
 	.slick-slide {
@@ -159,8 +157,8 @@ main {
 	}
 	
 	.project-info {
-		margin-left: 30vw;
-		margin-top: 0vh;
+		margin-left: 35vw;
+		bottom: 15%;
 	}
 }
 
@@ -176,5 +174,31 @@ main {
 	.project-info {
 		margin-left: 30vw;
 		margin-top: 10vh;
+	}
+}
+
+/* 4k */
+@media (min-width: 2160px) {
+	.project-info {
+		margin-left: 35vw;
+		bottom: 10%;
+	}
+
+	.project-info h2 {
+		font-size: 400%;
+		font-weight: 700;
+		font-style: italic;
+		letter-spacing: -2px;
+		border: 2px solid #5F4B8B;
+		padding: 10px 10px 10px 10px;
+	}
+
+	.project-info p {
+		padding-left: 20px;
+		font-size: 400%;
+	}
+
+	.project-info a {
+		line-height: 100px;
 	}
 }

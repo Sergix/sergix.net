@@ -192,6 +192,7 @@ main {
 	
 	#links > a {
 		font-size: 3vh;
+		padding: 7px 7px 10px 12px;
 	}
 
 	#links.active {
@@ -314,6 +315,7 @@ main {
 	
 	#links > a {
 		font-size: 4vh;
+		padding: 0vw 1vw 0vw 1vw;
 	}
 	
 /*
