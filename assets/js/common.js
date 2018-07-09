@@ -9,9 +9,7 @@ var linksOpen = false;
 $(document).ready(function () {
 	'use strict';
 
-	$("body html main").addEventListener('touchmove', function(e) {
-			e.preventDefault();
-	}, false);
+	$("#links").css("display", "none");
 	
 	$("#links-open").on("hover", function () {
 		$("#links-open").css("background-color", "#d1b257");
@@ -21,7 +19,7 @@ $(document).ready(function () {
 		if (linksOpen) {
 			linksOpen = false;
 			$("#links").css("margin-bottom", "-50%");
-			$("#links").css("display", "initial");
+			$("#links").css("display", "none");
 			$("#links-open").css("background-color", "#000");
 			setTimeout(function() {
 				$("#links").css("display", "hidden");
