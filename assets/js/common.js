@@ -8,8 +8,6 @@ var linksOpen = false;
 
 $(document).ready(function () {
 	'use strict';
-
-	$("#links").css("display", "none");
 	
 	$("#links-open").on("hover", function () {
 		$("#links-open").css("background-color", "#d1b257");
@@ -18,27 +16,16 @@ $(document).ready(function () {
 	$("#links-open").on("click", function () {
 		if (linksOpen) {
 			linksOpen = false;
-			$("#links").css("margin-bottom", "-50%");
-			$("#links").css("display", "none");
 			$("#links-open").css("background-color", "#000");
 			setTimeout(function() {
 				$("#links").css("display", "hidden");
 			}, 300);
+			$("#links").removeClass("active");
 		} else {
 			linksOpen = true;
 			
-			$("#links").css("display", "initial");
+			$("#links").addClass("active");
 			$("#links-open").css("background-color", "#fcb239");
-			
-			if (screen.width < 768) { // phone
-				$("#links").css("margin-bottom", "13vh");
-			} else if (screen.width >= 768 && screen.width < 992) { // tablet
-				$("#links").css("margin-bottom", "10vh");
-			} else if (screen.width >= 991 && screen.width < 1200) { // large tablet / small screen
-				$("#links").css("margin-bottom", "7vh");
-			} else { // desktop
-				$("#links").css("margin-bottom", "3vh");
-			}
 		}
 	});
 });

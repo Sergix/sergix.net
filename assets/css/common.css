@@ -122,11 +122,11 @@ main {
 }
 
 #links {
+	display: none;
 	position: absolute;
 	right: 10px;
 	bottom: 50%;
 	margin-bottom: -50%;
-	display: none;
 	transition: margin-bottom 1s;
 	z-index: 0;
 	transform: translate3d(0,0,0);
@@ -150,6 +150,10 @@ main {
 #links > a:hover {
 	color: #fcb239;
 	padding-right: 50px;
+}
+
+#links.active {
+	display: initial;
 }
 
 @media (max-width: 767px) {
@@ -188,6 +192,10 @@ main {
 	#links > a {
 		font-size: 3vh;
 	}
+
+	#links.active {
+		margin-bottom: 13vh;
+	}
 }
 
 @media (min-width: 767px) and (max-width: 991px) {
@@ -225,6 +233,10 @@ main {
 	
 	#links > a {
 		font-size: 3.5vh;
+	}
+
+	#links.active {
+		margin-bottom: 10vh;
 	}
 }
 
@@ -266,6 +278,10 @@ main {
 	#links {
 		bottom: 7vw;
 	}
+
+	#links.active {
+		margin-bottom: 7vh;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -304,4 +320,8 @@ main {
 		width: 15%;
 	}
 */
+
+	#links.active {
+		margin-bottom: 3vh;
+	}
 }
