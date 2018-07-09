@@ -1,42 +1,48 @@
 $(document).ready(function() {
 	'use strict';
 	
-	$("img").css("visibility", "hidden");
+	var currentImage;
+	var i = 0;
 	
-	var currentImage = 0;
+	$("img").css("visibility", "hidden");
 	
 	var images = ["break", "canvas5-2", "canvas5-large", "circles", "code-1", "dark", "destiny-unknown", "discover2", "dream-4", "edge-of-tomorrow", "entryflow", "error-nogradient", "fallback", "fear", "frame-of-mind", "insomnia", "jterm", "make", "phone-wallpaper", "reverb2", "revive-this-mind-simple", "root", "sergix", "sergix_destiny1", "sergix-comment", "srgx", "undeniable", "wanderer", "waveform", "wrapper", "zone-theory"];
 	
-	for (var i = 0; i < images.length; i++) {
-		images[i] = "/assets/img/design/" + images[i] + ".png";
-		var newImage = new Image();
-		newImage.src = images[i];
-		$(".carousel").append(newImage);
+	$("img").css("visibility", "visible");
+
+	function loadSlick() {
+		$('.carousel').slick({
+			arrows: false,
+			variableWidth: true,
+			centerMode: true,
+			centerPadding: '60px',
+			infinite: true
+		});
+
+		$("#before-button").on("click", function (e) {
+			$('.carousel').slick('slickPrev');
+		});
+
+		$("#next-button").on("click", function (e) {
+			$('.carousel').slick('slickNext');
+		});
 	}
 	
-	$("img").css("visibility", "visible");
+	function placeIntoSlick() {
+		$(".carousel").append(currentImage);
+		i++;
+		loadImages();
+	}
+
+	function loadImages() {
+		if (i > images.length - 1)
+			loadSlick();
+
+		images[i] = "/assets/img/design/" + images[i] + ".png";
+		currentImage = new Image();
+		currentImage.onload = placeIntoSlick
+		currentImage.src = images[i];
+	}
 	
-	// used to trigger update
-	$("img").css("vertical-align", "bottom");
-	
-	$('.carousel').slick({
-		arrows: false,
-		variableWidth: true,
-		 centerMode: true,
-  		centerPadding: '60px',
-		infinite: true
-	});
-	
-	$("#before-button").on("click", function (e) {
-		$('.carousel').slick('slickPrev');
-	});
-	
-	$("#next-button").on("click", function (e) {
-		$('.carousel').slick('slickNext');
-	});
-	
-	// used to trigger DOM update to ensure images display properly
-	setTimeout(function() {
-		$("img").css("vertical-align", "middle");
-	}, 250);
+	loadImages();
 });
