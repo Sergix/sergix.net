@@ -80,6 +80,8 @@ body {
 main {
 	padding: 50px;
 	width: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 #links-open {
