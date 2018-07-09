@@ -1,0 +1,35 @@
+main {
+	margin-top: 10vh;
+}
+
+h2 {
+	background-color: #000;
+	color: #fff;
+	font-family: "Helvetica";
+	font-size: 3vh;
+	font-weight: 700;
+	padding: 10px 10px 10px 10px;
+	font-style: italic;
+}
+
+main a {
+	font-family: "Roboto Mono";
+	font-size: 3vh;
+	color: #000;
+	text-decoration: underline;
+	line-height: 50px;
+}
+
+main a:hover {
+	color: #fcb239;
+}
+
+a.disabled {
+	color: #777;
+	text-decoration: none;
+	
+}
+
+a.disabled:hover {
+	color: #777;
+}

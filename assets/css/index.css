@@ -1,0 +1,144 @@
+#short-description h2 {
+	color: #000;
+	font-family: "Helvetica";
+	font-weight: 600;
+	font-kerning: normal;
+	font-display: block;
+	padding: -5px;
+	border: 1px solid #5F4B8B;
+}
+
+#links-open {
+	display: none;
+}
+
+#links-transition-cover {
+	display: none;
+}
+
+#links {
+	display: initial;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 3vh;
+}
+
+#links a {
+	background: #000;
+}
+
+/*
+EXTRA SMALL (XS)
+- PHONE
+*/
+@media (max-width: 767px) {
+	#short-description {
+		margin-top: 15vh;
+		right: 0;
+		position: absolute;
+	}
+	
+	#short-description h2 {
+		font-size: 18vw;
+		margin-top: -14px;
+		letter-spacing: -6px;
+		text-align: right;
+		float: right;
+		line-height: 9vh;
+	}
+	
+	#links {
+		margin-bottom: 4vh;
+	}
+}
+
+/*
+SMALL (SM)
+- iPad (portrait)
+*/
+@media (min-width: 767px) and (max-width: 991px) {
+	#short-description {
+		margin-top: 10vh;
+		right: 0;
+		position: absolute;
+	}
+	
+	#short-description h2 {
+		font-size: 15vw;
+		margin-top: -14px;
+		letter-spacing: -6px;
+		text-align: right;
+		float: right;
+		line-height: 10vh;
+	}
+	
+	#links {
+		margin-bottom: 4vh;
+	}
+}
+
+/*
+MEDIUM (MD)
+- iPad (landscape)
+- iPad Pro (portrait)
+*/
+@media (min-width: 991px) and (max-width: 1199px) {
+	@media (orientation: portrait) {
+		#short-description {
+			margin-top: 15vh;
+			right: 0;
+			position: absolute;
+		}
+		
+		#short-description h2 {
+			font-size: 14vw;
+			margin-top: -14px;
+			letter-spacing: -6px;
+			text-align: right;
+			float: right;
+			line-height: 9vh;
+		}
+	}
+	
+	@media (orientation: landscape) {
+		#short-description {
+			position: fixed;
+			bottom: 0;
+		}
+		
+		#short-description h2 {
+			font-weight: 700;
+			font-size: 9vw;
+			margin-top: -14px;
+			letter-spacing: -6px;
+			line-height: 12vh;
+		}
+	}
+	
+	#links {
+		position: absolute;
+		bottom: 0;
+		float: right;
+	}
+}
+
+/*
+LARGE (LG)
+- iPad Pro (landscape)
+- Computer Display
+*/
+@media (min-width: 1200px) {
+	#short-description {
+		position: absolute;
+		bottom: 0;
+	}
+
+	#short-description h2 {
+		font-size: 8vw;
+		margin-top: -20px;
+		letter-spacing: -10px;
+		line-height: 90px;
+		line-height: 1em;
+/*		color: #b66ba3;*/
+	}
+}

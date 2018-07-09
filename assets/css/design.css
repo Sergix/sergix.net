@@ -1,0 +1,102 @@
+#control-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-control {
+	margin: 20px 30px 20px 30px;
+	padding: 13px 14px 10px 14px;
+	background-color: #000;
+	box-shadow: 4px 4px #5F4B8B;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.image-control:hover {
+	background-color: #b66ba3;
+}
+
+#before-button:active, #next-button:active {
+	box-shadow: 6px 6px #b66ba3;
+}
+
+.image-control > object {
+	pointer-events: none;
+}
+
+.slick-slide {
+	height: 100%;
+}
+
+@media (max-width: 767px) {
+	#control-buttons {
+		margin-top: 10vh;
+	}
+	
+	.slick-slide {
+		width: 105vw;
+	}
+	
+	.carousel {
+		margin-top: 5vh;
+	}
+	
+	.image-control > object {
+		width: 25px;
+		height: 25px;
+	}
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+	#control-buttons {
+		margin-top: 10vh;
+	}
+	
+	.carousel {
+		margin-top: 5vh;
+	}
+	
+	.image-control > object {
+		width: 55px;
+		height: 55px;
+	}
+}
+
+@media (min-width: 991px) and (max-width: 1199px) {
+	#control-buttons {
+		margin-top: 10vh;
+	}
+	
+	.slick-slide {
+		width: 55vw;
+	}
+	
+	.carousel {
+		margin-top: 5vh;
+	}
+	
+	.image-control > object {
+		width: 55px;
+		height: 55px;
+	}
+}
+
+@media (min-width: 1200px) {
+	#control-buttons {
+		margin-top: 1vh;
+	}
+	
+	.slick-slide {
+		width: 45vw;
+	}
+	
+	.image-control > object {
+		width: 25px;
+		height: 25px;
+	}
+}

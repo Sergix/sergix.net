@@ -1,0 +1,179 @@
+.page-title a {
+	color: #000;
+}
+
+.page-title a:hover {
+	color: #555;
+	text-decoration: underline;
+}
+
+main {
+	font-family: "Helvetica";
+}
+
+#large-title {
+	position: absolute;
+	left: 0;
+	margin-left: -3vw;
+	font-weight: 900;
+	word-wrap: break-word;
+}
+
+.project-info {
+	margin-top: 10vh;
+	margin-left: 50px;
+	width: 100%;
+}
+
+.project-info h2 {
+	color: #fff;
+	background-color: black;
+	
+	font-size: 200%;
+	font-weight: 700;
+	font-style: italic;
+	letter-spacing: -2px;
+/*	border: 2px solid #5F4B8B;*/
+/*	background-color: white;*/
+	padding: 10px 10px 10px 10px;
+}
+
+.project-info p {
+	padding-left: 20px;
+	font-size: 120%;
+}
+
+.project-info a {
+	line-height: 30px;
+	color: #000;
+	font-family: "Roboto Mono";
+	text-decoration: underline;
+}
+
+.project-info a:hover {
+	color: #fcb239;
+}
+
+@media (max-width: 767px) {
+	#large-title {
+		font-size: 15vh;
+		letter-spacing: -10px;
+		line-height: 10vh;
+		bottom: -2vh;
+		width: 10%;
+	}
+	
+	.slick-slide {
+		width: 70vw;
+		margin-left: 50px;
+	}
+}
+
+/* iPhone X */
+@media (max-width: 767px) and (min-height: 768px) {
+	.project-info {
+		margin-top: 20vh;
+	}
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+	#large-title {
+		font-size: 20vh;
+		letter-spacing: -10px;
+		line-height: 14vh;
+		bottom: -2vh;
+		width: 10%;
+	}
+	
+	.project-info {
+		margin-left: 20vw;
+		margin-top: 20vh;
+	}
+	
+	.project-info h2 {
+		font-size: 400%;
+		font-weight: 700;
+		font-style: italic;
+		letter-spacing: -2px;
+		border: 2px solid #5F4B8B;
+		padding: 10px 10px 10px 10px;
+	}
+
+	.project-info p {
+		padding-left: 20px;
+		font-size: 200%;
+	}
+	
+	.slick-slide {
+		width: 70vw;
+		margin-left: 70px;
+	}
+}
+
+@media (min-width: 991px) and (max-width: 1199px) {
+	#large-title {
+		font-size: 20vh;
+		letter-spacing: -10px;
+		line-height: 14vh;
+		bottom: -2vh;
+		width: 10%;
+	}
+	
+	.project-info {
+		margin-left: 20vw;
+		margin-top: 10vh;
+	}
+	
+	.slick-slide {
+		width: 75vw;
+		margin-left: 70px;
+	}
+	
+	.slick-slide.project-info {
+		margin-left: 20vw;
+		margin-top: 20vh;
+	}
+	
+	.slick-slide.project-info h2 {
+		font-size: 500%;
+		font-weight: 700;
+		font-style: italic;
+		letter-spacing: -2px;
+		border: 2px solid #5F4B8B;
+		padding: 10px 10px 10px 10px;
+	}
+
+	.slick-slide.project-info p {
+		padding-left: 20px;
+		font-size: 300%;
+	}
+}
+
+@media (min-width: 1200px) {
+	#large-title {
+		line-height: 25vh;
+		font-size: 30vh;
+		width: 40%;
+		bottom: -5vh;
+	}
+	
+	.project-info {
+		margin-left: 30vw;
+		margin-top: 0vh;
+	}
+}
+
+/* iPad Pro Landscape*/
+@media (width: 1366px) and (height: 1024px) {
+	#large-title {
+		line-height: 25vh;
+		font-size: 30vh;
+		width: 40%;
+		bottom: -5vh;
+	}
+	
+	.project-info {
+		margin-left: 30vw;
+		margin-top: 10vh;
+	}
+}
