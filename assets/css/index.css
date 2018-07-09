@@ -6,6 +6,7 @@
 	font-display: block;
 	padding: -5px;
 	border: 1px solid #5F4B8B;
+	position: fixed;
 }
 
 #links-open {
