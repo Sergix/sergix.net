@@ -1,3 +1,7 @@
+#short-description {
+	position: fixed;
+}
+
 #short-description h2 {
 	color: #000;
 	font-family: "Helvetica";
@@ -6,7 +10,6 @@
 	font-display: block;
 	padding: -5px;
 	border: 1px solid #5F4B8B;
-	position: fixed;
 }
 
 #links-open {
@@ -36,7 +39,6 @@ EXTRA SMALL (XS)
 	#short-description {
 		margin-top: 15vh;
 		right: 0;
-		position: absolute;
 	}
 	
 	#short-description h2 {
@@ -61,7 +63,6 @@ SMALL (SM)
 	#short-description {
 		margin-top: 10vh;
 		right: 0;
-		position: absolute;
 	}
 	
 	#short-description h2 {
@@ -88,7 +89,6 @@ MEDIUM (MD)
 		#short-description {
 			margin-top: 15vh;
 			right: 0;
-			position: absolute;
 		}
 		
 		#short-description h2 {
@@ -103,7 +103,6 @@ MEDIUM (MD)
 	
 	@media (orientation: landscape) {
 		#short-description {
-			position: fixed;
 			bottom: 0;
 		}
 		
@@ -130,7 +129,6 @@ LARGE (LG)
 */
 @media (min-width: 1200px) {
 	#short-description {
-		position: absolute;
 		bottom: 0;
 	}
 
