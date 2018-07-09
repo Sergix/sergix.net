@@ -83,6 +83,7 @@ body {
 main {
 	padding: 50px;
 	width: 100%;
+	position: fixed;
 }
 
 #links-open {
