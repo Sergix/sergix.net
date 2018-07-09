@@ -20,6 +20,11 @@ Color Palette
 */
 }
 
+html {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
 body {
 /*	background-color: #5F4B8B;*/
 	overflow-x: hidden;
