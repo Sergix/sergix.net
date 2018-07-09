@@ -21,10 +21,15 @@ $(document).ready(function () {
 		if (linksOpen) {
 			linksOpen = false;
 			$("#links").css("margin-bottom", "-50%");
+			$("#links").css("display", "initial");
 			$("#links-open").css("background-color", "#000");
+			setTimeout(function() {
+				$("#links").css("display", "hidden");
+			}, 300);
 		} else {
 			linksOpen = true;
 			
+			$("#links").css("display", "initial");
 			$("#links-open").css("background-color", "#fcb239");
 			
 			if (screen.width < 768) { // phone
