@@ -35,6 +35,7 @@ main {
 	#project-list {
 		display: block;
 		float: right;
+		right: 25px;
 	}
 	
 	#project-list li {
