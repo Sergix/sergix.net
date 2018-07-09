@@ -8,6 +8,10 @@ var linksOpen = false;
 
 $(document).ready(function () {
 	'use strict';
+
+	$("body html main").addEventListener('touchmove', function(e) {
+			e.preventDefault();
+	}, false);
 	
 	$("#links-open").on("hover", function () {
 		$("#links-open").css("background-color", "#d1b257");
