@@ -29,6 +29,24 @@
 	pointer-events: none;
 }
 
+.carousel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#loader-icon {
+	margin-top: 15vh;
+}
+
+#loader-progress {
+	font-family: "Roboto Mono";
+	position: fixed;
+	font-size: 10vh;
+	bottom: 15%;
+	font-weight: 700;
+}
+
 .slick-slide {
 	height: 100%;
 }
