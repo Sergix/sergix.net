@@ -1,0 +1,75 @@
+@import 'colors'
+@import 'fonts'
+@import 'media'
+
+#project-list
+	list-style: none
+	width: 100%
+	position: fixed
+	top: 35%
+	left: 0
+	padding-left: 0
+
+	li
+		font-family: $monospace
+		font-size: 2.6em
+		margin-top: 3px
+		margin-left: 2px
+
+		a
+			padding: 0px 15px 5px 15px
+			background-color: $dark
+			text-decoration: none
+			letter-spacing: 10px
+			color: $light
+			transition: padding 0.3s
+			transition-timing-function: ease-out
+
+			&:hover
+				color: $link-gold
+
+@media #{$screen-xs}
+	#project-list
+		display: block
+		float: right
+		right: 25px
+		left: auto
+
+		li
+			float: right
+			clear: both
+
+			a:hover
+				padding: 0px 15px 0px 20vw
+
+@media #{$screen-sm}
+	#project-list
+		li
+			display: flex
+			justify-content: center
+			align-items: center
+			clear: both
+
+			a:hover
+				padding: 0px 15px 0px 20vw
+
+@media #{$screen-md}
+	#project-list
+		li
+			display: flex
+			justify-content: center
+			align-content: center
+			clear: both
+
+			a:hover
+				padding: 0px 15px 0px 20vw
+
+@media #{$screen-lg}
+	#project-list
+		display: flex
+		justify-content: center
+		align-items: center
+		top: 50%
+
+		li a:hover
+			padding: 0px 15px 7vh 15px

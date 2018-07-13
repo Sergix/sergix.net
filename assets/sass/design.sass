@@ -1,0 +1,69 @@
+@import 'colors'
+@import 'fonts'
+@import 'media'
+@import 'center'
+
+#control-buttons
+	display: flex
+	justify-content: center
+	align-items: center
+	position: fixed
+	top: 30%
+
+.image-control
+	@extend %center-transform
+	float: left
+	width: 3.5em
+	height: 3.5em
+	margin: 20px 30px 20px 30px
+	padding: 13px 14px 10px 14px
+	background-color: $dark
+	box-shadow: 4px 4px $ultraviolet
+	cursor: pointer
+	transition: background-color 0.3s
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+	&:hover
+		background-color: $magenta
+
+#before-button:active, #next-button:active
+	box-shadow: 6px 6px $magenta
+
+.image-control
+	object
+		pointer-events: none
+		width: 1.5em
+		height: 1.5em
+
+main
+	width: 100%
+	height: 100%
+
+.carousel
+	position: fixed
+	left: 0
+	top: 50%
+	width: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+
+#loader-icon
+	margin-top: 15vh
+
+#loader-progress
+	font-family: $monospace
+	position: fixed
+	font-size: 10vh
+	bottom: 15%
+	font-weight: 700
+
+.slick-slide
+	width: 35vw
+
+@media #{$screen-xs}
+	.slick-slide
+		width: 105vw

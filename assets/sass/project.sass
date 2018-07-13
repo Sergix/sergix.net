@@ -1,0 +1,82 @@
+@import 'colors'
+@import 'fonts'
+@import 'media'
+
+.page-title a
+	color: $dark
+
+	&:hover
+		color: $dark-grey
+		text-decoration: underline
+
+main
+	font-family: $sans-serif
+
+#large-title
+	position: fixed
+	left: -0.1em
+	bottom: -0.1em
+	font-weight: 900
+	font-size: 15vw
+	width: 40%
+	letter-spacing: -10px
+	line-height: 0.6em
+	word-wrap: break-word
+
+.project-info
+	position: fixed
+	bottom: 2em
+	left: -4px
+	width: 100%
+
+	h2
+		color: $light
+		background-color: $dark
+		font-size: 2vw
+		font-weight: 700
+		font-style: italic
+		letter-spacing: -2px
+		padding: 10px 10px 10px 10px
+
+	p
+		padding-left: 20px
+		font-size: 1vw
+
+	a
+		color: black
+		font-family: $monospace
+		text-decoration: underline
+		clear: both
+
+		&:hover
+			color: $link-gold
+
+	.row2:nth-child(2)
+		p > a
+			line-height: 2em
+
+@media #{$screen-xs}
+	@media #{$portrait}
+		#large-title
+			width: 10%
+
+		.slick-slide
+			width: 90vw
+			margin-left: 100px
+
+		.project-info
+			position: fixed
+			left: 5vw
+			bottom: auto
+			top: 25vh
+
+			h2
+				font-size: 200%
+
+			p
+				font-size: 100%
+
+@media #{$screen-sm}
+	@media #{$portrait}
+		.project-info
+			bottom: 15%

@@ -1,0 +1,43 @@
+@import 'colors'
+@import 'fonts'
+@import 'media'
+
+#short-description
+	position: fixed
+	bottom: 25px
+	left: 25px
+
+	h2
+		color: $dark
+		font-family: $sans-serif
+		font-size: 800%
+		font-weight: 600
+		font-kerning: normal
+		letter-spacing: -0.1em
+		line-height: 1em
+		margin: -0.1em
+
+#links-open
+	display: none
+
+#links
+	position: fixed
+	display: initial
+	bottom: 25px
+	right: 15px
+
+	a
+		background: $dark
+		clear: both
+
+@media #{$screen-xs}, #{$screen-sm}, #{$screen-md}
+	@media #{$portrait}
+		#short-description
+			bottom: 35%
+			right: 22px
+			left: auto
+
+			h2
+				font-size: 17vw
+				text-align: right
+				float: right
