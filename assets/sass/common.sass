@@ -16,7 +16,7 @@ html
 	height: 100%
 
 body
-	background-color: $light;
+	background-color: $light
 	overflow-x: hidden
 	overflow-y: hidden
 	width: 100%
@@ -54,17 +54,17 @@ body
 		justify-content: center
 		align-items: center
 		width: 100%
-		height: 4em
+		height: 5em
 
 		object
-			width: 10em
-			height: 4em
+			width: 50%
+			height: 3.5em
 			pointer-events: none
 
 .page-title
 	@extend %center-transform
 	position: relative
-	font-size: 120%
+	font-size: 140%
 	color: $dark
 	letter-spacing: 0.5em
 	font-family: $monospace
@@ -78,8 +78,8 @@ main
 #links-open
 	background-color: $dark
 	position: fixed
-	right: 25px
-	bottom: 25px
+	right: 3ex
+	bottom: 3ex
 	width: 5em
 	height: 5em
 	text-align: center
@@ -105,31 +105,30 @@ main
 #links
 	display: none
 	position: fixed
-	right: 10px
+	right: 0.5em
 	bottom: -50%
 	transition: margin-bottom 1s
 	z-index: 0
 	transform: translate3d(0,0,0)
 	-webkit-transform: translate3d(0,0,0)
 
-
 	a
 		color: $link-yellow
 		font-family: "Roboto Mono"
-		font-size: 1.5em
+		font-size: 2vw
 		letter-spacing: 1ex
 		text-decoration: none
 		transition: padding 0.3s
 		margin-top: 1px
 		position: relative
 		float: right
-		padding: 5px 1ch 5px 1ch
+		padding: 0.5ex 1ch 0.5ex 1ch
 		background-color: $ultraviolet
 		clear: both
 
 		&:hover
 			color: $link-gold
-			padding-right: 50px
+			padding-right: 4ch
 
 	&.active
 		display: initial
@@ -140,10 +139,13 @@ main
 		#rotate-device
 			display: initial
 
+	#links a
+		font-size: 6vw
+
 	.page-title
 		font-size: 5vw
 
-@media #{$screen-md}
+@media #{$screen-md}, #{$screen-sm}
 	@media (orientation: portrait)
 		#links a
-			font-size: 3em
+			font-size: 4vw

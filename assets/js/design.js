@@ -10,7 +10,7 @@ $(document).ready(function() {
 	$(".carousel").append('<img id="loader-icon" src="/assets/img/loaders/tail-spin.svg"/>');
 	$(".carousel").append('<figure id="loader-progress">0</figure>');
 	
-	var images = ["break", "canvas5-2", "canvas5-large", "circles", "code-1", "dark", "destiny-unknown", "discover2", "dream-4", "edge-of-tomorrow", "entryflow", "error-nogradient", "fallback", "fear", "frame-of-mind", "insomnia", "jterm", "make", "phone-wallpaper", "reverb2", "revive-this-mind-simple", "root", "sergix", "sergix_destiny1", "sergix-comment", "srgx", "undeniable", "wanderer", "waveform", "wrapper", "zone-theory"];
+	var images = ["abstract-project-desktop", "aftershock-desktop", "beneath-line-desktop", "break", "canvas5-2", "canvas5-large", "carry-me-away-phone", "code-1", "damaged-desktop", "dark", "dream-4", "drip", "edge-of-tomorrow", "entryflow", "error-nogradient", "everything-black-desktop", "fear", "frame-of-mind", "incongruety-4k", "insomnia", "make", "open-your-eyes-desktop", "perspective-desktop", "phone-wallpaper", "reverb2", "revive-this-mind-simple", "sergix", "sergix-comment", "sergix-hex-4k", "sergix-hex-back-4k", "stark-desktop", "twisted-dreams-desktop", "understand-desktop", "wanderer", "waveform", "wrapper"];
 	var imageFiles = [];
 
 	function loadSlick() {
@@ -41,6 +41,8 @@ $(document).ready(function() {
 	
 	function placeIntoSlick() {
 		$("#loader-progress").text( Math.ceil((i / images.length) * 100) );
+		if (currentImage.height > currentImage.width)
+			currentImage.className = "tall";
 		imageFiles.push(currentImage);
 		i++;
 		loadImages();
