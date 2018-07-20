@@ -1,0 +1,56 @@
+{
+  "name": "sergix.net",
+  "version": "1.0.0",
+  "description": "Sergix.net static site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack-cli --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergix/sergix.net.git"
+  },
+  "keywords": [
+    "website",
+    "html",
+    "js",
+    "css",
+    "webpack",
+    "node",
+    "npm"
+  ],
+  "author": "Peyton McGinnis",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sergix/sergix.net/issues"
+  },
+  "homepage": "https://github.com/sergix/sergix.net#readme",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.3.5",
+    "bootstrap": "^4.1.2",
+    "jquery": "^3.3.1",
+    "lightbox2": "^2.10.0",
+    "popper.js": "^1.14.3",
+    "scriptjs": "^2.5.8",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "barba.js": "^1.0.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.1.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.3"
+  }
+}

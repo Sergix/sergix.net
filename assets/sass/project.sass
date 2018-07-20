@@ -2,83 +2,85 @@
 @import 'fonts'
 @import 'media'
 
-.page-title a
-	color: $dark
+main.project
+	#large-title
+		position: fixed
+		left: -0.1em
+		bottom: -0.1em
+		font-weight: 900
+		font-size: 15vw
+		width: 40%
+		letter-spacing: -10px
+		line-height: 0.6em
+		word-wrap: break-word
 
-	&:hover
-		color: $dark-grey
-		text-decoration: underline
+	.project-info
+		position: fixed
+		bottom: 4em
+		right: -25%
+		width: 80%
 
-main
-	font-family: $sans-serif
+		section
+			float: left
 
-#large-title
-	position: fixed
-	left: -0.1em
-	bottom: -0.1em
-	font-weight: 900
-	font-size: 15vw
-	width: 40%
-	letter-spacing: -10px
-	line-height: 0.6em
-	word-wrap: break-word
+		h2
+			color: $light
+			background-color: $dark
+			font-size: 2vw
+			font-weight: 700
+			font-style: italic
+			letter-spacing: -2px
+			padding: 10px 10px 10px 10px
 
-.project-info
-	position: fixed
-	bottom: 2em
-	left: -4px
-	width: 100%
+		p
+			padding-left: 20px
+			font-size: 1vw
 
-	h2
-		color: $light
-		background-color: $dark
-		font-size: 2vw
-		font-weight: 700
-		font-style: italic
-		letter-spacing: -2px
-		padding: 10px 10px 10px 10px
+		a
+			color: black
+			font-family: $monospace
+			text-decoration: underline
 
-	p
-		padding-left: 20px
-		font-size: 1vw
+			&:hover
+				color: $link-gold
 
-	a
-		color: black
-		font-family: $monospace
-		text-decoration: underline
-		clear: both
-
-		&:hover
-			color: $link-gold
-
-	.row2:nth-child(2)
-		p > a
-			line-height: 2em
+		.row2
+			p > a
+				line-height: 2em
+				clear: both
+				width: 100%
+				float: left
 
 @media #{$screen-xs}
 	@media #{$portrait}
-		#large-title
-			width: 60%
-			font-size: 6em
-			line-height: 0.7em
+		main.project
+			#large-title
+				width: 60%
+				font-size: 6em
+				line-height: 0.7em
 
-		.slick-slide
-			width: 90vw
-			margin-left: 100px
+			.slick-slide
+				width: 90vw
+				margin-left: 100px
 
-		.project-info
-			position: fixed
-			left: 5vw
-			bottom: auto
-			top: 25vh
+			.project-info
+				position: fixed
+				left: 5vw
+				bottom: auto
+				top: 30vh
+				width: 100%
 
-			h2
-				font-size: 200%
+				h2
+					font-size: 200%
 
-			p
-				font-size: 100%
+				p
+					font-size: 100%
 
 @media #{$screen-sm}
 	@media #{$portrait}
-		.project-info
-			bottom: 15%
+		main.project
+			.project-info
+				position: fixed
+				bottom: 4em
+				right: -25%
+				width: 90%

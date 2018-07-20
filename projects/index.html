@@ -1,62 +1,59 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta name="description" content="Sergix is a website that devotes its content to programming and development.">
-        <title>/sergix/projects</title>
-		
-		<!-- Bootstrap -->
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<script src="https://unpkg.com/jquery"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-        <!-- Page sources -->
-        <link rel="stylesheet" type="text/css" href="/assets/css/projects.css">
-		<link rel="stylesheet" type="text/css" href="/assets/css/common.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<head>
+	<title>/sergix/projects</title>
+	<script src="/assets/dist/app.bundle.js" type="text/javascript"></script>
+</head>
+<body>
+	<nav class="navbar">
+		<a class="navbar-brand col-xs-12" href="/index.html">
+			<object type="image/svg+xml" data="/assets/img/logo/sergix.svg"></object>
+		</a>
+		<section class="page-title col-xs-12"></section>
+	</nav>
 
-        <!-- Page Scripts -->
-        <script src="/assets/js/loader.js" type="text/javascript"></script>
-    </head>
-    <body>
-		<nav class="navbar">
-			<a class="navbar-brand col-xs-12" href="/index.html">
-				<object type="image/svg+xml" data="/assets/img/logo/sergix.svg"></object>
-			</a>
-			<section class="page-title col-xs-12">
-				/projects
-			</section>
-		</nav>
-		
-		<div id="rotate-device">
-			<img src="/assets/img/rotate-device.png">
-		</div>
-		
-		<main>
+	<div id="rotate-device">
+		<img src="/assets/img/rotate-device.png">
+	</div>
+
+	<main id="barba-wrapper">
+		<div class="barba-container">
 			<ul id="project-list">
 				<li><a href="jterm.html">/jterm</a></li>
 				<li><a href="root.html">/root</a></li>
 				<li><a href="canvas5.html">/canvas5</a></li>
 				<li><a href="wrapper.html">/wrapper</a></li>
 			</ul>
-		</main>
-		
+		</div>
+	</main>
+
+	<figure id="links-open">
+		<a href="#">/</a>
+	</figure>
+
+	<div id="links-wrapper">
+		<nav id="links" class="col-xs-3">
+			<a href="/projects/">/projects</a>
+			<a href="/design/">/design</a>
+			<a href="/research/">/research</a>
+		</nav>
+	</div>
 <!--
-        <section class="container text-left info">
-            <figure class="col-sm-4 dev-text">
-                <h2>Why open source?</h2>
-                <p>Open source opens up the source code of your project to be modifiable and viewable by the end user. Let's say you find an amazing application that you really love, and being a programmer yourself, want to know how they developed a certain aspect of the program. If it's open source, you can find out how just by looking at the code, without having to worry about copyright infringements.</p>
-            </figure>
-            <figure class="col-sm-4 dev-text">
-                <h2>What can I do with these projects?</h2>
-                <p>Since these projects are completely open source, you can download, modify, and distribute them without having to pay a dime. It is not necessary, but if you do decide to distribute your own modification of these projects, we would ask that you would include a comment at the beginning of your code referencing the original; it can be found <a href="/resources/comment.txt">here</a>. It could be considered a "thank you" for using it. But again, it is not required.</p>
-            </figure>
-            <figure class="col-sm-4 dev-text">
-                <h2>How are these tools developed?</h2>
-                <p>This website was developed using <a href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>, and the website layout implements the open source <a href="https://getbootstrap.com/">Bootstrap</a> extension. The <a href="/projects/root/index.html">root</a> project was developed inside the Code::Blocks IDE, using the GNU MinGW C++ compiler on <a href="https://www.microsoft.com/en-us/windows">Microsoft Windows 10</a>, as well as the Wrapper project. The <a href="/projects/jterm/index.html">JTerm</a> project uses the <a href="https://eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3">Eclipse Java EE IDE</a>, and is written in Java.</p>
-            </figure>
-        </section>
+	<section class="container text-left info">
+		<figure class="col-sm-4 dev-text">
+			<h2>Why open source?</h2>
+			<p>Open source opens up the source code of your project to be modifiable and viewable by the end user. Let's say you find an amazing application that you really love, and being a programmer yourself, want to know how they developed a certain aspect of the program. If it's open source, you can find out how just by looking at the code, without having to worry about copyright infringements.</p>
+		</figure>
+		<figure class="col-sm-4 dev-text">
+			<h2>What can I do with these projects?</h2>
+			<p>Since these projects are completely open source, you can download, modify, and distribute them without having to pay a dime. It is not necessary, but if you do decide to distribute your own modification of these projects, we would ask that you would include a comment at the beginning of your code referencing the original; it can be found <a href="/resources/comment.txt">here</a>. It could be considered a "thank you" for using it. But again, it is not required.</p>
+		</figure>
+		<figure class="col-sm-4 dev-text">
+			<h2>How are these tools developed?</h2>
+			<p>This website was developed using <a href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>, and the website layout implements the open source <a href="https://getbootstrap.com/">Bootstrap</a> extension. The <a href="/projects/root/index.html">root</a> project was developed inside the Code::Blocks IDE, using the GNU MinGW C++ compiler on <a href="https://www.microsoft.com/en-us/windows">Microsoft Windows 10</a>, as well as the Wrapper project. The <a href="/projects/jterm/index.html">JTerm</a> project uses the <a href="https://eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3">Eclipse Java EE IDE</a>, and is written in Java.</p>
+		</figure>
+	</section>
 -->
-		<script src="/assets/js/common.js" type="text/javascript"></script>
-    </body>
+</body>
 </html>

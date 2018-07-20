@@ -49,26 +49,29 @@ body
 	top: 10vh
 
 	.navbar-brand
-		position: relative
+		@extend %center-transform
+		position: fixed
 		display: flex
 		justify-content: center
 		align-items: center
 		width: 100%
 		height: 5em
+		top: 15vh
 
 		object
 			width: 50%
 			height: 3.5em
 			pointer-events: none
 
-.page-title
-	@extend %center-transform
-	position: relative
-	font-size: 140%
-	color: $dark
-	letter-spacing: 0.5em
-	font-family: $monospace
-	text-align: center
+	.page-title
+		@extend %center-transform
+		top: 23vh
+		position: fixed
+		font-size: 120%
+		color: $dark
+		letter-spacing: 0.5em
+		font-family: $monospace
+		text-align: center
 
 main
 	padding: 50px
@@ -91,6 +94,9 @@ main
 	&:hover
 		background-color: $link-yellow
 
+	&.active
+		background-color: $link-gold
+
 	a
 		font-size: 3.2em
 		text-decoration: none
@@ -102,50 +108,71 @@ main
 		-ms-user-select: none
 		user-select: none
 
-#links
-	display: none
+#links-wrapper
+	transition: all 0.3s
 	position: fixed
-	right: 0.5em
-	bottom: -50%
-	transition: margin-bottom 1s
-	z-index: 0
-	transform: translate3d(0,0,0)
-	-webkit-transform: translate3d(0,0,0)
+	right: 0
+	bottom: 0
+
+	#links
+		position: relative
+		right: -200%
+		bottom: 7.5em
+		transition: all 1s
+		z-index: 0
+
+		-webkit-transition: right 1s;
+		-moz-transition: right 1s;
+		-o-transition: right 1s;
+		transition: right 1s;
+		
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+
+		&.active
+			right: 0
+
+		a
+			color: $link-yellow
+			font-family: "Roboto Mono"
+			font-size: 2vw
+			letter-spacing: 1ex
+			text-decoration: none
+			transition: padding 0.3s
+			margin-top: 1px
+			position: relative
+			float: right
+			padding: 0.5ex 1ch 0.5ex 1ch
+			background-color: $ultraviolet
+			clear: both
+
+			&:hover
+				color: $link-gold
+				padding-right: 4ch
+
+#links-open.index
+	display: none
+
+#links-wrapper.index > #links
+	position: fixed
+	bottom: 25px
+	right: 15px
 
 	a
-		color: $link-yellow
-		font-family: "Roboto Mono"
-		font-size: 2vw
-		letter-spacing: 1ex
-		text-decoration: none
-		transition: padding 0.3s
-		margin-top: 1px
-		position: relative
-		float: right
-		padding: 0.5ex 1ch 0.5ex 1ch
-		background-color: $ultraviolet
-		clear: both
-
-		&:hover
-			color: $link-gold
-			padding-right: 4ch
-
-	&.active
-		display: initial
-		bottom: 7.5em
+		background: $dark
 
 @media #{$screen-xs}
 	@media (orientation: landscape)
 		#rotate-device
 			display: initial
 
-	#links a
-		font-size: 6vw
+	#links-wrapper > #links > a
+				font-size: 6vw
 
 	.page-title
 		font-size: 5vw
 
 @media #{$screen-md}, #{$screen-sm}
 	@media (orientation: portrait)
-		#links a
+		#links-wrapper > #links > a
 			font-size: 4vw

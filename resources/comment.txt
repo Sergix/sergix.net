@@ -1,8 +1,0 @@
-/*
- *
- * Original source code by Sergix
- * https://www.sergix.net/
- * 
- * Code held under the GNU Public License
- *
-*/
