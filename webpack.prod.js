@@ -1,5 +1,4 @@
 const merge = require('webpack-merge')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
@@ -7,29 +6,34 @@ module.exports = merge(common, {
   output: {
     publicPath: '/assets/dist/'
   },
+  optimization: {
+    minimize: true
+  },
   module: {
     rules: [
       {
         test: [/\.sass$/, /\.scss$/, /\.css$/],
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              limit: 8192
-            }
+            loader: 'style-loader'
+          }, {
+            loader: 'css-loader'
+          }, {
+            loader: 'sass-loader'
           }
         ]
-      }
+      },
+      {
+       test: /\.(png|jpg|gif)$/,
+       use: [
+         {
+           loader: 'url-loader',
+           options: {
+             limit: 8192
+           }
+         }
+       ]
+     }
     ]
-  },
-  plugins: [
-    new ExtractTextPlugin('[name].sass')
-  ]
+  }
 })
