@@ -6,8 +6,7 @@ import * as util from './util.js'
 
 function loadPage(oldTitle, newTitle) {
   /* put the new .page-title in */
-  var pageTitle = document.title.substr(7, document.title.length)
-  util.typeOutTitle(pageTitle)
+  util.changeTitle(document.title.substr(7, document.title.length))
 
   /* do some class modification for the styling */
   $('#barba-wrapper').removeClass(oldTitle).addClass(newTitle)
@@ -29,27 +28,29 @@ function loadPage(oldTitle, newTitle) {
 }
 
 export function setEventHandlers() {
-  $(document).on('click', function (e) {
-    if (e.toElement.offsetParent === null || e.toElement.offsetParent.id !== 'links-open') {
+  $(document).on('click touchstart', function (e) {
+    if (e.target.id !== 'links-open' && (e.target.offsetParent === null || e.target.offsetParent.id !== 'links-open')) {
       $('#links-open').removeClass('active')
       $('#links').removeClass('active')
     }
   })
 
-  $('#links-open').on('click', function () {
+  $('#links-open').on('click touchstart', function () {
     if ($(this).hasClass('active')) {
+      console.log('removing')
       $(this).removeClass('active')
       $('#links').removeClass('active')
+      return
     } else {
+      console.log('adding')
       $(this).addClass('active')
       $('#links').addClass('active')
     }
   })
 }
 
-export function load () {
-  var page = util.getPage()
-  loadPage('', page)
+export function load() {
+  loadPage('', util.getPage())
 
   /* load in any large pieces of content with ajax */
   $.get('/assets/ajax/head.html', function(data){
@@ -57,7 +58,7 @@ export function load () {
   })
 
   /* Barba.js handlers */
-  var oldTitle, newTitle
+  var oldTitle
   var FadeTransition = Barba.BaseTransition.extend({
     start: function() {
       oldTitle = util.getPage()
@@ -72,12 +73,9 @@ export function load () {
     },
 
     fadeIn: function() {
-      var _this = this
       var $el = $(this.newContainer)
 
-      newTitle = util.getPage()
-
-      loadPage(oldTitle, newTitle)
+      loadPage(oldTitle, util.getPage())
 
       $(this.oldContainer).hide()
 
@@ -86,8 +84,8 @@ export function load () {
         opacity : 0
       })
 
-      $el.animate({ opacity: 1 }, 400, function() {
-        _this.done() // remove old container
+      $el.animate({ opacity: 1 }, 400, () => {
+        this.done() // remove old container
       })
     }
   })
@@ -97,5 +95,7 @@ export function load () {
   }
 
   Barba.Pjax.start()
+
+  util.bodyLoaderIconEnd()
 
 }

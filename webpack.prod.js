@@ -1,19 +1,25 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const MinifyPlugin = require('babel-minify-webpack-plugin')
+const MinifyPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
   mode: 'production',
+  devtool: 'source-map',
   optimization: {
     minimize: true,
     minimizer: [
-      new MinifyPlugin(null, {
-        comments: false
+      new MinifyPlugin({
+        cache: true,
+        test: /\.js($|\?)/i,
+        sourceMap: true,
+        parallel: 4
       }),
-      new OptimizeCSSAssetsPlugin({})
+      new OptimizeCSSAssetsPlugin({}),
     ],
     splitChunks: {
       cacheGroups: {
@@ -27,6 +33,8 @@ module.exports = merge(common, {
     }
   },
   plugins: [
+    new HtmlWebpackInlineSourcePlugin(),
+    new CleanWebpackPlugin(['assets/dist']),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
@@ -54,7 +62,11 @@ module.exports = merge(common, {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.woff(2)$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
     ]
   }
 })
