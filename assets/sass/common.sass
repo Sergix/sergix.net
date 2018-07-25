@@ -1,7 +1,7 @@
 @import 'colors'
 @import 'fonts'
 @import 'media'
-@import 'center'
+@import 'mixins'
 
 *
 	color: $dark
@@ -58,7 +58,6 @@ body.loading > *:not(#body-loader)
 		z-index: 1000
 
 .navbar
-	position: fixed
 	display: flex
 	justify-content: center
 	align-items: center
@@ -66,23 +65,34 @@ body.loading > *:not(#body-loader)
 	width: 100%
 
 	.navbar-brand
-		height: 5em
 		display: flex
 		justify-content: center
-		align-items: center
-		width: 100%
 		margin-right: 0
+		width: 10em
+		border: 1px solid $dark
+		box-shadow: 4px 4px $dark
+		transition: all 0.2s
+
+		&.hover
+			border: 1px solid $link-yellow
+			box-shadow: 4px 4px $link-yellow
+
+		&:active
+			border: 1px solid $link-gold
+			box-shadow: 2px 2px $link-gold
 
 		img
-			width: 25.5vh
-			height: 3.5em
+			padding: 10px
+			width: 100%
+			height: 100%
+			//width: 25.5vh
 			z-index: 999
 
 	.page-title
 		@extend %center-transform
-		top: 23vh
+		top: 25vh
 		position: fixed
-		font-size: 120%
+		font-size: 100%
 		font-weight: 400
 		color: $dark
 		letter-spacing: 0.5em
@@ -115,39 +125,27 @@ main
 		background-color: $link-gold
 
 	a
+		@extend %no-select
 		font-size: 3.2em
 		text-decoration: none
 		color: $light
 		font-family: $monospace
 		font-weight: 1000
-		-webkit-user-select: none
-		-moz-user-select: none
-		-ms-user-select: none
-		user-select: none
 
 #links-wrapper
-	transition: all 0.3s
+	@extend %hardware-acceleration
+	transition: all 1s
 	position: fixed
-	right: 0
+	right: -100%
 	bottom: 0
+
+	&.active
+		right: 0
 
 	#links
 		position: relative
-		right: -200%
 		bottom: 7.5em
-		transition: all 1s
 		z-index: 0
-
-		-webkit-transition: right 0.6s;
-		-moz-transition: right 0.6s;
-		-o-transition: right 0.6s;
-		transition: right 0.6s;
-
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-
-		&.active
-			right: 0
 
 		a
 			color: $link-yellow
@@ -170,13 +168,16 @@ main
 #links-open.index
 	display: none
 
-#links-wrapper.index > #links
+#links-wrapper.index
 	position: fixed
-	bottom: 25px
-	right: 25px
+	right: 0
 
-	a
-		background: $dark
+	#links
+		bottom: 25px
+		right: 25px
+
+		a
+			background: $dark
 
 @media #{$screen-xs}
 	@media (orientation: landscape)

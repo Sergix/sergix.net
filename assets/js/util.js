@@ -98,9 +98,11 @@ async function typeOutTitle(newTitle, queueNumber, inQueue) {
   // grab the element
   var $el = $('.page-title')
 
-  if (newTitle.startsWith($el.text()))
-  {
+  // if the current title already matches the start of the new one, then just continue there
+  if (newTitle.startsWith($el.text()) && $el.text() !== '') {
+    console.log('test')
     typeOutTitleCallback(newTitle, $el.text().length, queueNumber)
+    return
   }
 
   var removeInterval = setInterval(function() {
@@ -135,7 +137,6 @@ function typeOutTitleCallback(newTitle, position, queueNumber) {
   }
 
   // start the typing out part
-  var i = newTitle.length
   var insertInterval = setInterval(function() {
     // if we have reached the end or if another transition has been requested in the queue ahead of us, then quit
     if ($el.text().length === newTitle.length || queueNumber < typeQueue) {
@@ -145,8 +146,8 @@ function typeOutTitleCallback(newTitle, position, queueNumber) {
     }
 
     // print out the new title
-    $el.text(newTitle.substr(position, newTitle.length - i))
-    i--
+    $el.append(newTitle[position])
+    position++
   }, typeInterval)
 }
 

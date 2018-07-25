@@ -7,7 +7,7 @@ if (module.hot) {
 }
 
 /* sass */
-import '../../node_modules/bootstrap/scss/bootstrap.scss'
+import 'bootstrap/scss/bootstrap.scss'
 util.requireAll(require.context('../sass', true, /^(?!_).+.sass$/))
 
 /* js */

@@ -13,8 +13,6 @@ export function loadDesign() {
   var currentImage
   var i = 0
 
-  $('.art').css('visibility', 'hidden')
-
   // loader
   $('.carousel').append('<img id="loader-icon" src="/assets/img/loaders/tail-spin.svg"/>')
   $('.carousel').append('<figure id="loader-progress">0</figure>')
@@ -42,7 +40,9 @@ export function loadDesign() {
       hash     : false
     })
 
-    $('.art').css('visibility', 'visible')
+    $('.slick-slide').append('<img class="slick-maximize-overlay" src="/assets/img/feather/maximize.svg" alt="Maximize">')
+
+    $('.art').addClass('active')
 
     $('#before-button').on('click', function (e) {
       $('.carousel').slick('slickPrev')

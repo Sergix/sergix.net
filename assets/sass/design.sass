@@ -1,18 +1,27 @@
 @import 'colors'
 @import 'fonts'
 @import 'media'
-@import 'center'
+@import 'mixins'
 
 main.design
 	width: 100%
 	height: 100%
+
+	.art
+		transition: all 0.6s
+		visibility: hidden
+		opacity: 0
+
+		&.active
+			visibility: visible
+			opacity: 1
 
 	#control-buttons
 		display: flex
 		justify-content: center
 		align-items: center
 		width: 100%
-		margin-top: 23vh
+		margin-top: 14vh
 
 	.image-control
 		float: left
@@ -51,13 +60,13 @@ main.design
 		align-items: center
 
 	#loader-icon
-		margin-top: 15vh
+		margin-top: 14vh
 
 	#loader-progress
 		font-family: $monospace
 		position: fixed
 		font-size: 10vh
-		bottom: 15%
+		bottom: 13%
 		font-weight: 700
 
 	.slick-slide > img
@@ -65,6 +74,22 @@ main.design
 
 	img.tall
 		width: 20vw
+
+	.slick-maximize-overlay
+		position: fixed
+		width: 1.5em !important
+		height: 1.5em
+		opacity: 0
+		top: 0
+		margin: 15px
+		z-index: 999
+		transition: all 0.5s
+
+	.slick-current > .slick-maximize-overlay
+		opacity: 1
+
+	.slick-list
+		padding: 0 !important
 
 .fancybox-container
 	.fancybox-infobar > span

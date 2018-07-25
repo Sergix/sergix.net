@@ -7,8 +7,10 @@ export function loadProjectPage() {
       arrows: false,
       autoplay: true,
       variableWidth: true,
+      dots: true,
       rows: 1
     })
+    $('.slick-dots > li > button').text('')
   } else {
     $('.row1').wrapAll('<section/>')
     $('.row2').wrapAll('<section/>')

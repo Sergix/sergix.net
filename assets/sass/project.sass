@@ -35,6 +35,7 @@ main.project
 		p
 			padding-left: 20px
 			font-size: 1vw
+			font-family: $serif
 
 		a
 			color: black
@@ -50,6 +51,27 @@ main.project
 				clear: both
 				width: 100%
 				float: left
+
+	.slick-dots
+		position: fixed
+		left: 50%
+		transform: translateX(-70%)
+
+		li
+			display: inline
+			float: left
+			list-style: none
+			padding: 5px
+
+			button
+				width: 1px
+				height: 15px
+				background-color: rgba(0, 0, 0, 0.4)
+				border: solid 1px $light
+				border-radius: 50%
+
+			&.slick-active > button
+				background-color: rgba(0, 0, 0, 0.7)
 
 @media #{$screen-xs}
 	@media #{$portrait}
@@ -75,6 +97,14 @@ main.project
 
 				p
 					font-size: 100%
+
+@media (max-width: 320px)
+	main.project
+		#large-title
+			width: 80%
+			bottom: -45px
+		.slick-dots
+			display: none
 
 @media #{$screen-sm}
 	@media #{$portrait}

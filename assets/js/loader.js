@@ -31,30 +31,28 @@ export function setEventHandlers() {
   const $el = $('#links-open')
 
   util.attachHoverHandler('#links-open')
+  util.attachHoverHandler('.navbar-brand')
   // util.attachHoverHandler('#links > a')
 
-  $(document).on('click touchststart', function (e) {
+  $(document).on('click touchstart', function (e) {
     if (e.target.id !== 'links-open' && (e.target.offsetParent === null || e.target.offsetParent.id !== 'links-open')) {
       $el.removeClass('active')
-      $('#links').removeClass('active')
+      $('#links-wrapper').removeClass('active')
     }
   })
 
-  $('#links-open').on('click touchstart', function (e) {
+  $el.on('click touchstart', function (e) {
     if (util.isMobile() && e.type === 'click')
       return
     else if (!util.isMobile() && e.type === 'touchstart')
       return
 
     if ($(this).hasClass('active')) {
-      console.log('removing')
       $(this).removeClass('active')
-      $('#links').removeClass('active')
-      return
+      $('#links-wrapper').removeClass('active')
     } else {
-      console.log('adding')
       $(this).addClass('active')
-      $('#links').addClass('active')
+      $('#links-wrapper').addClass('active')
     }
   })
 }
@@ -63,9 +61,7 @@ export function load() {
   loadPage('', util.getPage())
 
   /* load in any large pieces of content with ajax */
-  $.get('/assets/ajax/head.html', function(data){
-    $('head').prepend(data)
-  })
+  $.get('/assets/ajax/head.html', (data) => $('head').prepend(data))
 
   /* Barba.js handlers */
   var oldTitle
