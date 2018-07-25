@@ -28,14 +28,24 @@ function loadPage(oldTitle, newTitle) {
 }
 
 export function setEventHandlers() {
-  $(document).on('click touchstart', function (e) {
+  const $el = $('#links-open')
+
+  util.attachHoverHandler('#links-open')
+  // util.attachHoverHandler('#links > a')
+
+  $(document).on('click touchststart', function (e) {
     if (e.target.id !== 'links-open' && (e.target.offsetParent === null || e.target.offsetParent.id !== 'links-open')) {
-      $('#links-open').removeClass('active')
+      $el.removeClass('active')
       $('#links').removeClass('active')
     }
   })
 
-  $('#links-open').on('click touchstart', function () {
+  $('#links-open').on('click touchstart', function (e) {
+    if (util.isMobile() && e.type === 'click')
+      return
+    else if (!util.isMobile() && e.type === 'touchstart')
+      return
+
     if ($(this).hasClass('active')) {
       console.log('removing')
       $(this).removeClass('active')

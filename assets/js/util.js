@@ -14,6 +14,21 @@ function once(fn, context) {
   }
 }
 
+export function attachHoverHandler (element) {
+  var $el = $(element)
+  $el.on('touchstart', function(e) {
+    $el.addClass('hover')
+  }).on('touchmove', function(e) {
+    $el.removeClass('hover')
+  }).mouseenter( function(e) {
+    $el.addClass('hover')
+  }).mouseleave( function(e) {
+    $el.removeClass('hover')
+  }).click( function(e) {
+    $el.removeClass('hover')
+  })
+}
+
 export const requireAll = (r) =>
   r.keys().forEach(r)
 
@@ -62,7 +77,7 @@ export function changeTitle(newTitle) {
 async function typeOutTitle(newTitle, queueNumber, inQueue) {
 
   // if a current typing out is in progress, wait for the current one to finish before doing anything
-  if (isRunningTransition) {
+  if (isRunningTransition) if (isRunningTransition) {
     window.setTimeout(() => typeOutTitle(newTitle, queueNumber, inQueue), typeInterval)
     return
   }
@@ -83,11 +98,16 @@ async function typeOutTitle(newTitle, queueNumber, inQueue) {
   // grab the element
   var $el = $('.page-title')
 
+  if (newTitle.startsWith($el.text()))
+  {
+    typeOutTitleCallback(newTitle, $el.text().length, queueNumber)
+  }
+
   var removeInterval = setInterval(function() {
     // if the page title is now empty
     if ($el.text().length === 0) {
       // type out the new one
-      typeOutTitleCallback(newTitle, queueNumber)
+      typeOutTitleCallback(newTitle, 0, queueNumber)
       clearInterval(removeInterval)
     }
 
@@ -104,7 +124,7 @@ async function typeOutTitle(newTitle, queueNumber, inQueue) {
   }, typeInterval)
 }
 
-function typeOutTitleCallback(newTitle, queueNumber) {
+function typeOutTitleCallback(newTitle, position, queueNumber) {
   // grab the element
   var $el = $('.page-title')
 
@@ -125,7 +145,7 @@ function typeOutTitleCallback(newTitle, queueNumber) {
     }
 
     // print out the new title
-    $el.text(newTitle.substr(0, newTitle.length - i))
+    $el.text(newTitle.substr(position, newTitle.length - i))
     i--
   }, typeInterval)
 }
