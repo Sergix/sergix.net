@@ -1,9 +1,12 @@
 @import 'colors'
 @import 'fonts'
 @import 'media'
+@import 'mixins'
 
 main.project
 	#large-title
+		@extend %no-select
+		font-family: $sans-serif
 		position: fixed
 		left: -0.1em
 		bottom: -0.1em
@@ -16,7 +19,7 @@ main.project
 
 	.project-info
 		position: fixed
-		bottom: 4em
+		bottom: 2em
 		right: -25%
 		width: 80%
 
@@ -55,30 +58,37 @@ main.project
 	.slick-dots
 		position: fixed
 		left: 50%
-		transform: translateX(-70%)
+		top: 25%
+		transform: translateX(-66.6%)
 
 		li
 			display: inline
 			float: left
 			list-style: none
 			padding: 5px
+			margin: 5px
+			width: 1px
+			height: 1px
+			background-color: rgba(0, 0, 0, 0.4)
+			box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4)
+			border-radius: 100%
 
 			button
-				width: 1px
-				height: 15px
-				background-color: rgba(0, 0, 0, 0.4)
-				border: solid 1px $light
-				border-radius: 100%
+				background-color: transparent !important
+				box-shadow: none !important
+				opacity: 0
 
-			&.slick-active > button
+			&.slick-active
 				background-color: rgba(0, 0, 0, 0.7)
 
 @media #{$screen-xs}
 	@media #{$portrait}
 		main.project
 			#large-title
-				width: 60%
-				font-size: 6em
+				bottom: -10px
+				width: 120%
+				left: -15px
+				font-size: 5em
 				line-height: 0.7em
 
 			.slick-slide
@@ -96,15 +106,7 @@ main.project
 					font-size: 200%
 
 				p
-					font-size: 100%
-
-@media (max-width: 320px)
-	main.project
-		#large-title
-			width: 80%
-			bottom: -45px
-		.slick-dots
-			display: none
+					font-size: 80%
 
 @media #{$screen-sm}
 	@media #{$portrait}

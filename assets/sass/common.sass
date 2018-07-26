@@ -57,14 +57,21 @@ body.loading > *:not(#body-loader)
 		transform: translate(-50%, -50%)
 		z-index: 1000
 
+// .navbar
+// 	display: flex
+// 	justify-content: center
+// 	align-items: center
+// 	padding: 0
+
 .navbar
-	display: flex
-	justify-content: center
-	align-items: center
-	top: 8%
-	width: 100%
+	position: fixed
+	top: 10%
+	z-index: 999
 
 	.navbar-brand
+		position: fixed
+		left: 50%
+		transform: translateX(-50%)
 		display: flex
 		justify-content: center
 		margin-right: 0
@@ -72,6 +79,7 @@ body.loading > *:not(#body-loader)
 		border: 1px solid $dark
 		box-shadow: 4px 4px $dark
 		transition: all 0.2s
+		z-index: 5
 
 		&.hover
 			border: 1px solid $link-yellow
@@ -81,24 +89,17 @@ body.loading > *:not(#body-loader)
 			border: 1px solid $link-gold
 			box-shadow: 2px 2px $link-gold
 
-		img
-			padding: 10px
-			width: 100%
-			height: 100%
-			//width: 25.5vh
-			z-index: 999
-
-	.page-title
-		@extend %center-transform
-		top: 25vh
-		position: fixed
-		font-size: 100%
-		font-weight: 400
-		color: $dark
-		letter-spacing: 0.5em
-		font-family: $monospace
-		text-align: center
-		margin-left: 0.2ch
+.page-title
+	@extend %center-transform
+	top: 21vh
+	position: fixed
+	font-size: 100%
+	font-weight: 400
+	color: $dark
+	letter-spacing: 0.5em
+	font-family: $monospace
+	text-align: center
+	margin-left: 0.2ch
 
 main
 	padding: 50px
@@ -108,10 +109,10 @@ main
 #links-open
 	background-color: $dark
 	position: fixed
-	right: 3ex
-	bottom: 3ex
-	width: 5em
-	height: 5em
+	right: 25px
+	bottom: 7px
+	width: 4em
+	height: 4em
 	text-align: center
 	box-shadow: 4px 4px $ultraviolet
 	cursor: pointer
@@ -126,7 +127,7 @@ main
 
 	a
 		@extend %no-select
-		font-size: 3.2em
+		font-size: 2.5em
 		text-decoration: none
 		color: $light
 		font-family: $monospace

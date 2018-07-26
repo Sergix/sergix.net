@@ -7,8 +7,13 @@ window.jQuery = $
 window.slick = require('slick-carousel')
 window.fancybox = require('@fancyapps/fancybox')
 
+import * as util from './util'
+
 export function loadDesign() {
   'use strict'
+
+  util.attachHoverHandler('#before-button')
+  util.attachHoverHandler('#next-button')
 
   var currentImage
   var i = 0
