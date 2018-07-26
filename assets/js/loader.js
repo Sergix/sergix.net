@@ -4,12 +4,16 @@ import * as design from './design.js'
 import * as project from './project.js'
 import * as util from './util.js'
 
-function loadPage(oldTitle, newTitle) {
-  /* put the new .page-title in */
-  util.changeTitle(document.title.substr(7, document.title.length))
+export const loadPage = (oldTitle, newTitle) => {
+  // put the new .page-title in
+  util.changeTitle(
+    document.title.substr(7, document.title.length)
+  )
 
-  /* do some class modification for the styling */
-  $('#barba-wrapper').removeClass(oldTitle).addClass(newTitle)
+  // do some class modification for the styling
+  $('#barba-wrapper')
+    .removeClass(oldTitle)
+    .addClass(newTitle)
 
   if (newTitle === 'index') {
     $('#links-open').addClass('index')
@@ -19,7 +23,7 @@ function loadPage(oldTitle, newTitle) {
     $('#links-wrapper').removeClass('index')
   }
 
-  /* load special content */
+  // load special content
   if (newTitle === 'design') {
     design.loadDesign()
   } else if (newTitle === 'project') {
@@ -27,15 +31,17 @@ function loadPage(oldTitle, newTitle) {
   }
 }
 
-export function setEventHandlers() {
+export const setEventHandlers = () => {
   const $el = $('#links-open')
 
   util.attachHoverHandler('#links-open')
   util.attachHoverHandler('.navbar-brand')
-  // util.attachHoverHandler('#links > a')
 
   $(document).on('click touchstart', function (e) {
-    if (e.target.id !== 'links-open' && (e.target.offsetParent === null || e.target.offsetParent.id !== 'links-open')) {
+    if (e.target.id !== 'links-open' &&
+       (e.target.offsetParent === null ||
+        e.target.offsetParent.id !== 'links-open'))
+    {
       $el.removeClass('active')
       $('#links-wrapper').removeClass('active')
     }
@@ -57,16 +63,16 @@ export function setEventHandlers() {
   })
 }
 
-export function load() {
+export const load = () => {
   loadPage('', util.getPage())
 
   /* load in any large pieces of content with ajax */
   $.get('/assets/ajax/head.html', (data) => $('head').prepend(data))
 
   /* Barba.js handlers */
-  var oldTitle
-  var FadeTransition = Barba.BaseTransition.extend({
-    start: function() {
+  let oldTitle = ''
+  const fadeTransition = Barba.BaseTransition.extend({
+    start: () => {
       oldTitle = util.getPage()
 
       Promise
@@ -74,12 +80,12 @@ export function load() {
         .then(this.fadeIn.bind(this))
     },
 
-    fadeOut: function() {
+    fadeOut: () => {
       return $(this.oldContainer).animate({ opacity: 0 }).promise()
     },
 
-    fadeIn: function() {
-      var $el = $(this.newContainer)
+    fadeIn: () => {
+      const $el = $(this.newContainer)
 
       loadPage(oldTitle, util.getPage())
 
@@ -91,17 +97,16 @@ export function load() {
       })
 
       $el.animate({ opacity: 1 }, 400, () => {
-        this.done() // remove old container
+        this.done()
       })
     }
   })
 
-  Barba.Pjax.getTransition = function() {
-    return FadeTransition
+  Barba.Pjax.getTransition = () => {
+    return fadeTransition
   }
 
   Barba.Pjax.start()
 
   util.bodyLoaderIconEnd()
-
 }

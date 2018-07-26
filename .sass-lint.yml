@@ -1,0 +1,54 @@
+files:
+  include: 'assets/sass/*.sass'
+rules:
+  attribute-quotes:
+    - 2
+  no-trailing-zero:
+    - 2
+  space-after-bang:
+    - 2
+  space-after-colon:
+    - 2
+  space-after-comma:
+    - 2
+  space-around-operator:
+    - 2
+  space-before-bang:
+    - 2
+  zero-unit:
+    - 2
+    -
+      include: false
+  quotes:
+    - 2
+  one-declaration-per-line:
+    - 2
+  indentation:
+    - 2
+    -
+      size: 'tab'
+  clean-import-paths:
+    - 2
+    -
+      leading-underscore: false
+      filename-extension: false
+  no-important:
+    - 0
+    -
+      include: false
+  no-ids:
+    - 0
+    -
+      include: false
+  no-color-literals:
+    - 0
+    -
+      include: false
+  no-url-domains:
+    - 0
+    -
+      include: false
+  no-url-protocols:
+    - 2
+    -
+      allow-protocol-relative-urls: true

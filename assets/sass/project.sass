@@ -3,23 +3,24 @@
 @import 'media'
 @import 'mixins'
 
-main.project
+
+.project
 	#large-title
 		@extend %no-select
+		bottom: -.1em
 		font-family: $sans-serif
-		position: fixed
-		left: -0.1em
-		bottom: -0.1em
-		font-weight: 900
 		font-size: 15vw
-		width: 40%
+		font-weight: 900
+		left: -.1em
 		letter-spacing: -10px
-		line-height: 0.6em
+		line-height: .6em
+		position: fixed
+		width: 40%
 		word-wrap: break-word
 
 	.project-info
-		position: fixed
 		bottom: 2em
+		position: fixed
 		right: -25%
 		width: 80%
 
@@ -27,50 +28,49 @@ main.project
 			float: left
 
 		h2
-			color: $light
 			background-color: $dark
+			color: $light
 			font-size: 2vw
-			font-weight: 700
 			font-style: italic
+			font-weight: 700
 			letter-spacing: -2px
-			padding: 10px 10px 10px 10px
+			padding: 10px
 
 		p
-			padding-left: 20px
-			font-size: 1vw
 			font-family: $serif
+			font-size: 1vw
+			padding-left: 20px
 
 		a
-			color: black
+			color: $dark
 			font-family: $monospace
 			text-decoration: underline
 
 			&:hover
 				color: $link-gold
 
-		.row2
-			p > a
-				line-height: 2em
-				clear: both
-				width: 100%
-				float: left
+		.row2 > p > a
+			clear: both
+			float: left
+			line-height: 2em
+			width: 100%
 
 	.slick-dots
-		position: fixed
 		left: 50%
 		margin-top: -10px
+		position: fixed
 		transform: translateX(-66.6%)
 
 		li
+			background-color: rgba(0, 0, 0, .4)
+			border-radius: 100%
 			display: inline
 			float: left
-			list-style: none
-			padding: 5px
-			margin: 5px
-			width: 1px
 			height: 1px
-			background-color: rgba(0, 0, 0, 0.4)
-			border-radius: 100%
+			list-style: none
+			margin: 5px
+			padding: 5px
+			width: 1px
 
 			button
 				background-color: transparent !important
@@ -78,26 +78,26 @@ main.project
 				opacity: 0
 
 			&.slick-active
-				background-color: rgba(0, 0, 0, 0.7)
+				background-color: rgba(0, 0, 0, .7)
 
 @media #{$screen-xs}
 	@media #{$portrait}
-		main.project
+		.project
 			#large-title
 				bottom: -1px
-				width: 120%
-				left: -15px
 				font-size: 5em
-				line-height: 0.7em
+				left: -15px
+				line-height: .7em
+				width: 120%
 
 			.slick-slide
-				width: 90vw
 				margin-left: 100px
+				width: 90vw
 
 			.project-info
-				position: fixed
-				left: 5vw
 				bottom: auto
+				left: 5vw
+				position: fixed
 				top: 30vh
 				width: 100%
 
@@ -109,9 +109,9 @@ main.project
 
 @media #{$screen-sm}
 	@media #{$portrait}
-		main.project
+		.project
 			.project-info
-				position: fixed
 				bottom: 4em
+				position: fixed
 				right: -25%
 				width: 90%

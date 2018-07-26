@@ -2,32 +2,33 @@
 @import 'fonts'
 @import 'media'
 
-main.research
+
+.research
 	position: fixed
 	top: 25%
 	width: 100%
 
 	section
-		margin-top: 0.5em
+		margin-top: .5em
 		width: 100%
 
 		h2
 			background-color: $dark
 			color: $light
-			font-family: "Helvetica"
+			font-family: 'Helvetica'
 			font-size: 3vh
-			font-weight: 700
-			padding: 10px 10px 10px 10px
 			font-style: italic
+			font-weight: 700
+			padding: 10px
 
 		p > a
+			color: $dark
 			display: block
 			font-family: $monospace
 			font-size: 3vh
-			color: black
-			text-decoration: underline
 			line-height: 50px
 			margin-left: 10px
+			text-decoration: underline
 
 			&:hover
 				color: $link-gold

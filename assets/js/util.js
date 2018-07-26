@@ -1,45 +1,38 @@
 /* globals */
-const typeInterval = 100
-var isRunningTransition = false
-var typeQueue = 0
+const typeInterval = 100,
+  $el = $('.page-title')
+let isRunningTransition = false,
+  typeQueue = 0,
+  inQueue = false
 
-function once(fn, context) {
-  var result
-  return function() {
-    if (fn) {
-      result = fn.apply(context || this, arguments)
-      fn = null
-    }
-    return result
-  }
-}
-
-export function attachHoverHandler (element) {
-  var $el = $(element)
-  $el.on('touchstart', function(e) {
-    $el.addClass('hover')
-  }).on('touchmove', function(e) {
-    $el.removeClass('hover')
-  }).mouseenter( function(e) {
-    $el.addClass('hover')
-  }).mouseleave( function(e) {
-    $el.removeClass('hover')
-  }).click( function(e) {
-    $el.removeClass('hover')
+export const attachHoverHandler = (element) => {
+  $(element).on('touchstart', function () {
+    this.addClass('hover')
+  }).on('touchmove', function () {
+    this.removeClass('hover')
+  }).mouseenter(function () {
+    this.addClass('hover')
+  }).mouseleave(function () {
+    this.removeClass('hover')
+  }).click(function () {
+    this.removeClass('hover')
   })
 }
 
 export const requireAll = (r) =>
   r.keys().forEach(r)
 
-export function bodyLoaderIconEnd() {
+export const isMobile = () =>
+  /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)
+
+export const bodyLoaderIconEnd = () => {
   $('#body-loader').remove()
   $('body.loading > *').css('visibility', 'visible')
   $('body.loading > *').animate({ opacity: 1 }, 400)
   $('body').removeClass('loading')
 }
 
-export function getPage() {
+export const getPage = () => {
   switch (document.title) {
   case '/sergix':
     return 'index'
@@ -61,12 +54,12 @@ export function getPage() {
   }
 }
 
-export function changeTitle(newTitle) {
+export const changeTitle = (newTitle) => {
   // increment the queue
   typeQueue++
 
-  // check and see if the function to be called will be placed in the queue or called immediately
-  var inQueue = false
+  // check if the function to be called will be placed
+  // in the queue or called immediately
   if (typeQueue > 1)
     inQueue = true
 
@@ -74,11 +67,14 @@ export function changeTitle(newTitle) {
   typeOutTitle(newTitle, typeQueue, inQueue)
 }
 
-async function typeOutTitle(newTitle, queueNumber, inQueue) {
-
-  // if a current typing out is in progress, wait for the current one to finish before doing anything
+export const typeOutTitle = async (newTitle, queueNumber, inQueue) => {
+  // if a current typing out is in progress,
+  // wait for the current one to finish before doing anything
   if (isRunningTransition) if (isRunningTransition) {
-    window.setTimeout(() => typeOutTitle(newTitle, queueNumber, inQueue), typeInterval)
+    window.setTimeout(
+      () => typeOutTitle(newTitle, queueNumber, inQueue),
+      typeInterval
+    )
     return
   }
 
@@ -86,7 +82,8 @@ async function typeOutTitle(newTitle, queueNumber, inQueue) {
   if (inQueue)
     queueNumber--
 
-  // if there is another ahead of us in the queue, then quit this one
+  // if there is another ahead of us in the queue,
+  // then quit this one
   if (queueNumber < typeQueue) {
     typeQueue--
     return
@@ -95,17 +92,14 @@ async function typeOutTitle(newTitle, queueNumber, inQueue) {
   // start the transition
   isRunningTransition = true
 
-  // grab the element
-  var $el = $('.page-title')
-
-  // if the current title already matches the start of the new one, then just continue there
+  // if the current title already matches the start
+  // of the new one,then just continue there
   if (newTitle.startsWith($el.text()) && $el.text() !== '') {
-    console.log('test')
     typeOutTitleCallback(newTitle, $el.text().length, queueNumber)
     return
   }
 
-  var removeInterval = setInterval(function() {
+  const removeInterval = setInterval(() => {
     // if the page title is now empty
     if ($el.text().length === 0) {
       // type out the new one
@@ -116,7 +110,8 @@ async function typeOutTitle(newTitle, queueNumber, inQueue) {
     // subtract one letter from the current title
     $el.text($el.text().substr(0, $el.text().length - 1))
 
-    // if we have reached what the new title is going to be, don't bother getting rid of the rest and retyping it
+    // if we have reached what the new title is going to be,
+    // don't bother getting rid of the rest and retyping it
     if ($el.text() === newTitle) {
       typeQueue--
       isRunningTransition = false
@@ -126,10 +121,7 @@ async function typeOutTitle(newTitle, queueNumber, inQueue) {
   }, typeInterval)
 }
 
-function typeOutTitleCallback(newTitle, position, queueNumber) {
-  // grab the element
-  var $el = $('.page-title')
-
+const typeOutTitleCallback = (newTitle, position, queueNumber) => {
   // if the title is blank, quit
   if (newTitle === undefined || newTitle === '') {
     isRunningTransition = false
@@ -137,8 +129,9 @@ function typeOutTitleCallback(newTitle, position, queueNumber) {
   }
 
   // start the typing out part
-  var insertInterval = setInterval(function() {
-    // if we have reached the end or if another transition has been requested in the queue ahead of us, then quit
+  const insertInterval = setInterval(() => {
+    // if we have reached the end or if another transition
+    // has been requested in the queue ahead of us, then quit
     if ($el.text().length === newTitle.length || queueNumber < typeQueue) {
       isRunningTransition = false
       typeQueue--
@@ -150,6 +143,3 @@ function typeOutTitleCallback(newTitle, position, queueNumber) {
     position++
   }, typeInterval)
 }
-
-export const isMobile = () =>
-  /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)

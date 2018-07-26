@@ -2,30 +2,30 @@
 @import 'fonts'
 @import 'media'
 
+
 #short-description
-	position: fixed
 	bottom: 25px
 	left: 25px
+	position: fixed
 
 	h2
 		color: $dark
 		font-family: $sans-serif
+		font-kerning: normal
 		font-size: 10vw
 		font-weight: 600
-		font-kerning: normal
-		letter-spacing: -0.1em
+		letter-spacing: -.1em
 		line-height: 1em
-		margin: -0.1em
+		margin: -.1em
 
 @media #{$screen-xs}, #{$screen-sm}, #{$screen-md}
 	@media #{$portrait}
-
 		#short-description
 			bottom: 35%
-			right: 19px
 			left: auto
+			right: 19px
 
 			h2
+				float: right
 				font-size: 17vw
 				text-align: right
-				float: right

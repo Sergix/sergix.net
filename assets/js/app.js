@@ -15,7 +15,8 @@ const $ = require('jquery')
 window.$ = $
 util.requireAll(require.context('.', true, /\.js$/))
 
-$(function() {
+// begin the initial page loading
+$(() => {
   loader.setEventHandlers()
   loader.load()
 })

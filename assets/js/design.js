@@ -9,23 +9,59 @@ window.fancybox = require('@fancyapps/fancybox')
 
 import * as util from './util'
 
-export function loadDesign() {
-  'use strict'
-
+export const loadDesign = async function () {
   util.attachHoverHandler('#before-button')
   util.attachHoverHandler('#next-button')
 
-  var currentImage
-  var i = 0
-
   // loader
-  $('.carousel').append('<img id="loader-icon" src="/assets/img/loaders/tail-spin.svg"/>')
-  $('.carousel').append('<figure id="loader-progress">0</figure>')
+  $('.carousel')
+    .append('<img id="loader-icon" src="/assets/img/loaders/tail-spin.svg"/>')
+    .append('<figure id="loader-progress">0</figure>')
 
-  var images = ['abstract-project-desktop', 'aftershock-desktop', 'beneath-line-desktop', 'break', 'canvas5-2', 'canvas5-large', 'carry-me-away-phone', 'code-1', 'damaged-desktop', 'dark', 'dream-4', 'drip', 'edge-of-tomorrow', 'entryflow', 'error-nogradient', 'everything-black-desktop', 'fear', 'frame-of-mind', 'incongruety-4k', 'insomnia', 'make', 'open-your-eyes-desktop', 'perspective-desktop', 'phone-wallpaper', 'reverb2', 'revive-this-mind-simple', 'sergix', 'sergix-comment', 'sergix-hex-4k', 'sergix-hex-back-4k', 'stark-desktop', 'twisted-dreams-desktop', 'understand-desktop', 'wanderer', 'waveform', 'wrapper']
-  var imageFiles = []
+  let currentImage,
+    i = 0
 
-  function loadSlick() {
+  const imageFiles = [],
+    images = [
+      'abstract-project-desktop',
+      'aftershock-desktop',
+      'beneath-line-desktop',
+      'break',
+      'canvas5-2',
+      'canvas5-large',
+      'carry-me-away-phone',
+      'code-1',
+      'damaged-desktop',
+      'dark',
+      'dream-4',
+      'drip',
+      'edge-of-tomorrow',
+      'entryflow',
+      'error-nogradient',
+      'everything-black-desktop',
+      'fear',
+      'frame-of-mind',
+      'incongruety-4k',
+      'insomnia',
+      'make',
+      'open-your-eyes-desktop',
+      'perspective-desktop',
+      'phone-wallpaper',
+      'reverb2',
+      'revive-this-mind-simple',
+      'sergix',
+      'sergix-comment',
+      'sergix-hex-4k',
+      'sergix-hex-back-4k',
+      'stark-desktop',
+      'twisted-dreams-desktop',
+      'understand-desktop',
+      'wanderer',
+      'waveform',
+      'wrapper'
+    ]
+
+  const loadSlick = function () {
     $('.carousel').empty()
 
     $('.carousel').slick({
@@ -41,11 +77,25 @@ export function loadDesign() {
     }
 
     $().fancybox({
-      selector : '.slick-slide:not(.slick-cloned)',
-      hash     : false
+      selector: '.slick-slide:not(.slick-cloned)',
+      hash: false,
+      loop: true,
+      infobar: false,
+      buttons: [
+        'share',
+        'fullScreen',
+        'thumbs',
+        'close'
+      ],
+      protect: true,
+      animationEffect: 'zoom-in-out',
+      transitionEffect: 'slide',
+      hideScrollbar: true
     })
 
-    $('.slick-slide').append('<img class="slick-maximize-overlay" src="/assets/img/feather/maximize.svg" alt="Maximize">')
+    $('.slick-slide')
+      .append('<img class="slick-maximize-overlay"\
+       src="/assets/img/feather/maximize.svg" alt="Maximize">')
 
     $('.art').addClass('active')
 
@@ -58,11 +108,11 @@ export function loadDesign() {
     })
   }
 
-  function loadImages() {
+  const loadImages = function () {
     if (i > images.length - 1)
       loadSlick()
 
-    if (images[i] != undefined) {
+    if (images[i] !== undefined) {
       images[i] = '/assets/img/design/' + images[i] + '.png'
 
       currentImage = document.createElement('a')
@@ -70,10 +120,10 @@ export function loadDesign() {
       currentImage.className = 'art no-barba'
       currentImage.setAttribute('data-fancybox', 'images')
 
-      var img = new Image()
+      const img = new Image()
       img.src = images[i]
-      img.onload = function() {
-        $('#loader-progress').text( Math.ceil((i / images.length) * 100) )
+      img.onload = function () {
+        $('#loader-progress').text(Math.ceil((i / images.length) * 100))
 
         if (img.height > img.width)
           img.className = 'tall'

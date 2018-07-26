@@ -2,79 +2,79 @@
 @import 'fonts'
 @import 'media'
 
-main.projects
+
+.projects
 	#project-list
+		left: 0
 		list-style: none
-		width: 100%
+		padding-left: 0
 		position: fixed
 		top: 35%
-		left: 0
-		padding-left: 0
+		width: 100%
 
 		li
 			font-family: $monospace
 			font-size: 2em
-			margin-top: 3px
 			margin-left: 2px
+			margin-top: 3px
 
-			a
-				padding: 0px 15px 5px 15px
-				background-color: $dark
-				text-decoration: none
-				letter-spacing: 10px
-				color: $light
-				transition: padding 0.3s
-				transition-timing-function: ease-out
+		li > a
+			background-color: $dark
+			color: $light
+			letter-spacing: 10px
+			padding: 0 15px 5px
+			text-decoration: none
+			transition: padding .3s
+			transition-timing-function: ease-out
 
-				&:hover
-					color: $link-gold
+			&:hover
+				color: $link-gold
+				padding: 0 15px 5px 20vw
+
+			&:active
+				padding: 0 15px 5px 22vw
 
 @media #{$screen-xs}
-	main.projects
+	.projects
 		#project-list
 			display: block
 			float: right
-			right: 25px
 			left: auto
+			right: 25px
 
 			li
-				float: right
 				clear: both
-
-				a:hover
-					padding: 0px 15px 0px 20vw
+				float: right
 
 @media #{$screen-sm}
-	main.projects
+	.projects
 		#project-list
 			li
-				display: flex
-				justify-content: center
 				align-items: center
 				clear: both
-
-				a:hover
-					padding: 0px 15px 0px 20vw
-
-@media #{$screen-md}
-	main.projects
-		#project-list
-			li
 				display: flex
 				justify-content: center
+
+@media #{$screen-md}
+	.projects
+		#project-list
+			li
 				align-content: center
 				clear: both
-
-				a:hover
-					padding: 0px 15px 0px 20vw
+				display: flex
+				justify-content: center
 
 @media #{$screen-lg}
-	main.projects
+	.projects
 		#project-list
+			align-items: center
 			display: flex
 			justify-content: center
-			align-items: center
 			top: 50%
 
-			li a:hover
-				padding: 0px 15px 7vh 15px
+		#project-list > li > a
+			&:hover
+				padding: 0 15px 7vh
+
+			&:active
+				padding: 0 15px 10vh

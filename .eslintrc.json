@@ -9,7 +9,28 @@
     "rules": {
         "semi": ["error", "never"],
         "quotes": ["error", "single"],
-        "indent": ["error", 2]
+        "indent": ["error", 2],
+        "eqeqeq": "error",
+        "no-useless-escape": "error",
+        "no-unmodified-loop-condition": "error",
+        "no-alert": "error",
+        "block-spacing": "error",
+        "comma-spacing": "error",
+        "comma-style": "error",
+        "func-style": "error",
+        "lines-around-comment": "error",
+        "max-len": ["error", {
+            "code": 80,
+            "comments": 65
+        }],
+        "max-depth": ["error", 2],
+        "no-lonely-if": "error",
+        "no-var": "error",
+        "prefer-const": "error",
+        "no-duplicate-imports": "error",
+        "space-in-parens": "error",
+        "space-before-function-paren": "error",
+        "object-curly-spacing": ["error", "always"]
     },
 	"env": {
 		"browser": true,
