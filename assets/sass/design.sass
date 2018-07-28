@@ -4,7 +4,6 @@
 @import 'mixins'
 
 
-
 .design
 	height: 100%
 	width: 100%
@@ -27,7 +26,7 @@
 
 		.image-control
 			background-color: $dark
-			box-shadow: 4px 4px $ultraviolet
+			box-shadow: 4px 4px $pink
 			cursor: pointer
 			float: left
 			height: 3.5em
@@ -46,11 +45,11 @@
 			transition: box-shadow .2s
 
 			&.hover
-				background-color: $magenta
+				background-color: $teal
 
 			&:active
-				background-color: $magenta
-				box-shadow: 2px 2px $magenta
+				background-color: $teal
+				box-shadow: 2px 2px $teal
 
 	.carousel
 		align-items: center
@@ -63,9 +62,11 @@
 
 	#loader-icon
 		margin-top: 12vh
+		position: fixed
 
 	#loader-progress
-		bottom: 13%
+		@extend %center-transform
+		bottom: 5%
 		font-family: $monospace
 		font-size: 10vh
 		font-weight: 700
@@ -75,7 +76,7 @@
 		width: 45vw
 
 	.tall
-		width: 20vw
+		width: 20vw !important
 
 	.slick-maximize-overlay
 		height: 1.5em
@@ -107,4 +108,4 @@
 			width: 90vw
 
 		.tall
-			width: 45vw
+			width: 45vw !important

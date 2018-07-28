@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    include ../_head.pug
+    title /sergix/projects/jterm
+
+  body
+    include ../_header.pug
+
+    main#barba-wrapper.container-fluid
+      .barba-container
+        #large-title JTERM
+        .project-info
+          section.row1
+            h2.text-center Cross Platform
+            p
+              | Because JTerm is written in Java, any computer with Java installed can instantly run the JTerm application. The build process uses
+              a(href='https://maven.apache.org/') Apache&apos;s Maven
+              | , which also runs off of Java. So that means you can also help develop this project on any OS!
+          section.row1
+            h2.text-center Simply ROOT
+            p
+              | JTerm has many of the same features as the ROOT project, so you&apos;re not missing out on anything. JTerm comes with a lot of extra utilities, such as a work-in-progress socket server + client, and also some OS-dependent features like a process viewing command.
+          section.row2
+            h2.text-center Contributed
+            p
+              | JTerm is an open-collaberated project, ensuring that multiple people&apos;s input are recieved on updates. There are more and more features that we need help on, so come help out!
+          section.row2
+            h2.text-center Resources
+            p
+              a.col-xs-12.no-barba(href='https://github.com/Sergix/JTerm/raw/master/build/jar/jterm-v0.2.1.jar') Latest Release
+              a.col-xs-12.no-barba(href='https://raw.githubusercontent.com/Sergix/JTerm/master/changelog.txt') Changelog
+              a.col-xs-12.no-barba(href='https://github.com/Sergix/JTerm/blob/master/docs/patch/jterm-v0.2.1-docs.md') Documentation
+
+    include ../_links.pug

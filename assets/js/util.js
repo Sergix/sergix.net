@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 /* globals */
 const typeInterval = 100,
   $el = $('.page-title')
@@ -7,15 +9,15 @@ let isRunningTransition = false,
 
 export const attachHoverHandler = (element) => {
   $(element).on('touchstart', function () {
-    this.addClass('hover')
+    $(this).addClass('hover')
   }).on('touchmove', function () {
-    this.removeClass('hover')
+    $(this).removeClass('hover')
   }).mouseenter(function () {
-    this.addClass('hover')
+    $(this).addClass('hover')
   }).mouseleave(function () {
-    this.removeClass('hover')
+    $(this).removeClass('hover')
   }).click(function () {
-    this.removeClass('hover')
+    $(this).removeClass('hover')
   })
 }
 
@@ -25,7 +27,12 @@ export const requireAll = (r) =>
 export const isMobile = () =>
   /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)
 
-export const bodyLoaderIconEnd = () => {
+export const bodyLoaderIconEnd = (finish) => {
+  if (finish === true) {
+    setTimeout(bodyLoaderIconEnd(true), 500)
+    return
+  }
+
   $('#body-loader').remove()
   $('body.loading > *').css('visibility', 'visible')
   $('body.loading > *').animate({ opacity: 1 }, 400)

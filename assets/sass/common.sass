@@ -55,7 +55,7 @@ body
 
 .navbar
 	position: fixed
-	top: 10%
+	top: 50px
 	z-index: 999
 
 	.navbar-brand
@@ -68,17 +68,16 @@ body
 		padding: 10px
 		position: fixed
 		transform: translateX(-50%)
-		transition: border box-shadow .2s
 		width: 10em
 		z-index: 5
 
 		&.hover
-			border: 1px solid $link-yellow
-			box-shadow: 4px 4px $link-yellow
+			border: 1px solid $sky
+			box-shadow: 4px 4px $sky
 
 		&:active
-			border: 1px solid $link-gold
-			box-shadow: 2px 2px $link-gold
+			border: 1px solid $teal
+			box-shadow: 2px 2px $teal
 
 .page-title
 	@extend %center-transform
@@ -90,7 +89,7 @@ body
 	margin-left: .2ch
 	position: fixed
 	text-align: center
-	top: 22%
+	top: 7em
 
 main
 	padding: 50px
@@ -99,8 +98,8 @@ main
 
 #links-open
 	background-color: $dark
-	bottom: 7px
-	box-shadow: 4px 4px $ultraviolet
+	bottom: 25px
+	box-shadow: 4px 4px $teal
 	cursor: pointer
 	height: 4em
 	position: fixed
@@ -111,10 +110,10 @@ main
 	z-index: 5
 
 	&.hover
-		background-color: $link-yellow
+		background-color: $sky
 
 	&.active
-		background-color: $link-gold
+		background-color: $pink
 
 	&.index
 		display: none
@@ -144,9 +143,9 @@ main
 		z-index: 0
 
 		a
-			background-color: $ultraviolet
+			background-color: $teal
 			clear: both
-			color: $link-yellow
+			color: $magenta
 			float: right
 			font-family: $monospace
 			font-size: 2vw
@@ -158,7 +157,7 @@ main
 			transition: padding .3s
 
 			&:hover
-				color: $link-gold
+				color: $pink
 				padding-right: 4ch
 
 	&.index

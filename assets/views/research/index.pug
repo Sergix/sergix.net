@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    include ../_head.pug
+    title /sergix/research
+
+  body
+    include ../_header.pug
+
+    main#barba-wrapper.container-fluid
+      .barba-container.row
+        section.col-xs-12.col-sm-12.col-md-5.text-left
+          h2.text-center Blockchain
+          p
+            a.col-xs-12.no-barba(href='Blockchain.pdf') Whitepaper
+        section.col-xs-12.col-sm-12.col-md-7.text-left
+          h2.text-center Thoughts
+          p
+            a.disabled.col-xs-12(href='#') Disagreement
+            a.disabled.col-xs-12(href='#') Absolute Truth
+
+    include ../_links.pug

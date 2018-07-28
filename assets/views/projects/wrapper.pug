@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    include ../_head.pug
+    title /sergix/projects/wrapper
+
+  body
+    include ../_header.pug
+
+    main#barba-wrapper.container-fluid
+      .barba-container
+        section#large-title
+          | WRAPPER
+        .project-info
+          section.row1
+            h2.text-center Wrap
+            p
+              | Wrapper builds all your files into a single package that can be easily sent to other users.
+          section.row1
+            h2.text-center Portable
+            p
+              | Because your entire package is all contained in one file, it allows for quick and easy transfer between other people on your project team.
+          section.row2
+            h2.text-center Multiplatform
+            p
+              | Wrapper is built for Windows and Linux. Packages are not operating-system dependant, so you can transfer them between any systems you like, adding a whole new layer of portability to your project.
+          section.row2
+            h2.text-center Resources
+            p
+              a.col-xs-12.no-barba(href='https://github.com/Sergix7440/Wrapper/blob/master/build/windows/wrapper-windows-v1.0.2.3.exe') Download Latest Release (Windows)
+              a.col-xs-12.no-barba(href='https://github.com/Sergix7440/Wrapper/blob/master/build/linux/wrapper-linux-v1.0.2.3') Download Latest Release (Linux)
+              a.col-xs-12.no-barba(href='https://github.com/Sergix7440/Wrapper/blob/master/changelog.txt') Changelog
+              a.col-xs-12.no-barba(href='https://github.com/Sergix7440/Wrapper/blob/master/docs/1.0.2.2-docs.md') Documentation
+
+    include ../_links.pug

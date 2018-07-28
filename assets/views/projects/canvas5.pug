@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    include ../_head.pug
+    title /sergix/projects/canvas5
+
+  body
+    include ../_header.pug
+
+    main#barba-wrapper.container-fluid
+      .barba-container
+        section#large-title
+          | CANVAS5
+        .project-info
+          section.row1
+            h2.text-center Objects
+            p
+              | Built around constructors contained in the Canvas5 namespace, making the game&apos;s sprites and elements contained in objects provides much more portability and ease. You can even use the objects without the built-in rendering engine, and use them as a simple container for common game entity properties, such as position, sprite sheet animation, and more!
+          section.row1
+            h2.text-center Rendering
+            p
+              | The Canvas5 engine comes built-in with an automatic collision detection system and renderer. No need to write your own algorithms; just call Canvas5.render()! However, the current used algorithms are not fullproof quite yet, so any contributions concerning it would greatly help.
+          section.row2
+            h2.text-center HTML5
+            p
+              | Written in one source file, built for the browser. Canvas5 is made to be an easy to use, quick to learn, and built to be portable for the browser.
+          section.row2
+            h2.text-center Resources
+            p
+              a.col-xs-12.no-barba(href='https://raw.githubusercontent.com/Sergix7440/Canvas5/master/build/release/canvas5-release1.3.js') Latest Release
+              a.col-xs-12.no-barba(href='https://raw.githubusercontent.com/Sergix7440/Canvas5/master/build/release/canvas5-release1.3.min.js') Latest Release (Minimal)
+              a.col-xs-12.no-barba(href='https://raw.githubusercontent.com/Sergix7440/Canvas5/master/docs/Canvas5-documentation-release1.3.txt') Documentation
+              a.col-xs-12.no-barba(href='https://github.com/Sergix7440/Canvas5/wiki') Official Wiki
+
+    include ../_links.pug

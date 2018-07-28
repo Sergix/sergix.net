@@ -1,4 +1,5 @@
-import 'jquery'
+const $ = require('jquery')
+window.$ = $
 import * as Barba from 'barba.js'
 import * as design from './design.js'
 import * as project from './project.js'
@@ -66,13 +67,10 @@ export const setEventHandlers = () => {
 export const load = () => {
   loadPage('', util.getPage())
 
-  /* load in any large pieces of content with ajax */
-  $.get('/assets/ajax/head.html', (data) => $('head').prepend(data))
-
   /* Barba.js handlers */
   let oldTitle = ''
   const fadeTransition = Barba.BaseTransition.extend({
-    start: () => {
+    start: function () {
       oldTitle = util.getPage()
 
       Promise
@@ -80,11 +78,11 @@ export const load = () => {
         .then(this.fadeIn.bind(this))
     },
 
-    fadeOut: () => {
+    fadeOut: function () {
       return $(this.oldContainer).animate({ opacity: 0 }).promise()
     },
 
-    fadeIn: () => {
+    fadeIn: function () {
       const $el = $(this.newContainer)
 
       loadPage(oldTitle, util.getPage())
@@ -102,7 +100,7 @@ export const load = () => {
     }
   })
 
-  Barba.Pjax.getTransition = () => {
+  Barba.Pjax.getTransition = function () {
     return fadeTransition
   }
 
