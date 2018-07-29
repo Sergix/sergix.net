@@ -73,12 +73,12 @@ body
 		z-index: 5
 
 		&.hover
-			border: 1px solid $spark-pink
-			box-shadow: 8px 8px $spark-pink
+			border: 1px solid $ultraviolet
+			box-shadow: 8px 8px $ultraviolet
 
 		&:active
-			border: 1px solid $retro-red
-			box-shadow: 4px 4px $retro-red
+			border: 1px solid $tangy-red
+			box-shadow: 4px 4px $tangy-red
 
 .page-title
 	@extend %center-transform
@@ -100,7 +100,7 @@ main
 #links-open
 	background-color: $dark
 	bottom: 25px
-	box-shadow: 8px 8px $spark-pink
+	box-shadow: 8px 8px $ultraviolet
 	cursor: pointer
 	height: 4em
 	position: fixed
@@ -114,8 +114,8 @@ main
 		background-color: $dark-grey
 
 	&.active
-		background-color: $retro-red
-		box-shadow: 4px 4px $retro-red
+		background-color: $tangy-red
+		box-shadow: 4px 4px $tangy-red
 
 	&.index
 		display: none
@@ -145,7 +145,7 @@ main
 		z-index: 0
 
 		a
-			background-color: $retro-red
+			background-color: $ultraviolet
 			clear: both
 			color: $muted-yellow
 			float: right
@@ -159,7 +159,7 @@ main
 			transition: padding .3s
 
 			&:hover
-				color: $hadrien
+				color: $link-gold
 				padding-right: 4ch
 
 	&.index
@@ -172,9 +172,6 @@ main
 
 			a
 				background: $dark
-
-				&:hover
-					color: $retro-red
 
 @media #{$screen-xs}
 	#links-wrapper > #links > a
