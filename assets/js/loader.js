@@ -33,33 +33,19 @@ export const loadPage = (oldTitle, newTitle) => {
 }
 
 export const setEventHandlers = () => {
-  const $el = $('#links-open')
-
   util.attachHoverHandler('#links-open')
   util.attachHoverHandler('.navbar-brand')
+  //util.attachHoverHandler('')
+
+  util.attachClickHandler('#links-open')
 
   $(document).on('click touchstart', function (e) {
     if (e.target.id !== 'links-open' &&
        (e.target.offsetParent === null ||
         e.target.offsetParent.id !== 'links-open'))
     {
-      $el.removeClass('active')
+      $('#links-open').removeClass('active')
       $('#links-wrapper').removeClass('active')
-    }
-  })
-
-  $el.on('click touchstart', function (e) {
-    if (util.isMobile() && e.type === 'click')
-      return
-    else if (!util.isMobile() && e.type === 'touchstart')
-      return
-
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active')
-      $('#links-wrapper').removeClass('active')
-    } else {
-      $(this).addClass('active')
-      $('#links-wrapper').addClass('active')
     }
   })
 }

@@ -60,7 +60,7 @@ body
 
 	.navbar-brand
 		border: 1px solid $dark
-		box-shadow: 4px 4px $dark
+		box-shadow: 8px 8px $dark
 		display: flex
 		justify-content: center
 		left: 50%
@@ -68,20 +68,21 @@ body
 		padding: 10px
 		position: fixed
 		transform: translateX(-50%)
+		transition: border .3s, box-shadow .3s
 		width: 10em
 		z-index: 5
 
 		&.hover
-			border: 1px solid $sky
-			box-shadow: 4px 4px $sky
+			border: 1px solid $spark-pink
+			box-shadow: 8px 8px $spark-pink
 
 		&:active
-			border: 1px solid $teal
-			box-shadow: 2px 2px $teal
+			border: 1px solid $retro-red
+			box-shadow: 4px 4px $retro-red
 
 .page-title
 	@extend %center-transform
-	color: $dark
+	color: $mid-grey
 	font-family: $monospace
 	font-size: 100%
 	font-weight: 400
@@ -99,21 +100,22 @@ main
 #links-open
 	background-color: $dark
 	bottom: 25px
-	box-shadow: 4px 4px $teal
+	box-shadow: 8px 8px $spark-pink
 	cursor: pointer
 	height: 4em
 	position: fixed
 	right: 25px
 	text-align: center
-	transition: background-color .3s
+	transition: background-color .3s, box-shadow .3s
 	width: 4em
 	z-index: 5
 
 	&.hover
-		background-color: $sky
+		background-color: $dark-grey
 
 	&.active
-		background-color: $pink
+		background-color: $retro-red
+		box-shadow: 4px 4px $retro-red
 
 	&.index
 		display: none
@@ -122,8 +124,8 @@ main
 		@extend %no-select
 		color: $light
 		font-family: $monospace
-		font-size: 2.5em
-		font-weight: 1000
+		font-size: 2.4em
+		font-weight: 900
 		text-decoration: none
 
 #links-wrapper
@@ -137,15 +139,15 @@ main
 		right: 0
 
 	#links
-		bottom: 5.5em
+		bottom: 5.7em
 		position: relative
 		transition: bottom .4s
 		z-index: 0
 
 		a
-			background-color: $teal
+			background-color: $retro-red
 			clear: both
-			color: $magenta
+			color: $muted-yellow
 			float: right
 			font-family: $monospace
 			font-size: 2vw
@@ -157,7 +159,7 @@ main
 			transition: padding .3s
 
 			&:hover
-				color: $pink
+				color: $hadrien
 				padding-right: 4ch
 
 	&.index
@@ -170,6 +172,9 @@ main
 
 			a
 				background: $dark
+
+				&:hover
+					color: $retro-red
 
 @media #{$screen-xs}
 	#links-wrapper > #links > a

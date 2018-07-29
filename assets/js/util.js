@@ -21,6 +21,23 @@ export const attachHoverHandler = (element) => {
   })
 }
 
+export const attachClickHandler = (element) => {
+  $(element).on('click touchstart', function (e) {
+    if (isMobile() && e.type === 'click')
+      return
+    else if (!isMobile() && e.type === 'touchstart')
+      return
+
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active')
+      $('#links-wrapper').removeClass('active')
+    } else {
+      $(this).addClass('active')
+      $('#links-wrapper').addClass('active')
+    }
+  })
+}
+
 export const requireAll = (r) =>
   r.keys().forEach(r)
 
