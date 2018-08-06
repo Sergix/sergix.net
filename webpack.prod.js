@@ -6,8 +6,6 @@ const MinifyPlugin =
   require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin =
   require('mini-css-extract-plugin')
-const HtmlWebpackInlineSourcePlugin =
-  require('html-webpack-inline-source-plugin')
 const OptimizeCSSAssetsPlugin =
   require('optimize-css-assets-webpack-plugin')
 const CleanWebpackPlugin =
@@ -41,7 +39,6 @@ module.exports = merge(common, {
     }
   },
   plugins: [
-    new HtmlWebpackInlineSourcePlugin(),
     new CleanWebpackPlugin(['assets/dist']),
     new MiniCssExtractPlugin({
       filename: '[name].css'
