@@ -31,7 +31,7 @@ export const loadPage = (oldTitle, newTitle) => {
   }
 
   // some extra styling
-  $('#short-description > h2').longShadow({
+  $('#short-description > h1').longShadow({
     colorShadow: '#ddd',
     sizeShadow: 1000,
     directionShadow: 'bottom-right'
