@@ -11,8 +11,6 @@ import 'bootstrap/scss/bootstrap.scss'
 util.requireAll(require.context('../sass', true, /^(?!_).+.sass$/))
 
 /* js */
-const $ = require('jquery')
-window.$ = $
 util.requireAll(require.context('.', true, /\.js$/))
 
 // begin the initial page loading

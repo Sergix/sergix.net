@@ -1,5 +1,3 @@
-import $ from 'jquery'
-
 /* globals */
 const typeInterval = 100,
   $el = $('.page-title')

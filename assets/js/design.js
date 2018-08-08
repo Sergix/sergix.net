@@ -1,9 +1,6 @@
 import 'slick-carousel/slick/slick.css'
 import '@fancyapps/fancybox/dist/jquery.fancybox.css'
 
-import $ from 'jquery'
-window.$ = $
-window.jQuery = $
 window.slick = require('slick-carousel')
 window.fancybox = require('@fancyapps/fancybox')
 

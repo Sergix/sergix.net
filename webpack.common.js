@@ -1,8 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fs = require('fs')
+const webpack = require('webpack')
 
-const plugins = []
+const plugins = [
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery'
+  })
+]
 
 const tree = function (dir, done) {
   const results = {

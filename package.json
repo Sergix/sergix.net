@@ -32,6 +32,7 @@
     "@fancyapps/fancybox": "^3.3.5",
     "bootstrap": "^4.1.2",
     "jquery": "^3.3.1",
+    "jquery-longshadow": "^1.0.0",
     "lightbox2": "^2.10.0",
     "little-loader": "^0.2.0",
     "popper.js": "^1.14.3",

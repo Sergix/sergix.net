@@ -1,5 +1,4 @@
-const $ = require('jquery')
-window.$ = $
+import 'jquery-longshadow'
 import * as Barba from 'barba.js'
 import * as design from './design.js'
 import * as project from './project.js'
@@ -30,6 +29,13 @@ export const loadPage = (oldTitle, newTitle) => {
   } else if (newTitle === 'project') {
     project.loadProjectPage()
   }
+
+  // some extra styling
+  $('#short-description > h2').longShadow({
+    colorShadow: '#ddd',
+    sizeShadow: 1000,
+    directionShadow: 'bottom-right'
+  })
 }
 
 export const setEventHandlers = () => {
