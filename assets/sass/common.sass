@@ -55,12 +55,10 @@ body
 
 .navbar
 	position: fixed
-	top: 50px
+	top: 70px
 	z-index: 999
 
 	.navbar-brand
-		border: 1px solid $dark
-		box-shadow: 8px 8px $dark
 		display: flex
 		height: 3em
 		justify-content: center
@@ -80,6 +78,9 @@ body
 			border: 1px solid $ultraviolet
 			box-shadow: 8px 8px $ultraviolet
 
+		&.hover + .page-title
+			top: 130px
+
 		&:active
 			border: 1px solid $tangy-red
 			box-shadow: 4px 4px $tangy-red
@@ -94,7 +95,8 @@ body
 	margin-left: .2ch
 	position: fixed
 	text-align: center
-	top: 7em
+	top: 125px
+	transition: top .3s
 
 main
 	padding: 50px
