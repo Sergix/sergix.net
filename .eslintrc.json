@@ -1,42 +1,49 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 2017,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "impliedStrict": true
-        }
-    },
-    "rules": {
-        "semi": ["error", "never"],
-        "quotes": ["error", "single"],
-        "indent": ["error", 2],
-        "eqeqeq": "error",
-        "no-useless-escape": "error",
-        "no-unmodified-loop-condition": "error",
-        "no-alert": "error",
-        "block-spacing": "error",
-        "comma-spacing": "error",
-        "comma-style": "error",
-        "func-style": "error",
-        "lines-around-comment": "error",
-        "max-len": ["error", {
-            "code": 80,
-            "comments": 65
-        }],
-        "max-depth": ["error", 2],
-        "no-lonely-if": "error",
-        "no-var": "error",
-        "prefer-const": "error",
-        "no-duplicate-imports": "error",
-        "space-in-parens": "error",
-        "space-before-function-paren": "error",
-        "object-curly-spacing": ["error", "always"]
-    },
-	"env": {
-		"browser": true,
-        "node": true,
-        "commonjs": true,
-        "jquery": true,
-        "es6": true
-	}
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
+  "rules": {
+    "gridsome/format-query-block": "error",
+    "gridsome/require-g-image-src": "error",
+    "gridsome/require-g-link-to": "warn",
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "indent": ["error", 2],
+    "eqeqeq": "error",
+    "no-useless-escape": "error",
+    "no-unmodified-loop-condition": "error",
+    "no-alert": "error",
+    "block-spacing": "error",
+    "comma-spacing": "error",
+    "comma-style": "error",
+    "func-style": "error",
+    "lines-around-comment": "error",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "comments": 65
+      }
+    ],
+    "max-depth": ["error", 2],
+    "no-lonely-if": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "no-duplicate-imports": "error",
+    "space-in-parens": "error",
+    "space-before-function-paren": "error",
+    "object-curly-spacing": ["error", "always"],
+    "prettier/prettier": "error"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": ["gridsome", "prettier"],
+  "extends": ["plugin:gridsome/recommended", "prettier"]
 }

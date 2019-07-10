@@ -1,0 +1,14 @@
+/* .gqlconfig */
+ {
+   schema: {
+     files: "schemas/**/*.gql"
+   },
+   query: {
+     files: [
+       {
+         match: 'src/**/*.vue',
+         parser: ['EmbeddedQueryParser', { startTag: '<static-query>', endTag: '</static-query>' }],
+       },
+     ],
+   },
+ }
