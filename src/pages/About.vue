@@ -6,19 +6,19 @@ Layout
 </template>
 
 <script>
-import ExampleComp from "~/components/ExampleComp.vue";
+import ExampleComp from '~/components/ExampleComp.vue'
 
 export default {
   data: () => ({
     test: {
-      text: "message"
-    }
+      text: 'message',
+    },
   }),
   components: {
-    ExampleComp
+    ExampleComp,
   },
   metaInfo: {
-    title: "About us"
-  }
-};
+    title: 'About us',
+  },
+}
 </script>

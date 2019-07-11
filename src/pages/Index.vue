@@ -6,13 +6,15 @@ Layout
 
 </template>
 
+
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!',
+    title: 'Home',
   },
 }
 </script>
+
 
 <style lang="scss" scoped>
 .cover {

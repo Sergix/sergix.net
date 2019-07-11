@@ -16,10 +16,11 @@ query Post ($path: String!) {
 
 <script>
 export default {
+  name: 'Post',
   metaInfo() {
     return {
-      title: this.$page.post.title
-    };
-  }
-};
+      title: this.$page.post.title,
+    }
+  },
+}
 </script>
