@@ -1,6 +1,6 @@
 <template lang="pug">
-layout
-  div(v-html="$page.post.content")
+  Layout
+    div(v-html="$page.post.content")
 </template>
 
 
