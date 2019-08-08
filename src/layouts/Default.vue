@@ -51,8 +51,6 @@ main {
   flex-direction: column;
   height: auto !important;
   height: 100%;
-  // -6rem is for footer (see min-height below)
-  // believe the -6rem has to do with the navbar
   margin: 0 auto;
   max-width: 1488px;
   // keep footer at bottom of page even when content does not fill
@@ -88,9 +86,10 @@ p {
   opacity: 0;
 }
 
-@media screen and (max-width: $responsive-sm) {
+@media screen and (max-width: $responsive-xs) {
   main {
     max-width: 300px;
+    min-height: calc(89.5% - 6rem);
   }
 }
 </style>

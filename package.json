@@ -11,6 +11,7 @@
     "@babel/plugin-transform-runtime": "^7.5.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-polyfill": "^6.26.0",
+    "buefy": "^0.8.2",
     "gridsome": "^0.6.0",
     "typeface-playfair-display": "^0.0.72",
     "typescript": "^3.5.2",

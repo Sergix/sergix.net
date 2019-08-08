@@ -3,16 +3,15 @@ nav.navbar
   g-link(to='/')
     img(src='@/assets/image/logo/sergix-box-logo.svg'
       alt='Sergix').nav_logo
-  li(v-responsive.md.lg.xl).nav_link_list
+  li.nav_link_list
     g-link.nav_link(to='/about') ABOUT
     g-link.nav_link(to='/design') DESIGN
     g-link.nav_link(to='/projects') PROJECTS
     g-link.nav_link(to='/mode') MODE
     a.nav_link(href='https://github.com/sergix') GITHUB
   button(type='button' aria-label='Menu' aria-controles='navigation'
-    v-responsive.xs.sm
     v-bind:class='{ "is-active": menuButtonActive }'
-    v-on:click='menuButtonActive = !menuButtonActive').menu-icon.hamburger.hamburger--slider
+    v-on:click='menuButtonActive = !menuButtonActive').menu-icon.hamburger.hamburger--minus
     span.hamburger-box
       span.hamburger-inner
   NavMenu(:active="menuButtonActive")
@@ -62,6 +61,26 @@ export default {
   .menu-icon {
     margin-right: -1rem;
     z-index: 1000;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .nav_link_list {
+    display: none;
+  }
+
+  .menu-icon {
+    display: initial;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .nav_link_list {
+    display: initial;
+  }
+
+  .menu-icon {
+    display: none;
   }
 }
 

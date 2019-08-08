@@ -24,7 +24,17 @@ export default {
 
   p {
     font-family: TTHoves-Italic;
+    font-size: 2vh;
+    padding: 0 1rem 0 1rem;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: $responsive-sm) {
+  .footer {
+    height: 5rem;
+    width: 100%;
+    margin: 0;
   }
 }
 </style>

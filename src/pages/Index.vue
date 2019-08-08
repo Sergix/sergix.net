@@ -5,7 +5,8 @@
       figure.box
         img(src='@/assets/image/index-cover-graphic-rotated.svg'
           alt='Perspective Matters'
-          v-parallax='0.1').cover-graphic
+          v-parallax='0.1'
+          v-responsive.lg.xl).cover-graphic
         //- img(src='@/assets/image/test.png' alt='Peyton McGinnis').portrait
     div.content
       section
@@ -102,17 +103,20 @@ export default {
   }
 }
 
-@media screen and (max-width: $responsive-sm) {
+@media screen and (orientation: portrait) {
+  .cover-graphic {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $responsive-xs) {
   .cover {
     width: auto;
 
     h1 {
       font-size: 7.5vh;
+      padding-left: 0;
       width: 100%;
-    }
-
-    .box {
-      display: none;
     }
   }
 
@@ -130,5 +134,9 @@ export default {
 }
 
 @media screen and (max-width: $responsive-sm) {
+  .cover .box {
+    left: -50%;
+    width: 150%;
+  }
 }
 </style>
