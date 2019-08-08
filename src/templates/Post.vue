@@ -1,6 +1,6 @@
 <template lang="pug">
-layout
-  div(v-html="$page.post.content")
+  Layout
+    div(v-html="$page.post.content")
 </template>
 
 
@@ -16,10 +16,11 @@ query Post ($path: String!) {
 
 <script>
 export default {
+  name: 'Post',
   metaInfo() {
     return {
-      title: this.$page.post.title
-    };
-  }
-};
+      title: this.$page.post.title,
+    }
+  },
+}
 </script>

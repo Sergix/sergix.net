@@ -1,16 +1,20 @@
 <template lang="pug">
     div.example
-        p {{message.text}}
+        p#message {{ message.text }}
+        button(@click='content = !content')#toggle butt
 </template>
 
 <script>
 export default {
-  name: "example",
+  name: 'example',
+  data: () => ({
+    content: true,
+  }),
   props: {
     message: {
       type: Object,
-      required: true
-    }
-  }
-};
+      required: true,
+    },
+  },
+}
 </script>
