@@ -3,7 +3,7 @@ nav.navbar
   g-link(to='/')
     img(src='@/assets/image/logo/sergix-box-logo.svg'
       alt='Sergix').nav_logo
-  li.nav_link_list
+  .nav_link_list
     g-link.nav_link(to='/about') ABOUT
     g-link.nav_link(to='/design') DESIGN
     g-link.nav_link(to='/projects') PROJECTS
@@ -48,7 +48,6 @@ export default {
 
   .nav_link_list {
     float: right;
-    list-style: none;
   }
 
   .nav_link {
@@ -74,13 +73,23 @@ export default {
   }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (min-width: $responsive-sm) {
   .nav_link_list {
     display: initial;
   }
 
   .menu-icon {
     display: none;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: $responsive-sm) {
+  .nav_link_list {
+    display: none;
+  }
+
+  .menu-icon {
+    display: initial;
   }
 }
 

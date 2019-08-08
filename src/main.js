@@ -6,21 +6,16 @@ import 'typeface-playfair-display'
 import '@/assets/fonts/TTHoves.css'
 
 // styles
-import '@/assets/styles/_bulma.scss'
 import '@/assets/styles/hamburgers/hamburgers.scss'
 
 // directives/plugins
-import Buefy from 'buefy'
 import VueParallaxJs from 'vue-parallax-js'
 import VueResponsive from 'vue-responsive'
-
-import 'buefy/dist/buefy.css'
 
 // layouts
 import DefaultLayout from '@/layouts/Default.vue'
 
 export default function(Vue, { router, head, isClient }) {
-  Vue.use(Buefy)
   Vue.use(VueParallaxJs)
   Vue.use(VueResponsive)
 

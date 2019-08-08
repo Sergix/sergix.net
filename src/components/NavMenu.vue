@@ -14,6 +14,18 @@ export default {
   props: {
     active: Boolean,
   },
+  watch: {
+    active() {
+      if (this.active) {
+        window.scrollTo(0, 0)
+        document.body.style.overflowY = 'hidden'
+      } else if (!this.active) {
+        document.body.style.overflowY = 'initial'
+      } else {
+        console.error('Something has gone horribly wrong.')
+      }
+    },
+  },
 }
 </script>
 
