@@ -8,4 +8,4 @@ dist
 .env.*
 coverage/
 .old/
-yarn.lock
+/yarn.lock
