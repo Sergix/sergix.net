@@ -37,7 +37,7 @@ export default {
   font-family: TTHoves-Medium, $font-stack-sans-serif;
   height: 100%;
   left: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
 
@@ -48,7 +48,7 @@ export default {
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 1rem;
+    margin: 1rem 1rem .5rem 1rem;
 
     .nav_link {
       color: $light-color;

@@ -9,3 +9,4 @@ dist
 coverage/
 .old/
 /yarn.lock
+yarn.lock

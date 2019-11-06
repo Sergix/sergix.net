@@ -3,7 +3,7 @@
     .cover
       h1(v-parallax='0.2') Breaking the paradigm of design.
       figure.box
-        img(src='@/assets/image/index-cover-graphic-rotated.svg'
+        img(src='@/assets/image/index-cover-graphic.svg'
           alt='Perspective Matters'
           v-parallax='0.1'
           v-responsive.lg.xl).cover-graphic
@@ -40,28 +40,29 @@ export default {
   flex: 1 1 auto;
   height: 100vh;
   margin-top: -6rem;
+  margin-left: -20px;
+  margin-bottom: 4rem;
   width: 100vw;
   z-index: -1;
 
   h1 {
     font-size: 10vh;
     width: 35%;
-    padding-left: 4vw;
+    margin-left: 10%;
   }
 
   .box {
     background-color: white;
-    height: 75%;
-    left: -5%;
+    height: 100%;
     overflow: hidden;
     position: absolute;
-    transform: rotate(4deg);
-    width: 105%;
+    width: 100%;
     z-index: -1;
 
     .cover-graphic {
-      right: 10%;
+      margin-top: 8%;
       position: absolute;
+      right: 10%;
       width: 40%;
       z-index: 0;
     }
@@ -78,7 +79,7 @@ export default {
 
 .content {
   section {
-    width: 45%;
+    width: 55%;
     padding: 5rem;
 
     p {
@@ -124,7 +125,7 @@ export default {
     section {
       width: 100%;
       padding: 0;
-      margin-bottom: 5rem;
+      margin-bottom: 7rem;
 
       h2 {
         font-size: 1.5rem;

@@ -6,7 +6,9 @@ import 'typeface-playfair-display'
 import '@/assets/fonts/TTHoves.css'
 
 // styles
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/assets/styles/hamburgers/hamburgers.scss'
+import '@/assets/avant-ui/css/avantui.min.css'
 
 // directives/plugins
 import VueParallaxJs from 'vue-parallax-js'
@@ -41,11 +43,5 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     name: 'theme-color',
     content: '#FAB7AC',
-  })
-
-  head.meta.push({
-    name: 'viewport',
-    content:
-      'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
   })
 }

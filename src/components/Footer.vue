@@ -23,6 +23,7 @@ export default {
   width: 75%;
 
   p {
+    margin: 0;
     font-family: TTHoves-Italic;
     font-size: 2vh;
     padding: 0 1rem 0 1rem;
