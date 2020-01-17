@@ -20,16 +20,16 @@ module.exports = {
   siteName: 'Sergix',
   siteUrl: 'https://sergix.net/',
   titleTemplate: '%s / Sergix',
-  plugins: [
-    {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'mode/**/*.md',
-        typeName: 'Post',
-        route: '/mode/:slug',
-      },
-    },
-  ],
+  // plugins: [
+  //   {
+  //     use: '@gridsome/source-filesystem',
+  //     options: {
+  //       path: 'mode/**/*.md',
+  //       typeName: 'Post',
+  //       route: '/mode/:slug',
+  //     },
+  //   },
+  // ],
   chainWebpack: config => {
     // style loading (https://gridsome.org/docs/assets-css)
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
