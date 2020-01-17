@@ -1,7 +1,7 @@
 <template lang="pug">
 nav.navbar
   g-link(to='/')
-    img(src='@/assets/image/logo/sergix-box-logo.svg'
+    img(src='@/assets/image/logo/sergix-logo.svg'
       alt='Sergix').nav_logo
   .nav_link_list
     g-link.nav_link(to='/about') ABOUT
@@ -9,7 +9,10 @@ nav.navbar
     g-link.nav_link(to='/projects') PROJECTS
     g-link.nav_link(to='/mode') MODE
     a.nav_link(href='https://github.com/sergix') GITHUB
-  button(type='button' aria-label='Menu' aria-controles='navigation'
+  button(
+    type='button'
+    aria-label='Menu'
+    aria-controls='navigation'
     v-bind:class='{ "is-active": menuButtonActive }'
     v-on:click='menuButtonActive = !menuButtonActive').menu-icon.hamburger.hamburger--minus
     span.hamburger-box
@@ -34,16 +37,15 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   align-items: center;
+  background-color: $light-color;
   display: flex;
-  height: 4rem;
   justify-content: space-between;
-  margin: 0 2vh 0 2vh;
-  padding: 5vh 5vh 0 5vh;
+  padding: 2vh;
   z-index: 1;
 
   .nav_logo {
     float: left;
-    width: 6.5vh;
+    width: 10em;
   }
 
   .nav_link_list {
@@ -55,6 +57,7 @@ export default {
     font-size: 1rem;
     margin: 2rem;
     text-decoration: none;
+    padding: 0.5rem;
   }
 
   .menu-icon {
@@ -96,7 +99,7 @@ export default {
 @media screen and (max-width: $responsive-sm) {
   .navbar {
     margin: 0;
-    padding: 2vh 5vh 0 5vh;
+    padding: 2vh 5vh 2vh 5vh;
   }
 }
 </style>

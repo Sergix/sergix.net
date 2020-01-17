@@ -23,6 +23,7 @@ export default {
   width: 75%;
 
   p {
+    margin: 0;
     font-family: TTHoves-Italic;
     font-size: 2vh;
     padding: 0 1rem 0 1rem;
@@ -35,6 +36,10 @@ export default {
     height: 5rem;
     width: 100%;
     margin: 0;
+
+    p {
+      font-size: 0.8em;
+    }
   }
 }
 </style>

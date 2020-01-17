@@ -6,6 +6,7 @@ import 'typeface-playfair-display'
 import '@/assets/fonts/TTHoves.css'
 
 // styles
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/assets/styles/hamburgers/hamburgers.scss'
 
 // directives/plugins
@@ -41,11 +42,5 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     name: 'theme-color',
     content: '#FAB7AC',
-  })
-
-  head.meta.push({
-    name: 'viewport',
-    content:
-      'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
   })
 }
