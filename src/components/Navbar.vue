@@ -9,7 +9,10 @@ nav.navbar
     g-link.nav_link(to='/projects') PROJECTS
     g-link.nav_link(to='/mode') MODE
     a.nav_link(href='https://github.com/sergix') GITHUB
-  button(type='button' aria-label='Menu' aria-controles='navigation'
+  button(
+    type='button'
+    aria-label='Menu'
+    aria-controls='navigation'
     v-bind:class='{ "is-active": menuButtonActive }'
     v-on:click='menuButtonActive = !menuButtonActive').menu-icon.hamburger.hamburger--minus
     span.hamburger-box
@@ -42,7 +45,7 @@ export default {
 
   .nav_logo {
     float: left;
-    width: 30vh;
+    width: 10em;
   }
 
   .nav_link_list {
@@ -54,6 +57,7 @@ export default {
     font-size: 1rem;
     margin: 2rem;
     text-decoration: none;
+    padding: 0.5rem;
   }
 
   .menu-icon {

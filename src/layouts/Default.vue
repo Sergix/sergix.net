@@ -51,8 +51,7 @@ main {
   flex-direction: column;
   height: auto !important;
   height: 100%;
-  margin: 0 auto;
-  max-width: 1488px;
+  //max-width: 1488px;
   // keep footer at bottom of page even when content does not fill
   // change the 6rem to the height of the footer
   // (88.7% = 13/15)
@@ -78,6 +77,15 @@ p {
   font-family: TTHoves-Regular, $font-stack-sans-serif;
 }
 
+div.content {
+  clear: both;
+  display: block;
+  float: left;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  width: 100vw;
+}
+
 .fade-enter-active {
   transition: opacity 0.5s;
 }
@@ -88,8 +96,26 @@ p {
 
 @media screen and (max-width: $responsive-xs) {
   main {
-    max-width: 300px;
-    min-height: calc(89.5% - 6rem);
+    //max-width: 300px;
+    min-height: calc(89.5% - 7rem);
+    padding: 0;
+  }
+
+  div.content {
+    clear: both;
+    display: block;
+    float: left;
+    padding: 0;
+
+    section {
+      margin-bottom: 7rem;
+      padding: 0;
+      width: 100%;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
   }
 }
 </style>

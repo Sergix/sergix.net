@@ -36,6 +36,10 @@ export default {
     height: 5rem;
     width: 100%;
     margin: 0;
+
+    p {
+      font-size: 0.8em;
+    }
   }
 }
 </style>

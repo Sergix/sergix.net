@@ -8,7 +8,6 @@ import '@/assets/fonts/TTHoves.css'
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/assets/styles/hamburgers/hamburgers.scss'
-import '@/assets/avant-ui/css/avantui.min.css'
 
 // directives/plugins
 import VueParallaxJs from 'vue-parallax-js'

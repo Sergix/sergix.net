@@ -39,9 +39,8 @@ export default {
   display: flex;
   flex: 1 1 auto;
   height: 100vh;
-  margin-top: -6rem;
+  margin-top: -5rem;
   margin-left: -20px;
-  margin-bottom: 4rem;
   width: 100vw;
   z-index: -1;
 
@@ -66,31 +65,10 @@ export default {
       width: 40%;
       z-index: 0;
     }
-
-    .portrait {
-      bottom: 0;
-      position: absolute;
-      left: 0;
-      // transform: scaleX(-1);
-      width: 15%;
-    }
   }
 }
 
-.content {
-  section {
-    width: 55%;
-    padding: 5rem;
-
-    p {
-      margin-bottom: 2rem;
-    }
-  }
-
-  section:nth-child(2n) {
-    float: right;
-  }
-
+div.content {
   .links {
     padding: 0;
 
@@ -110,6 +88,35 @@ export default {
   }
 }
 
+@media screen and (min-width: $responsive-lg) {
+  div.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem 0 5rem;
+
+    section {
+      width: 55%;
+      padding: 5rem;
+
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+
+    section:nth-child(2n) {
+      float: right;
+    }
+  }
+}
+
+@media screen and (max-width: $responsive-sm) {
+  .cover .box {
+    left: -50%;
+    width: 150%;
+  }
+}
+
 @media screen and (max-width: $responsive-xs) {
   .cover {
     width: auto;
@@ -119,25 +126,6 @@ export default {
       padding-left: 0;
       width: 100%;
     }
-  }
-
-  .content {
-    section {
-      width: 100%;
-      padding: 0;
-      margin-bottom: 7rem;
-
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: $responsive-sm) {
-  .cover .box {
-    left: -50%;
-    width: 150%;
   }
 }
 </style>
