@@ -4,10 +4,11 @@
       <Links class="links mt-4 lg:mt-16" />
       <Contact class="mt-auto mb-8 lg:mb-16" />
 
-      <g-image
-        class="large-illustration max-w-2xl absolute hidden md:inline lg:max-w-4xl z-neg-1"
-        src="@/assets/image/home-illustration.svg"
-      />
+      <ClientOnly>
+        <AnimatedCanvas
+          class="large-illustration fixed hidden z-neg-1 md:inline"
+        />
+      </ClientOnly>
 
       <!-- right sidebar -->
       <aside
@@ -33,12 +34,14 @@
 <script>
 import Contact from '@/components/Contact'
 import Links from '@/components/Links'
+import AnimatedCanvas from '@/components/AnimatedCanvas'
 
 export default {
   name: 'IndexPage',
   components: {
     Contact,
     Links,
+    AnimatedCanvas,
   },
   metaInfo: {
     title: '',
