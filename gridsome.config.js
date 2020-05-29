@@ -10,22 +10,11 @@ module.exports = {
     {
       use: 'gridsome-plugin-tailwindcss',
     },
-    // {
-    //   use: 'gridsome-source-storyblok',
-    //   options: {
-    //     client: {
-    //       accessToken: 'lDVNOrqLOIoHwfw4WZbmFQtt',
-    //     },
-    //     version: 'published',
-    //     typeName: 'Post',
-    //   },
-    // },
     {
-      use: '@gridsome/vue-remark',
+      use: '@gridsome/source-filesystem',
       options: {
+        path: 'content/posts/**/*.md',
         typeName: 'Post',
-        baseDir: './content/posts',
-        template: './src/templates/Post.vue',
         route: '/blog/:slug',
       },
     },

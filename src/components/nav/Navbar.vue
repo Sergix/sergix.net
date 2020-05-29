@@ -77,7 +77,20 @@ export default {
 ul > li
   @apply px-12
 
-  & > a.active--exact
-    @apply border-b-2 border-primary
-    @apply pb-1
+  & > a
+    &::after
+      content: ''
+      height: 2px
+      transition: width 0.2s
+      transition-delay: 0.1s
+      @apply w-0
+      @apply mx-auto
+      @apply block
+      @apply bg-primary
+
+    &.active--exact::after
+      @apply w-full
+
+    &:hover::after
+      @apply w-1/2
 </style>

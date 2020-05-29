@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="mx-auto px-6 my-8 max-w-xl post lg:mt-24">
+    <main class="mx-auto px-6 m-8 max-w-xl post lg:mt-24">
       <header class="flex flex-row items-center">
         <h1 class="text-2xl font-medium flex-1">
           {{ $page.post.title }}
@@ -9,19 +9,18 @@
           {{ timestamp }}
         </span>
       </header>
-      <article class="mt-12 font-serif">
-        <VueRemarkContent />
-      </article>
+      <article class="mt-12 font-serif" v-html="$page.post.content" />
     </main>
   </Layout>
 </template>
 
 <page-query>
-query Post ($id: ID!) {
-  post(id: $id) {
+query Post ($path: String!) {
+  post: post (path: $path) {
     title
     slug
     published
+    content
   }
 }
 </page-query>

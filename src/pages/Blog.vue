@@ -18,9 +18,7 @@
         </header>
 
         <!-- grab the first paragraph -->
-        <p class="mt-4 font-serif lg:mt-8">
-          {{ content.split('\n')[1] }}
-        </p>
+        <p class="mt-4 font-serif lg:mt-8" v-html="content.split('</p>')[0]" />
 
         <g-link
           class="btn btn-gradient-outline mt-6 self-end md:mt-8 lg:mt-12"
@@ -80,13 +78,8 @@ query ($page: Int) {
 </page-query>
 
 <script>
-import { Pager } from 'gridsome'
-
 export default {
   name: 'BlogPage',
-  components: {
-    Pager,
-  },
   computed: {
     previousPagePath() {
       let previousPage = this.$page.allPost.pageInfo.currentPage - 1

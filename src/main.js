@@ -5,14 +5,11 @@
 import '@/assets/css/tthoves.css'
 
 // directives/plugins
-import VueParallaxJs from 'vue-parallax-js'
 
 // layouts
 import DefaultLayout from '@/layouts/Default.vue'
 
 export default function(Vue, { router, head, isClient }) {
-  Vue.use(VueParallaxJs)
-
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
@@ -34,7 +31,7 @@ export default function(Vue, { router, head, isClient }) {
 
   head.meta.push({
     name: 'theme-color',
-    content: '#FAB7AC',
+    content: '#F78996',
   })
 
   head.link.push({
