@@ -2,23 +2,16 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 // fonts
-import 'typeface-playfair-display'
-import '@/assets/fonts/TTHoves.css'
-
-// styles
-import 'bootstrap/dist/css/bootstrap.min.css'
-import '@/assets/styles/hamburgers/hamburgers.scss'
+import '@/assets/css/tthoves.css'
 
 // directives/plugins
 import VueParallaxJs from 'vue-parallax-js'
-import VueResponsive from 'vue-responsive'
 
 // layouts
 import DefaultLayout from '@/layouts/Default.vue'
 
 export default function(Vue, { router, head, isClient }) {
   Vue.use(VueParallaxJs)
-  Vue.use(VueResponsive)
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
@@ -36,11 +29,17 @@ export default function(Vue, { router, head, isClient }) {
 
   head.meta.push({
     name: 'description',
-    content: 'Breaking the paradigm of design.',
+    content: 'Form follows function.',
   })
 
   head.meta.push({
     name: 'theme-color',
     content: '#FAB7AC',
+  })
+
+  head.link.push({
+    rel: 'stylesheet',
+    href:
+      'https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap',
   })
 }

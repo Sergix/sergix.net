@@ -1,20 +1,28 @@
-<template lang="pug">
-  div.layout
-    Navbar
-    transition(name="fade" appear)
-      main
-        slot
-    Footer
+<template>
+  <div class="h-screen flex flex-col max-w-lg-screen mx-auto">
+    <Navbar class="lg:mt-4" />
+    <div class="flex-1 flex flex-col">
+      <transition name="fade" appear>
+        <slot />
+      </transition>
+    </div>
+    <Footer class="flex-0" v-show="!isIndexPage" />
+  </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/nav/Navbar'
 import Footer from '@/components/Footer'
 
 export default {
   components: {
     Navbar,
     Footer,
+  },
+  computed: {
+    isIndexPage() {
+      return this.$route.path === '/'
+    },
   },
 }
 </script>
@@ -27,95 +35,13 @@ query {
 }
 </static-query>
 
-<style lang="scss">
-html,
-body,
-.layout {
-  height: 100%;
-}
+<style lang="sass">
+body
+  @apply overflow-x-hidden
 
-body {
-  background-color: $light-color;
-  color: $dark-color;
-  font-family: TTHoves-Regular, $font-stack-sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1em;
-  line-height: 1.5;
-  margin: 0;
-  overflow-x: hidden;
-}
+.fade-enter-active
+  transition: opacity 0.5s
 
-main {
-  display: flex;
-  flex-direction: column;
-  height: auto !important;
-  height: 100%;
-  //max-width: 1488px;
-  // keep footer at bottom of page even when content does not fill
-  // change the 6rem to the height of the footer
-  // (88.7% = 13/15)
-  min-height: calc(88.7% - 6rem);
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-h1 {
-  font-family: 'Playfair Display', $font-stack-serif;
-  font-weight: bold;
-  font-size: 3rem;
-  line-height: 1.2;
-}
-
-h2 {
-  font-family: TTHoves-Medium, $font-stack-sans-serif;
-  font-size: 3rem;
-}
-
-p {
-  // font-family: 'Playfair Display', $font-stack-serif;
-  font-family: TTHoves-Regular, $font-stack-sans-serif;
-}
-
-div.content {
-  clear: both;
-  display: block;
-  float: left;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  width: 100vw;
-}
-
-.fade-enter-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter {
-  opacity: 0;
-}
-
-@media screen and (max-width: $responsive-xs) {
-  main {
-    //max-width: 300px;
-    min-height: calc(89.5% - 7rem);
-    padding: 0;
-  }
-
-  div.content {
-    clear: both;
-    display: block;
-    float: left;
-    padding: 0;
-
-    section {
-      margin-bottom: 7rem;
-      padding: 0;
-      width: 100%;
-
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
-  }
-}
+.fade-enter
+  opacity: 0
 </style>

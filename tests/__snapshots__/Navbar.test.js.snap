@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`component/Navbar renders correctly 1`] = `
-<nav class="navbar"><a><img src="@/assets/image/logo/sergix-box-logo.svg" alt="Sergix" class="nav_logo"></a>
-  <li class="nav_link_list"><a class="nav_link">ABOUT</a><a class="nav_link">DESIGN</a><a class="nav_link">PROJECTS</a><a class="nav_link">MODE</a><a href="https://github.com/sergix" class="nav_link">GITHUB</a></li>
-</nav>
-`;
