@@ -40,7 +40,7 @@
         />
         <g-image
           class="max-w-64 mt-16 ml-auto md:max-w-sm lg:max-w-lg lg:mt-32"
-          src="@/assets/image/designs/perspective-matters_compressed.jpg"
+          src="@/assets/image/designs/perspective-matters.png"
         />
         <g-image
           class="max-w-64 mt-16 md:max-w-sm lg:max-w-lg lg:mt-32"

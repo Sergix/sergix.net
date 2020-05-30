@@ -68,5 +68,5 @@ aside
   span
     @apply text-xs
     @apply ml-auto
-    writing-mode: sideways-lr
+    writing-mode: vertical-rl
 </style>

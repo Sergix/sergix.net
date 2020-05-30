@@ -8,9 +8,9 @@
       />
 
       <section class="w-3/4 mt-8 w-full mx-auto">
-        <div class="flex flex-row w-full">
+        <div class="flex flex-row items-center w-full">
           <img
-            class="max-w-64 flex-1"
+            class="max-w-64 flex-0"
             src="@/assets/image/websites/workdrop-mobile.png"
           />
           <img
