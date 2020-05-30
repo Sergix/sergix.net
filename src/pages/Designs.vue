@@ -11,15 +11,15 @@
         </h2>
         <g-image
           class="max-w-64 mt-8 md:max-w-sm lg:max-w-lg lg:mt-16"
-          src="@/assets/image/designs/sparkboard-macbook-mockup.png"
+          src="@/assets/image/designs/sparkboard-macbook-mockup_compressed.jpg"
         />
         <g-image
           class="max-w-64 mt-16 ml-auto md:max-w-sm  lg:max-w-lg lg:mt-32"
-          src="@/assets/image/designs/workdrop-iphone-mockup.png"
+          src="@/assets/image/designs/workdrop-iphone-mockup_compressed.jpg"
         />
         <g-image
           class="max-w-64 mt-16 md:max-w-sm  lg:max-w-lg lg:mt-32"
-          src="@/assets/image/designs/bluetree-iphone-mockup.png"
+          src="@/assets/image/designs/bluetree-iphone-mockup_compressed.jpg"
         />
       </section>
       <section class="mt-32 lg:mt-64">
@@ -36,15 +36,15 @@
         </a>
         <g-image
           class="max-w-64 mt-8 md:max-w-sm lg:max-w-lg lg:mt-16"
-          src="@/assets/image/designs/something-different-hardcover-journal.jpg"
+          src="@/assets/image/designs/something-different-hardcover-journal_compressed.jpg"
         />
         <g-image
           class="max-w-64 mt-16 ml-auto md:max-w-sm lg:max-w-lg lg:mt-32"
-          src="@/assets/image/designs/perspective-matters.png"
+          src="@/assets/image/designs/perspective-matters_compressed.jpg"
         />
         <g-image
           class="max-w-64 mt-16 md:max-w-sm lg:max-w-lg lg:mt-32"
-          src="@/assets/image/designs/let-the-sky-fall-down-hardcover-journal.jpg"
+          src="@/assets/image/designs/let-the-sky-fall-down-hardcover-journal_compressed.jpg"
         />
       </section>
     </main>

@@ -39,4 +39,16 @@ export default function(Vue, { router, head, isClient }) {
     href:
       'https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap',
   })
+
+  head.meta.push({
+    key: 'og:description',
+    name: 'og:description',
+    content: `Form follows function.`,
+  })
+
+  head.meta.push({
+    key: 'og:image',
+    name: 'og:image',
+    content: `https://sergix.dev/ogimage.png`,
+  })
 }
