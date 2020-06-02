@@ -9,10 +9,12 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@gridsome/plugin-sitemap": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.0",
     "@gridsome/vue-remark": "^0.2.1",
     "gridsome": "^0.7.14",
+    "gridsome-plugin-monetization": "^1.0.0",
     "gridsome-source-storyblok": "^1.0.1",
     "vue-mouse-parallax": "^0.9.2"
   },
