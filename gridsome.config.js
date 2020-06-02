@@ -18,5 +18,30 @@ module.exports = {
         route: '/blog/:slug',
       },
     },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        config: {
+          '/blog/*': {
+            changefreq: 'weekly',
+            priority: 0.5,
+          },
+          '/about': {
+            changefreq: 'monthly',
+            priority: 0.7,
+          },
+          '/': {
+            changefreq: 'monthly',
+            priority: 0.8,
+          },
+        },
+      },
+    },
+    {
+      use: 'gridsome-plugin-monetization',
+      options: {
+        paymentPointer: '$ilp.uphold.com/8bJBkDmJDw4R',
+      },
+    },
   ],
 }
