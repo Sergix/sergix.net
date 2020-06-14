@@ -69,4 +69,7 @@ aside
     @apply text-xs
     @apply ml-auto
     writing-mode: vertical-rl
+
+main
+  height: -webkit-fill-available
 </style>
