@@ -34,18 +34,22 @@
             OPEN SHOP
           </button>
         </a>
-        <g-image
-          class="max-w-64 mt-8 md:max-w-sm lg:max-w-lg lg:mt-16"
-          src="@/assets/image/designs/something-different-hardcover-journal_compressed.jpg"
-        />
-        <g-image
-          class="max-w-64 mt-16 ml-auto md:max-w-sm lg:max-w-lg lg:mt-32"
-          src="@/assets/image/designs/perspective-matters.png"
-        />
-        <g-image
-          class="max-w-64 mt-16 md:max-w-sm lg:max-w-lg lg:mt-32"
-          src="@/assets/image/designs/let-the-sky-fall-down-hardcover-journal_compressed.jpg"
-        />
+        <div class="artwork">
+          <g-image
+            src="@/assets/image/designs/something-different-hardcover-journal_compressed.jpg"
+          />
+          <g-image
+            class="ml-auto"
+            src="@/assets/image/designs/perspective-matters.png"
+          />
+          <g-image
+            src="@/assets/image/designs/let-the-sky-fall-down-hardcover-journal_compressed.jpg"
+          />
+          <g-image
+            class="ml-auto"
+            src="@/assets/image/designs/new-horizons.png"
+          />
+        </div>
       </section>
     </main>
   </Layout>
@@ -59,3 +63,29 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.artwork > img {
+  @apply max-w-64 mt-16;
+
+  &:first-child {
+    @apply mt-8;
+  }
+}
+
+@screen md {
+  .artwork > img {
+    @apply max-w-sm;
+  }
+}
+
+@screen lg {
+  .artwork > img {
+    @apply max-w-lg mt-32;
+
+    &:first-child {
+      @apply mt-16;
+    }
+  }
+}
+</style>

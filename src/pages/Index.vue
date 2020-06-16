@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="mx-6 flex-1 flex flex-col">
+    <main class="mx-6 flex-1 flex flex-col max-h-full">
       <Links class="links mt-4 lg:mt-16" />
       <Contact class="mt-auto mb-8 lg:mb-16" />
 

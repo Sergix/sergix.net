@@ -1,5 +1,7 @@
 <template>
-  <div class="min-h-screen flex flex-col max-w-lg-screen mx-auto">
+  <div
+    class="min-h-screen flex flex-col max-w-lg-screen mx-auto overflow-x-hidden relative md:static"
+  >
     <Navbar class="lg:mt-4" />
     <div class="flex-1 flex flex-col">
       <transition name="fade" appear>
