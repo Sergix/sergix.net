@@ -43,5 +43,12 @@ module.exports = {
         paymentPointer: '$ilp.uphold.com/8bJBkDmJDw4R',
       },
     },
+    {
+      use: 'gridsome-plugin-fathom',
+      options: {
+        siteId: 'VAXML',
+        trackerUrl: '//fathom.sergix.dev/tracker.js',
+      },
+    },
   ],
 }

@@ -10,3 +10,4 @@ coverage/
 .old/
 /yarn.lock
 yarn.lock
+fathom/
