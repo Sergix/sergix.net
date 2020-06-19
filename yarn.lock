@@ -4866,6 +4866,11 @@ gray-matter@^4.0.2:
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
 
+gridsome-plugin-fathom@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-fathom/-/gridsome-plugin-fathom-0.0.16.tgz#61221f537fe028ee6c6f13d5bdd5a08f83fc5b72"
+  integrity sha512-hmgNI04PEuFve0vvBIXIlI3KsSkOCneyoYYpU3iT8KMy4o05qoOMWhSBA5FCgVpvrd/C12H/7NuvUzdBBGIsNg==
+
 gridsome-plugin-monetization@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gridsome-plugin-monetization/-/gridsome-plugin-monetization-1.0.0.tgz#c101fd688d64d385c9fd80fc39da461af3a690ad"
