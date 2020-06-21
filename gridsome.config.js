@@ -46,7 +46,7 @@ module.exports = {
     {
       use: 'gridsome-plugin-fathom',
       options: {
-        siteId: 'VAXML',
+        siteId: 'XICCY',
         trackerUrl: '//fathom.sergix.dev/tracker.js',
       },
     },
