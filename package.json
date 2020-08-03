@@ -1,6 +1,7 @@
 {
   "name": "sergix",
   "private": false,
+  "license": "MIT",
   "scripts": {
     "build": "gridsome build",
     "test": "jest",

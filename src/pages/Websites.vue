@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="px-6 my-8 md:w-2xl lg:w-4xl mx-auto">
+    <main class="px-6 my-8 md:w-2xl lg:w-3xl mx-auto">
       <h1 class="text-5xl font-medium md:mt-16">WEBSITES</h1>
       <img
         class="-ml-12 -mt-12 relative z-neg-1"
@@ -19,15 +19,17 @@
           />
         </div>
         <div class="flex flex-row w-full mt-12">
-          <h2 class="font-medium text-5xl flex-1 z">
-            workdrop
+          <h2 class="font-medium text-5xl flex-1">
+            <a href="https://www.workdrop.app/" class="hover:underline">
+              workdrop
+            </a>
           </h2>
           <img src="@/assets/image/dots.svg" />
         </div>
-        <p class="mt-4 leading-tight">
+        <p class="mt-4">
           A file requesting app designed for teachers and educators.
         </p>
-        <p class="text-sm mt-6">
+        <p class="text-sm mt-6 italic">
           Vue, Nuxt, Netlify, MongoDB, AWS
         </p>
       </section>
@@ -38,12 +40,35 @@
           src="@/assets/image/websites/bluetree-mobile.png"
         />
         <h2 class="font-medium text-5xl leading-none mt-12">
-          BlueTree Landscaping
+          <a href="https://www.bluetreesc.com/" class="hover:underline">
+            BlueTree Landscaping
+          </a>
         </h2>
-        <p class="mt-4 leading-tight w-3/4">
-          A local landscaping company in Charleston, South Carolina.
+        <p class="mt-6 w-3/4">
+          A local landscaping company based in Charleston, South Carolina.
         </p>
-        <p class="text-sm mt-6">Vue, Gridsome, Netlify, Sanity</p>
+        <p class="text-sm mt-6 italic">Vue, Gridsome, Netlify, Storyblok</p>
+      </section>
+
+      <section class="mt-24 lg:mt-40 w-3/4 w-full mx-auto">
+        <img
+          class="flex-0 w-64"
+          src="@/assets/image/websites/blygold-mobile.png"
+        />
+        <div class="flex flex-row w-full mt-12">
+          <h2 class="font-medium text-5xl flex-1 leading-tight">
+            <a href="https://www.blygoldsc.com/" class="hover:underline">
+              BlygoldSC
+            </a>
+          </h2>
+          <img class="transform rotate-45" src="@/assets/image/dots.svg" />
+        </div>
+        <p class="mt-6 max-w-2xl">
+          Custom HVAC corrosive-resistant coating for commercial distributors within the southeast region of the United States. A partner of <a class="font-medium hover:underline" href="https://www.blygold.com/">Blygold International BV</a>.
+        </p>
+        <p class="text-sm mt-6 italic">
+          Vue, Gridsome, Netlify
+        </p>
       </section>
     </main>
   </Layout>

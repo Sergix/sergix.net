@@ -25,6 +25,7 @@ module.exports = {
       width: {
         'lg-screen': '96em',
         '2xl': '38rem',
+        '3xl': '48rem',
         '4xl': '56rem',
       },
       minHeight: {

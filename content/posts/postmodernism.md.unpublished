@@ -1,9 +1,9 @@
 ---
-slug: oop-metaphysics
-title: Object-Oriented Programming and Metaphysics
+slug: postmodernism-and-confusion
+title: Postmodernism and Confusion
 subtitle: How does OOP relate to philosophy?
 published: 29 May 2020
-last_edit: 29 May 2020
+last_edit: 8 July 2020
 ---
 
 Object-oriented programming (OOP) is the most well-known paradigm of computer programming. Java, C#, C++, JavaScript, and many other programming languages all have (intrinsically or extrinsically) OOP principles embedded in them. Languages like Ruby and Python even claim that "everything is an object" in their environment.
@@ -49,7 +49,7 @@ The same thing with deconstruction: by the first law of thermodynamics, nothing 
 
 ## Metaphysics and objects
 
-These properties of objects sets the stage for tying OOP together with metaphysics: state, action, construction, and deconstruction.
+These properties of objects sets the stage for tying OOP together with metaphysics: state, action, construction, and destruction.
 
 Every entity in the real contains these same properties.
 

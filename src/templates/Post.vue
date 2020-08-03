@@ -9,6 +9,7 @@
           {{ timestamp }}
         </span>
       </header>
+      <!-- <PostTools /> -->
       <article class="mt-12 font-serif" v-html="$page.post.content" />
     </main>
   </Layout>
@@ -26,8 +27,13 @@ query Post ($path: String!) {
 </page-query>
 
 <script>
+// import PostTools from '@/components/PostTools.vue'
+
 export default {
   name: 'Post',
+  components: {
+    // PostTools
+  },
   computed: {
     timestamp() {
       return this.$page.post.published
@@ -38,7 +44,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$page.post.slug,
+      title: this.$page.post.title,
     }
   },
 }
@@ -46,19 +52,27 @@ export default {
 
 <style lang="sass">
 /* purgecss start ignore */
+
 .post
   h2
-    @apply text-2xl
-    @apply mt-16
+    @apply text-2xl mt-16
 
   p
-    @apply mt-4
-    @apply leading-relaxed
+    @apply mt-4 leading-relaxed
+
+  ol, ul
+    @apply ml-10 mt-4
+  
+  ol
+    @apply list-decimal
+
+  ul
+    @apply list-disc
 
 @screen lg
   .post
     p
-      @apply mt-6
-      @apply leading-loose
+      @apply mt-6 leading-loose
+
 /* purgecss end ignore */
 </style>
