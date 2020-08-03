@@ -26,7 +26,7 @@ export default function(Vue, { router, head, isClient }) {
 
   head.meta.push({
     name: 'description',
-    content: 'Form follows function.',
+    content: 'Designing and developing fast, responsive websites and web apps using modern and low-cost web technologies.',
   })
 
   head.meta.push({

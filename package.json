@@ -1,13 +1,13 @@
 {
   "name": "sergix",
-  "private": false,
   "license": "MIT",
+  "private": false,
   "scripts": {
     "build": "gridsome build",
-    "test": "jest",
+    "explore": "gridsome explore",
     "serve": "gridsome develop",
     "serve:prod": "gridsome build && lite-server --baseDir dist/",
-    "explore": "gridsome explore"
+    "test": "jest"
   },
   "dependencies": {
     "@gridsome/plugin-sitemap": "^0.3.0",
