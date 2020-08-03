@@ -2,7 +2,7 @@
   <nav class="flex flex-row flex-shrink-0 h-24">
     <MobileMenu :active="menuButtonActive" @close="closeMenu" />
     <g-link class="logo" v-show="!menuButtonActive" to="/">
-      <img class="w-48 mt-4 ml-2 pb-2" src="@/assets/image/logo/sergix.svg" />
+      <img class="w-48 ml-2 pb-2" src="@/assets/image/logo/sergix.svg" />
     </g-link>
     <ul
       class="hidden md:flex flex-row my-auto flex-1 items-center ml-8"
@@ -73,6 +73,7 @@ export default {
 <style lang="sass" scoped>
 .logo
   transition: display 0.5s ease-in
+  margin-top: .85rem
 
 ul > li
   @apply px-12
