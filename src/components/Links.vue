@@ -14,14 +14,18 @@
 
 <style lang="sass" scoped>
 nav > button
-  @apply font-medium
-  @apply leading-none
   @apply gradient-primary
+  @apply font-medium leading-none
   @apply mt-4
-  @apply px-3
-  @apply pt-2
-  @apply pb-1
+  @apply px-5 pt-4 pb-3
+  @apply text-black text-5xl
+  //@apply border-2 border-gray-300
   @apply rounded-lg
-  @apply text-black
-  @apply text-5xl
+  @apply shadow-md
+
+  &:hover
+    @apply gradient-primary-soft
+
+  &:active
+    @apply gradient-primary-reversed
 </style>

@@ -14,7 +14,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.0",
     "@gridsome/vue-remark": "^0.2.1",
-    "gridsome": "^0.7.14",
+    "gridsome": "^0.7.20",
     "gridsome-plugin-fathom": "^0.0.16",
     "gridsome-plugin-monetization": "^1.0.0",
     "gridsome-source-storyblok": "^1.0.1",
