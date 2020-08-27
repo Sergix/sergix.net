@@ -44,6 +44,14 @@ module.exports = {
           background:
             'linear-gradient(180deg, rgba(250,183,172,1) 0%, rgba(247,137,150,1) 100%)',
         },
+        '.gradient-primary-reversed': {
+          background:
+            'linear-gradient(180deg, rgba(247,137,150,1) 0%, rgba(250,183,172,1) 100%)',
+        },
+        '.gradient-primary-soft': {
+          background:
+            'linear-gradient(180deg, rgba(250,183,172,1) 0%, rgba(247,137,150,1) 50%)',
+        },
       }
 
       addUtilities(newUtilities)
