@@ -17,7 +17,7 @@ nav > button
   @apply gradient-primary
   @apply font-medium leading-none
   @apply mt-4
-  @apply px-5 pt-4 pb-3
+  @apply px-3 pt-2 pb-1
   @apply text-black text-5xl
   //@apply border-2 border-gray-300
   @apply rounded-lg
