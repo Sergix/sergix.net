@@ -2,7 +2,7 @@
   <Layout>
     <main class="px-6 my-8 md:mt-24 mx-auto max-w-xl">
       <h1 class="text-5xl font-medium">BLOG</h1>
-      <h2 class="mt-2">Minimal, because it's not Medium.</h2>
+      <h2 class="mt-2 border-black border p-6">Minimal, because it's not Medium.</h2>
 
       <article
         class="mt-16 w-full flex flex-col lg:mt-32"
@@ -21,7 +21,7 @@
         <p class="mt-4 font-serif lg:mt-8" v-html="content.split('</p>')[0]" />
 
         <g-link
-          class="btn btn-gradient-outline mt-6 self-end md:mt-8 lg:mt-12"
+          class="btn btn-gradient-outline pt-button-fix mt-6 self-end md:mt-8 lg:mt-12"
           :to="`/blog/${slug}`"
         >
           CONTINUE READING

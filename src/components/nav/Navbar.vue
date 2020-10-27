@@ -1,11 +1,11 @@
 <template>
-  <nav class="flex flex-row flex-shrink-0 h-24">
+  <nav class="flex flex-row flex-shrink-0 h-24 items-center">
     <MobileMenu :active="menuButtonActive" @close="closeMenu" />
     <g-link class="logo" v-show="!menuButtonActive" to="/">
       <img class="w-48 ml-2 pb-2" src="@/assets/image/logo/sergix.svg" />
     </g-link>
     <ul
-      class="hidden md:flex flex-row my-auto flex-1 items-center ml-8"
+      class="hidden md:flex flex-row mt-1 flex-1 items-center ml-8"
       v-show="!isIndexPage"
     >
       <li>
@@ -19,7 +19,7 @@
       </li>
     </ul>
     <button
-      class="btn btn-gradient-outline ml-auto mr-6 pt-button-fix my-auto md:hidden"
+      class="btn btn-gradient-outline ml-auto mr-6 pt-button-fix md:hidden"
       :class="{ hidden: isIndexPage }"
       @click="toggleMenu"
     >

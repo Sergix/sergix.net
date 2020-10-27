@@ -1,10 +1,11 @@
 <template>
   <Layout>
     <main class="px-6 mt-8 mx-auto md:w-2xl lg:w-4xl">
-      <div class="flex flex-row items-center md:mt-16">
+      <div class="flex flex-row items-center mt-8 md:mt-16">
         <h1 class="text-5xl font-medium flex-1">DESIGNS</h1>
-        <g-image class="-mr-12" src="@/assets/image/circle.svg" />
+        <g-image class="-mr-16 z-neg-1 -mb-8" src="@/assets/image/circle.svg" />
       </div>
+      <h2 class="mt-2 border-black border p-6 mr-4 md:rounded-tr-full">A small collection of part of my web design and artwork.</h2>
       <section class="mt-16">
         <h2 class="text-xl">
           Websites and Web Applications
@@ -66,7 +67,8 @@ export default {
 
 <style lang="scss" scoped>
 .artwork > img {
-  @apply max-w-64 mt-16;
+  @apply max-w-64;
+  @apply mt-16;
 
   &:first-child {
     @apply mt-8;
