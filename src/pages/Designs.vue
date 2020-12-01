@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="px-6 mt-8 mx-auto md:w-2xl lg:w-4xl">
+    <main class="px-6 my-8 mx-auto md:w-2xl lg:w-4xl">
       <div class="flex flex-row items-center mt-8 md:mt-16">
         <h1 class="text-5xl font-medium flex-1">DESIGNS</h1>
         <g-image class="-mr-16 z-neg-1 -mb-8" src="@/assets/image/circle.svg" />
@@ -15,15 +15,15 @@
           src="@/assets/image/designs/sparkboard-macbook-mockup_compressed.jpg"
         />
         <g-image
-          class="max-w-64 mt-16 ml-auto md:max-w-sm  lg:max-w-lg lg:mt-32"
+          class="max-w-64 mt-4 ml-auto md:max-w-sm lg:max-w-lg lg:mt-32"
           src="@/assets/image/designs/workdrop-iphone-mockup_compressed.jpg"
         />
         <g-image
-          class="max-w-64 mt-16 md:max-w-sm  lg:max-w-lg lg:mt-32"
+          class="max-w-48 mt-4 md:max-w-sm lg:max-w-lg lg:mt-32"
           src="@/assets/image/designs/bluetree-iphone-mockup_compressed.jpg"
         />
       </section>
-      <section class="mt-32 lg:mt-64">
+      <section class="mt-20 lg:mt-64">
         <h2 class="text-xl">
           Artwork
         </h2>
@@ -65,29 +65,19 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.artwork > img {
-  @apply max-w-64;
-  @apply mt-16;
+<style lang="sass" scoped>
+.artwork > img
+  @apply max-w-48
+  @apply mt-8
 
-  &:first-child {
-    @apply mt-8;
-  }
-}
+@screen md
+  .artwork > img
+    @apply max-w-sm
 
-@screen md {
-  .artwork > img {
-    @apply max-w-sm;
-  }
-}
+@screen lg
+  .artwork > img
+    @apply max-w-lg mt-32
 
-@screen lg {
-  .artwork > img {
-    @apply max-w-lg mt-32;
-
-    &:first-child {
-      @apply mt-16;
-    }
-  }
-}
+    &:first-child
+      @apply mt-16
 </style>

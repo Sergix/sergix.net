@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="px-4 my-8 mx-auto">
+    <main class="px-6 my-8 mx-auto">
       <div class="mt-8 md:p-8 md:mt-16">
         <h1 class="text-5xl font-medium md:pt-5 md:pb-4 px-2 py-2">WEBSITES</h1>
         <!-- <img
@@ -61,10 +61,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@screen md {
-  .card {
-    @apply mx-4;
-  }
-}
+<style lang="sass" scoped>
+@screen md
+  .card
+    @apply mx-4
 </style>

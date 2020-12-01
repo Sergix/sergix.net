@@ -16,11 +16,11 @@
       >
         <span>MINIMUM COMPOSITION</span>
         <span class="flex-1 relative">
-          <span class="h-full inline-block text-center pt-8">
+          <span class="h-full inline-block text-center pt-6">
             CREATIVE ASSEMBLY
           </span>
         </span>
-        <figure class="text-5xl font-medium mb-8 md:text-6xl">ALT7440</figure>
+        <figure class="text-5xl font-medium mb-4 md:text-6xl">ALT7440</figure>
         <span>OPEN SOURCE</span>
         <img
           class="absolute mb-8 mr-8 right-0 bottom-0 w-12 lg:mb-16"
