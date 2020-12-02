@@ -19,6 +19,7 @@ module.exports = {
       },
       maxWidth: {
         '32': '8em',
+        '48': '12em',
         '64': '16em',
         'lg-screen': '96em',
       },
