@@ -1,0 +1,17 @@
+---
+import LayoutBase from "./LayoutBase.astro"
+import Navbar from "@components/nav/Navbar.vue";
+
+export interface Props {
+	title: string,
+	noNav: boolean
+}
+const { title, noNav } = Astro.props as Props
+---
+
+<LayoutBase title={title}>
+	<Navbar class="lg:mt-4" noNav={noNav} />
+	<div class="flex-1 flex flex-col">
+		<slot />
+	</div>
+</LayoutBase>

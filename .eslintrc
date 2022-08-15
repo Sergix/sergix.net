@@ -8,9 +8,6 @@
     }
   },
   "rules": {
-    "gridsome/format-query-block": "error",
-    "gridsome/require-g-image-src": "error",
-    "gridsome/require-g-link-to": "warn",
     "semi": ["error", "never"],
     "quotes": ["error", "single"],
     "indent": ["error", 2],
@@ -44,6 +41,6 @@
     "browser": true,
     "es6": true
   },
-  "plugins": ["gridsome", "prettier"],
-  "extends": ["plugin:gridsome/recommended", "prettier"]
+  "plugins": ["prettier"],
+  "extends": ["prettier"]
 }

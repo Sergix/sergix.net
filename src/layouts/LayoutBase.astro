@@ -1,0 +1,110 @@
+---
+import '@assets/css/fonts.css'
+import '@assets/css/global.css'
+
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:i&display=swap" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:b&display=swap" />
+
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+		<title>{'/' + title}</title>
+	</head>
+	<body class="md:static">
+		<slot />
+	</body>
+</html>
+
+<style lang="sass">
+	body
+		@apply overflow-x-hidden
+		@apply min-h-screen 
+		@apply flex
+		@apply flex-col
+		@apply max-w-lg-screen
+		@apply mx-auto
+		@apply overflow-x-hidden
+		@apply relative
+</style>
+
+<!-- <script>
+	export default {
+	  metaInfo() {
+		return {
+		  meta: [
+			{ name: 'description', content: this.$page.post.description },
+	
+			// Some Open Graph Tags
+			{ property: 'og:title', content: this.$page.post.title },
+			{ property: 'og:description', content: this.$page.post.description },
+			{ property: 'og:image', content: this.$page.post.cover_image },
+			{
+			  property: 'og:url',
+			  content: this.$static.metadata.siteUrl + this.$page.post.path,
+			},
+	
+			// Some Twitter Cards Tags
+			{ name: 'twitter:card', content: 'summary_large_image' },
+			{ name: 'twitter:title', content: this.$page.post.title },
+			{ name: 'twitter:image', content: this.$page.post.cover_image },
+			{ name: 'twitter:description', content: this.$page.post.description },
+		  ],
+		}
+	  },
+	}
+</script> -->
+
+<!-- 
+	// meta tags
+	head.meta.push({
+	  name: 'keywords',
+	  content: 'Design,Programming,Blog,Portfolio',
+	})
+  
+	head.meta.push({
+	  name: 'author',
+	  content: 'Peyton McGinnis',
+	})
+  
+	head.meta.push({
+	  name: 'description',
+	  content: 'Designing and developing fast, responsive websites and web apps using modern and low-cost web technologies.',
+	})
+  
+	head.meta.push({
+	  name: 'theme-color',
+	  content: '#F78996',
+	})
+  
+	head.link.push({
+	  rel: 'stylesheet',
+	  href:
+		'https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap',
+	})
+  
+	head.meta.push({
+	  key: 'og:description',
+	  name: 'og:description',
+	  content: `Form follows function.`,
+	})
+  
+	head.meta.push({
+	  key: 'og:image',
+	  name: 'og:image',
+	  content: `https://sergix.dev/ogimage.png`,
+	})
+  }
+   -->
