@@ -1,0 +1,78 @@
+---
+import LayoutDefault from '@layouts/LayoutDefault.astro'
+
+const { frontmatter } = Astro.props;
+---
+
+<LayoutDefault title={frontmatter.title}>
+  <main class="mx-auto px-6 m-8 max-w-xl post md:mt-24">
+    <header class="flex flex-row items-center">
+      <h1 class="text-2xl mr-8 font-medium flex-1">
+        { frontmatter.title }
+      </h1>
+      <span class="text-gray-500 text-sm">
+        { frontmatter.published }
+      </span>
+    </header>
+    <h2 class="mt-2">
+      { frontmatter.subtitle }
+    </h2>
+    <article class="mt-12 font-serif post">
+      <slot />
+    </article>
+    <!-- <PostTools /> -->
+  </main>
+</LayoutDefault>
+
+<style lang="sass" is:global>
+article.post
+  h2
+    @apply text-2xl mt-16
+
+  h3
+    @apply text-lg font-bold mt-10
+
+  p
+    @apply mt-4 leading-normal text-lg
+
+  ol, ul
+    @apply ml-10 mt-4
+  
+  ol
+    @apply list-decimal
+
+  ul
+    @apply list-disc
+
+  li
+    @apply mt-1
+  
+  a
+    @apply italic text-blue-700 underline underline-offset-4
+
+  hr
+    @apply my-4
+
+  table
+    @apply mt-4
+  
+  th
+    @apply p-1
+
+  tr
+    @apply border-b border-gray-200
+    &:last-child
+      @apply border-0
+
+  td
+    @apply border-gray-200 border-x text-center p-1
+    &:first-child
+      @apply text-left border-0 px-2
+    &:last-child
+      @apply border-0
+
+@screen lg
+  article.post
+    p
+      @apply mt-6 leading-normal
+</style>

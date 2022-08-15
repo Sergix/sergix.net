@@ -1,26 +1,26 @@
 <template>
   <nav class="flex flex-row flex-shrink-0 h-24 items-center">
     <MobileMenu :active="menuButtonActive" @close="closeMenu" />
-    <g-link class="logo" v-show="!menuButtonActive" to="/">
-      <img class="w-48 ml-2 pb-2" src="@/assets/image/logo/sergix.svg" />
-    </g-link>
+    <a class="logo" v-show="!menuButtonActive" href="/">
+      <img class="w-48 ml-2 pb-2" src="/image/logo/sergix.svg" />
+    </a>
     <ul
       class="hidden md:flex flex-row mt-1 flex-1 items-center ml-8"
-      v-show="!isIndexPage"
+      v-show="!noNav"
     >
       <li>
-        <g-link to="/websites">WEBSITES</g-link>
+        <a href="/websites">WEBSITES</a>
       </li>
       <li>
-        <g-link to="/designs">DESIGNS</g-link>
+        <a href="/designs">DESIGNS</a>
       </li>
       <li>
-        <g-link to="/blog">BLOG</g-link>
+        <a href="/blog">BLOG</a>
       </li>
     </ul>
     <button
       class="btn btn-gradient-outline ml-auto mr-6 pt-button-fix md:hidden"
-      :class="{ hidden: isIndexPage }"
+      :class="{ hidden: noNav }"
       @click="toggleMenu"
     >
       {{ menuButtonActive ? 'CLOSE MENU' : 'MENU' }}
@@ -29,22 +29,24 @@
 </template>
 
 <script>
-import MobileMenu from '@/components/nav/MobileMenu'
+import MobileMenu from '@components/nav/MobileMenu.vue'
 
 export default {
   name: 'Navbar',
   components: {
     MobileMenu,
   },
+  props: {
+    noNav: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   data() {
     return {
       menuButtonActive: false,
     }
-  },
-  computed: {
-    isIndexPage() {
-      return this.$route.path === '/'
-    },
   },
   methods: {
     toggleMenu() {
@@ -52,15 +54,12 @@ export default {
       this.toggleBodyOverflow()
     },
     toggleBodyOverflow() {
-      // no ssr
-      if (process.isClient) {
-        window.scrollTo(0, 0)
-        const el = document.body
-        const className = 'overflow-hidden'
-        this.menuButtonActive
-          ? el.classList.add(className)
-          : el.classList.remove(className)
-      }
+      window.scrollTo(0, 0)
+      const el = document.body
+      const className = 'overflow-hidden'
+      this.menuButtonActive
+        ? el.classList.add(className)
+        : el.classList.remove(className)
     },
     closeMenu() {
       this.menuButtonActive = false
