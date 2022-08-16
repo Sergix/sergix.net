@@ -20,6 +20,8 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@layouts/*": ["src/layouts/*"]
-    }
+    },
+    "allowJs": true,
+    "jsx": "preserve"
   }
 }
