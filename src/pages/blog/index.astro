@@ -7,10 +7,12 @@ const posts = await Astro.glob('./*.md')
         .map(({ frontmatter, url }) => ({
             title: frontmatter.title,
             published: frontmatter.published,
+            draft: frontmatter.draft,
             publishedDate: parse(frontmatter.published, "d MMMM yyyy", new Date()),
             summary: frontmatter.summary,
-            url
+            url,
         }))
+        .filter(post => !post.draft)
         .sort((a, b) => {
             if (isBefore(a.publishedDate, b.publishedDate)) return 1;
             if (isBefore(b.publishedDate, a.publishedDate)) return -1;
@@ -31,7 +33,7 @@ const posts = await Astro.glob('./*.md')
         class="mt-16 w-full flex flex-col lg:mt-32"
       >
         <header class="flex flex-row items-center">
-          <h3 class="text-2xl font-medium flex-1">
+          <h3 class="text-2xl font-medium flex-1 leading-tight">
             { post.title }
           </h3>
           <span class="text-gray-500">{ post.published }</span>
@@ -68,7 +70,7 @@ const posts = await Astro.glob('./*.md')
         >
           NEXT PAGE
         </a>
-      </div> -->
-    </nav>
+      </div>
+    </nav> -->
   </main>
 </LayoutDefault>

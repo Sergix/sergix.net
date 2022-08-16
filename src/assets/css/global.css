@@ -1,4 +1,7 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
   body {
     margin-left: auto;
@@ -6,7 +9,6 @@
   }
 }
 
-@tailwind components;
 @layer components {
   .btn {
     font-weight: 500;
@@ -36,18 +38,5 @@
     position: absolute;
     border-radius: inherit;
     z-index: -1;
-  }
-};
-
-@tailwind utilities;
-@layer utilities {
-  .gradient-primary {
-    background: linear-gradient(180deg, rgba(250,183,172,1) 0%, rgba(247,137,150,1) 100%);
-  }
-  .gradient-primary-reversed {
-    background: linear-gradient(180deg, rgba(247,137,150,1) 0%, rgba(250,183,172,1) 100%);
-  }
-  .gradient-primary-soft {
-    background: linear-gradient(180deg, rgba(250,183,172,1) 0%, rgba(247,137,150,1) 50%);
   }
 };
