@@ -18,13 +18,15 @@
         <a href="/blog">BLOG</a>
       </li>
     </ul>
-    <button
-      class="btn btn-gradient-outline ml-auto mr-6 pt-button-fix md:hidden"
-      :class="{ hidden: noNav }"
-      @click="toggleMenu"
-    >
-      {{ menuButtonActive ? 'CLOSE MENU' : 'MENU' }}
-    </button>
+    <div class="z-20 ml-auto mr-6 nav-button-wrapper md:hidden">
+      <button
+        class="btn btn-gradient-outline pt-button-fix "
+        :class="{ hidden: noNav }"
+        @click="toggleMenu"
+      >
+        {{ menuButtonActive ? 'CLOSE MENU' : 'MENU' }}
+      </button>
+    </div>
   </nav>
 </template>
 
@@ -66,6 +68,11 @@ export default {
       this.toggleBodyOverflow()
     },
   },
+  mounted() {
+    window.onresize = () => {
+      this.closeMenu()
+    }
+  }
 }
 </script>
 
