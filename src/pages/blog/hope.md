@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPost.astro
 title: Hope
 subtitle: NaN
 published: 27 October 2020
-edited: 27 October 2020
+edited: 28 October 2022
 draft: true
 ---
 
@@ -57,15 +57,17 @@ This vaporous life drowns meaning
 Within the depths of our eyes,  
 Blind to the sunset that approaches.  
 
-Reach, reach, reach!  
+		 reach!
+	reach,
+Reach,   
 
 Reach aloft and seize the fading light!    
-The empty chamber narrows!  
+This empty chamber narrows --
 Dark shadows lurch from the corners,  
-My chained soul writhes in apprehension.
+My chained soul writhes in dread.
 
-The chamber is the mind,  
-The chains are the flesh!  
+( The chamber is the mind,  
+  The chains are the flesh! )
 
 Free my captive being.  
 Rupture these shackles!  
