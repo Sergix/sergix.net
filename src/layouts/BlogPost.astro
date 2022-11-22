@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <LayoutDefault title={frontmatter.title}>
-  <main class="mx-auto px-6 m-8 max-w-xl post md:mt-24">
+  <main class="mx-auto px-6 m-8 max-w-2xl post md:mt-24">
     <header class="flex flex-row items-center">
       <h1 class="text-2xl mr-8 font-medium flex-1">
         { frontmatter.title }
@@ -30,10 +30,10 @@ article.post
     @apply text-2xl mt-16
 
   h3
-    @apply text-lg font-bold mt-10
+    @apply text-lg font-bold mt-6
 
   p
-    @apply mt-4 leading-normal text-lg
+    @apply text-lg leading-normal mt-4
 
   ol, ul
     @apply ml-10 mt-4
@@ -74,5 +74,5 @@ article.post
 @screen lg
   article.post
     p
-      @apply mt-6 leading-normal
+      @apply mt-4 leading-normal
 </style>
