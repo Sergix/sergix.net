@@ -1,0 +1,16 @@
+---
+layout: ../../layouts/BlogPost.astro
+title: Photos and the Crystallized Moment
+subtitle: The definite pattern of a moment, that while our past never changes, the people in our past change.
+summary: "What is the feeling of a photograph? When you look at a photograph that has crystallized a moment into a frame, it almost becomes a placeholder of emotion. For each person’s face holds the semblance of a once-felt emotion in that moment, yet simply peering at their faces through that glassy crystal of a picture frame reminds you of how it felt to be there."
+published: 17 February 2023
+last_edit: 17 February 2023
+---
+
+<img src="/image/posts/on-photos/picture.JPG" alt="The Photo"/>
+
+What is the feeling of a photograph? When you look at a photograph that has crystallized a moment into a frame, it almost becomes a placeholder of emotion. For each person’s face holds the semblance of a once-felt emotion in that moment, yet simply peering at their faces through that glassy crystal of a picture frame reminds you of how it felt to be there. So, we return to those memories to feel once again.
+
+I thought to write this because I was looking through some old photo albums on my phone and I stumbled across a picture my mom had taken a few years ago when I was in high school. It was a group of friends at a friend’s house for a get-together, and many people that I had grown up with and knew very well were all there. It’s by our nature to take a moment for granted, and to feel sad when you realize how much you take for granted, but as I looked at this photo I didn’t feel this kind of regret. The sadness I experienced is difficult to explain — for it wasn’t regret, it wasn’t guilt, it wasn’t necessarily nostalgia with rose-colored glasses. For when you peer into the glassy crystal with rose-colored glasses, the light refracts as its picture comes into view, and you only see what you *want* to see, in this case the color of rose. But when I looked into the frame, the refracted spectrum of other people emerged. Other people that I had known, had loved, and some still know and love, but the common thread between all these people, including myself, was our mistakes. Many of those people are no longer friends, some have passively left our faith, some have moved elsewhere, and yet everyone is still alive and somewhere out in the world. But the world — that’s what it does, doesn’t it? — the world draws you away, showing you what you once had, tempting you to despair that you have it no longer.
+
+So here is the danger of a photograph — that when peered into long enough, the past becomes what is real to you now, and you despair once the glass shatters and you see how broken each piece actually is. But this is what differs a photograph and a story, is that while they can both take you out of reality, the photograph is real. It crystallizes a real story filled with people, with lessons to be learned, memories and feelings to be felt, and hope to be found in how God is working. So, in a rebuke to myself, don’t despair that you no longer have those people next to you, for God doesn’t have to work in others when they’re right next to you, and He still loves us just the same.
