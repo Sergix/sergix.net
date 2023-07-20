@@ -7,23 +7,24 @@
     - https://ishwar-rimal.medium.com/fixing-that-address-bar-issue-in-mobile-browsers-once-and-for-all-8c283fc88e56
     - https://stackoverflow.com/questions/75113350/webkit-scroll-snap-bug
     - https://stackoverflow.com/questions/64317214/safari-webkit-css-scroll-snap-bug
+    - https://stackoverflow.com/questions/17328742/mobile-chrome-fires-resize-event-on-scroll
   */
 
   /* scroll snapping fix */
-  html {
+  /* html {
     overflow: hidden;
     width: 100%;
-  }
+  } */
 
   body {
     margin-left: auto;
     margin-right: auto;
 
     /* scroll snapping fix */
-    height: 100%;
+    /* height: 100%;
     position: fixed;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; */
   }
 }
 
