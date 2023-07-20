@@ -64,8 +64,8 @@ export default {
         : el.classList.remove(className)
     },
     closeMenu() {
+      if (this.menuButtonActive) this.toggleBodyOverflow()
       this.menuButtonActive = false
-      this.toggleBodyOverflow()
     },
   },
   mounted() {
