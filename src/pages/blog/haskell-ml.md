@@ -8,3 +8,287 @@ last_edit: 29 December 2022
 draft: true
 ---
 
+Haskell and Standard ML are two popular functional programming languages with varying degrees of type safety and functional purity. Both languages have heralded type systems that implement compile-time static type checking with polymorphic types and pattern matching. Haskell forces the programmer to make safe decisions regarding side effects by providing mathematically-proven structures such as "monads" and enforcing complete variable immutability while Standard ML relaxes side effect management and allows mutable references which enable the programmer to think about their program with less overhead but inherently less safety guarantees than Haskell. Haskell's syntax is more modern and readable than Standard ML's syntax, but Standard ML provides some features such as polymorphic type inference that reduces the amount of code that clutters its definitions compared to Haskell. Haskell's lazy expression evaluation is considered another hallmark of the language and has many advantages compared to Standard ML's eagerly evaluated expressions by potentially reducing the amount of processing cycles that expressions consume. This makes Haskell suited for applications requiring fast parallel computing, but both languages are general-purpose languages and can be used to build a wide variety of applications using all the benefits of the functional language paradigm.
+
+## Introduction
+
+To adequately assess the acceleration of functional programming concepts in modern-day programming, Haskell and Standard ML must be carefully inspected: how have these two somewhat-obscure languages erected an entire paradigm of computing? How do they relate and how do they differ? This paper compares Haskell and Standard ML and analyzes the readability, writability, and reliability of both languages. Each language also distinctly defines a strict type system that will be closely inspected. This paper assumes that the reader has some degree of familiarity with Standard ML.
+
+Haskell and Standard ML both meet in the territory of functional programming. Functional programming is a paradigm of computing based on lambda calculus, a mathematical theory of abstract computational processes, and functional programming emphasizes strong types, immutability, and other unique features. Both languages provide general-purpose programming semantics suited for many categories of software development, and both are completely portable languages that compile on Windows, macOS, FreeBSD, and many other operating systems. Interestingly, both languages released their 1.0 version in 1990. Haskell gets its namesake from Haskell Curry, a mathematician known for his foundational work in combinatorics. The original Haskell founders developed the language out of frustration --- nearly all functional languages at the time, the late 1980's, tightly specialized their use to a specific class of programming problems; no useful general-purpose language existed that suited the founders' intents \cite{Hudak01}. Created by Peyton Jones, Paul Hudak, and a number of other members on the original Haskell Committee, Haskell supports general-purpose, high-level programming with a rigorous mathematical foundation. Haskell's type system in particular gleans from an esoteric field of mathematics called "category theory" that has been hailed as one of the most powerful features of the language by introducing true functional composition \cite{wiki_category}. Because of its strict functional nature, Haskell performs very well with multi-threaded applications \cite{haskell_multithread_advantage}. The Standard ML committee, on the other hand, proposed a language particularly intended for "finding and performing proofs" \cite{Milner01}. Robin Milner, a professor at the University of Cambridge, standardized ML, which stands for "Meta Language", as "an application of logical rigour to writing code" \cite{Milner01}. Because of this premise, Standard ML highly benefits language and grammar parsing applications as well as theorem-proving models.
+
+Despite their similarities and notable benefits, Haskell is much more powerful and suited for more applications because of its purely functional nature and type system, but its strictness and typing concepts are much more difficult to comprehend than Standard ML.
+
+This paper organizes its content into an Overview and Language Features section. The Overview section discusses the surface-level syntax and structure of each language and instructions on how to compile a program in Haskell. The Language Features section splits into multiple subsections that each discuss different key comparisons and interesting yet useful oddities of both languages; the categories of features discussed include types, variables, expressions, control statements, subroutines, and functional programming.
+
+## Overview
+
+This section contrasts the syntactic and modular differences between Haskell and Standard ML through a detailed explanation of common language features and a walk-through of an example code listing. This section concludes with a detailed step-by-step process of how to compile and run a Haskell source file in Ubuntu Linux.
+
+### Structure and Syntax
+
+Haskell organizes its programs into pure functions in one or more source files and shares those functions using modules. Modules collect the functions in a file into a unique name-space that can be imported by any other module in the program \cite{haskell_modules}. Standard ML, in contrast, has a much simpler import system that uses the \texttt{use "<file>";} syntax to import the definitions from \texttt{"<file>"}. Haskell defines a program's entry point as the \texttt{main} function that has the \texttt{IO} monad type. A monad guarantees that a function remains pure despite side effects that it may produce, such as printing to a file stream; Haskell strictly enforces functional purity and technically defines no possible way of circumventing its purity checks. The Haskell standard library, called Prelude, supplies a wide array of utilities that eclipses Standard ML's standard library \cite{prelude}. Standard ML does not define an entry point and evaluates in-order similar to a scripting language.
+
+Haskell implements an extensive operator set that includes basic arithmetic, logical and list operators, but it also includes functional operators like pattern matching and lambda operators \cite{haskell_operators}. Operators in Haskell can be used in normal infix-notation, \texttt{3 + 5}, or they can be used as prefix-notation, \texttt{(+) 3 5}; this also applies for operators that normally apply with prefix notation which can be used as infix with backticks: \texttt{(-) `foldl` 5}. Most Haskell syntax can take these forms, formally known as the "sweet" and "unsweet" versions of the syntax \cite{wiki_sweet}. "Point-free" style cleans up syntactic elements even further by automatically inferring function parameters to clarify function composition in the code \cite{pointfree}. Haskell statements use newlines as statement separators for nearly all expressions \cite{haskell_syntax_tips}. Therefore, since whitespace affects the interpretation of match and multi-line expressions, Haskell is not considered a free-form language \cite{wiki_indent}. Haskell variables and definitions are case-sensitive, and types and typeclasses must start with an uppercase first letter while functions and variables must start with a lowercase first letter \cite{programming_guidelines}. Because of these naming conventions and Haskell's method of pattern matching, functional polymorphism looks syntactically clearer than in Standard ML. Comments use the double-dash prefix \texttt{----}: for example, \texttt{---- this is a Haskell comment}.
+
+```haskell
+select [] _ = []
+select (x : xs) f =
+  (if f x then [x] else []) ++ (select xs f)
+main = do
+  putStrLn "filter even or odd numbers?"
+  input <- getLine
+  if (input == "even") then do
+      print(select lst even)
+    else print(select lst odd)
+  where lst = [1,2,3,4,5,6,7,8,9,10]
+```
+
+The listing in Figure \ref{fig:samplecode_hs} filters a list of the numbers 1 to 10 for even or odd numbers at the user's request. Most developers can much more quickly comprehend this 10-line listing than Standard ML's 30-line listing in Figure \ref{fig:samplecode2} (even though it is compacted for the sake of typesetting this paper). Line 1 matches an empty list and anything to an empty list; this is almost identical to the Standard ML listing. Line 2 matches a list starting with the element \texttt{x} and rest-of-list \texttt{xs} and a function \texttt{f}. Haskell's pattern matching syntactically looks like a function redefinition, while Standard ML uses the pipe symbol \texttt{|} to separate pattern-matching function clauses. Line 3 states that if the function applied to \texttt{x} returns true, add \texttt{x} to the front of the list (\texttt{++}) and recursively \texttt{select} the tail of the list, \texttt{xs}. This statement is virtually identical to Standard ML's version. Line 4 defines the \texttt{main} entry point with a \texttt{do} block that provides the \texttt{IO} monad features. In Standard ML, \texttt{main} has to be explicitly called at the end of the program because of its in-order evaluation. On Line 5, the program prints a message to the user. Standard ML's version is similar but must specify the newline character. Haskell's input stream mechanism on Line 6 is far superior to Standard ML's enforced use of the Option type to read input. Line 7 tests for string equivalence; Standard ML concisely prefers pattern matching in many cases since the language's string equality tests can be cumbersome. Line 8 then prints to \texttt{stdout} the result of calling \texttt{select} on the predefined list with the \texttt{even} function from the Prelude module \cite{prelude}. Standard ML automatically prints the result of an expression evaluation to \texttt{stdout}. Haskell includes many utility functions similar to \texttt{even}, as seen on Line 9 which prints to \texttt{stdout} the result of calling \texttt{select} on the list with the \texttt{odd} function, which Prelude also contains. Standard ML does not have these utility functions and must be explicitly defined. Lastly, Line 10 defines local variables to be used in the \texttt{where} block, in this case the list to filter. Haskell uses \texttt{where} for monadic expressions and pattern guards and its scope binds to the entire function block \cite{haskell_let_where}.
+
+```ml
+fun select [] _ = []
+|   select (x :: xs) f =
+  (if (f x) then [x] else [])
+    @ (select xs f);
+
+fun printIntLst lst =
+  print ("[" ^
+    (foldr (fn (a,b) =>
+      (Int.toString a) ^ "," ^ b)
+      "" lst) ^ "]\n")
+
+fun filterNums "even\n" lst =
+  printIntLst (select lst
+    (fn x => (x mod 2) = 0))
+| filterNums _ lst 
+  printIntLst (select lst
+    (fn x => ((x mod 2) = 1)));
+
+fun main () = 
+  let 
+    val _ =
+      print "filter even or odd numbers?\n"
+    val inp = Option.getOpt
+      (TextIO.inputLine TextIO.stdIn,
+        "NONE")
+  in
+    filterNums inp [1,2,3,4,5,6,7,8,9,10]
+  end;
+
+main ();
+```
+
+### Language Processor
+
+This paper uses the GHC Haskell compiler to compile and interactively interpret Haskell programs \cite{GHC}. GHCup, the Haskell installation toolchain manager, maintains and easily provides the GHC binary and its toolset \cite{GHCup}. A Haskell program can either be loaded interactively using GHCi, \texttt{ghci <program.hs>}, or compiled using GHC, \texttt{ghc --make <program.hs>}. For example, to execute the program in Figure \ref{fig:samplecode_hs} in a shell as in Figure \ref{fig:screen}, first save the source code of the program into \texttt{main.hs}. Second, load the program interactively by entering \texttt{\$ ghci main.hs}. Third, type and enter \texttt{main} at the \texttt{Prelude>} prompt to execute the \texttt{main} function. Lastly, enter a valid program input for the program to accordingly filter the list. Last, type and enter \texttt{:quit} at the \texttt{Prelude>} prompt to exit \texttt{ghci} and return to the shell.
+
+\includegraphics[scale=.6]{hs-screen_1.png}
+\caption{Sample program running in GHCI on WSL2.}
+
+## Language Features
+
+This section compares various language features common to both Haskell and Standard ML and analyzes their advantages and disadvantages through concrete examples. Each subsection evaluates individual components of a portion of the language definition.
+
+### Types
+
+Haskell and Standard ML implement a strong typing system that enforces type strictness and static typing for all variables at compile-time to prevent errors. Haskell slightly simplifies typing syntax compared to Standard ML for types like tuples and polymorphic types, as seen in Figure \ref{fig:types_hs} and Figure \ref{fig:types_ml} and therefore has more readable types. Haskell's compiler also helps writing programs by generating much clearer and more helpful messages for type errors than Standard ML. However, Haskell's extensive type system can cause confusion of which type structure to use in which cases \cite{Liu01}. Lastly, Haskell provides a much more reliable and provable type system than Standard ML because of its strong mathematical foundation.
+
+```haskell
+-- tuple type annotation
+f :: (a, b) -> (a, b)
+f x = x
+
+-- polymorphic types
+g :: a -> a
+g x = x
+```
+\caption{Type annotations in Haskell.}
+
+```ml
+(* tuple type annotation *)
+fun f (x: 'a * 'b) = x;
+
+(* polymorphic types *)
+fun g (x: 'a) = x;
+```
+\caption{Type annotations in Standard ML.}
+
+Haskell resolves type comparisons by using nominal typing for algebraic types and structural typing for programmatically-defined type synonyms \cite{structural_typing}. Standard ML, on the other hand, uses structural typing for all type comparisons by recursively determining the type's dependents and comparing the fundamental requirements of both types \cite{Fluet01}. Haskell's typing definitions are much clearer and more concise than Standard ML's definitions; for example, to define a polymorphic recursive type for a list in Haskell, the Haskell expression \texttt{data List a = Nil | Cons a (List a)} \cite{haskell_list_type} semantically equates to the Standard ML expression  \texttt{datatype 'a list = nil | :: of 'a * 'a list} \cite{ml_list_type}. The Haskell version uses more natural naming conventions for its type expressions than Standard ML and has a significant advantage in readability, which also gives Haskell a writeability advantage in constructing type declarations over Standard ML. However, since Haskell uses two different type comparison systems, it can be cumbersome to define structural types that enforce one method of type comparison over the other \cite{structural_typing}. For example, as in Figure \ref{fig:type_equiv_hs} when defining a type synonym using the \texttt{type} keyword, the Haskell language system compares the \texttt{T\_Point3} and \texttt{T\_Vector3} using structural typing and so they are equivalent types. However, when defined using the \texttt{data} keyword as for \texttt{Point3} and \texttt{Vector3}, the type takes constructor arguments \cite{algebraic_typing} and outputs a \texttt{D\_Point3} or \texttt{D\_Vector3} and subjects to nominal type comparisons, so therefore the types are not equivalent. Since all type comparisons in Standard ML use the same comparison system, its type system tends to be more reliable in terms of predictability, but Haskell's more extensive structural typing system provides more functionality to the programmer.
+
+```haskell
+-- structural equivalence
+type T_Point3 = (Int, Int, Int)
+type T_Vector3 = (Int, Int, Int)
+
+-- name equivalence
+data D_Point3 = Point3 Int Int Int
+data D_Vector3 = Vector3 Int Int Int
+```
+\caption{Type declarations in Haskell.}
+
+Both Haskell and Standard ML's type system automatically infer types for expressions and variables. Type annotations for variables are optional in both languages, but they can be used to clarify or enforce a specific type and increase the readability of the code. (As an aside, Haskell's operator for providing a type annotation, \typettt{::}, can be easily confused with Standard ML's syntax for the cons operator.) Haskell and Standard ML's inferred types are useful and clear to the programmer and accurately determine the appropriate types for expressions. However, Haskell does not infer polymorphic types \cite{Bottu01} and must be explicitly annotated \cite{monomorphism_restriction}, which decreases the writability of types in Haskell compared to Standard ML's more intuitive system of inferring types from most general (polymorphic types) to specific ("ground" types, such as \texttt{int}) as it assesses the type of an expression. However, because Haskell does not infer polymorphic types, forcing the programmer to explicitly annotate polymorphic types does increase the reliability of the language since the compiler must statically check the explicitly defined type.
+
+Before continuing, the notion of a {\it monad} must be clarified since they commonly appear in Haskell programs and will be mentioned later in this paper. A monad is another mathematical concept from category theory that obeys a set of abstract properties and "pipes" results from computations into other structures while enforcing type checks \cite{hs_monads}. Monads can be reused and composed with functions and other sequential processes. Programs implement monads to "isolate" computations in functions with possible side effects into a separate construct to ensure that functions with side effects retain their purity \cite{hs_monads}. A couple of familiar examples of built-in monads in Haskell are the \texttt{Maybe} and \texttt{IO} monads \cite{hs_monads}.
+
+### Variables
+
+Haskell's variables are always immutable \cite{haskell_immutability} while Standard ML's variables are immutable by-default and provides mutable reference types \cite{Fourman01}. Immutability in both languages makes code easier to reason about since you do not have to track when the state of a variable mutates, especially across large programs. However, Haskell and Standard ML's immutability introduces more variables and prevents reusing a name for a value inside the same scope which potentially decreases the readability and writability of both languages since it can be cumbersome to propose new names for variables every time that a value mutates. Standard ML's mutable references reuse blocks of memory pointed to by a variable and provide convenience for the programmer and increase the language's writability. Standard ML reference variables are assigned using the \texttt{:=} syntax and dereferenced using the \texttt{!reference\_var} syntax \cite{Fourman01}. However, despite its syntactic disadvantages, Haskell's immutability increases reliability since it guarantees memory safety at the compiler level, especially with computing lists; on the other hand, this guarantee increases the computational overhead of mutating data structures during runtime.
+
+{\it Optional} types stipulate the {\it possibility} of a value and provide mechanisms for interacting with the contained value. Both Haskell and Standard ML contribute optional type definitions that can be easily used in case expressions and with pattern matching \cite{ml_syntax}, as seen in Figure \ref{fig:hs_maybe}. Haskell's optional type syntax is more readable and natural than Standard ML's, using the \texttt{Maybe} monad with \texttt{Nothing} and \texttt{Just} as the constructors, while Standard ML uses the \texttt{option} type with \texttt{NONE} and \texttt{SOME}. Haskell's \texttt{Maybe} monad also inherits the equality and ordinance types, so equality-testing is built-in to Haskell's \texttt{Maybe} definition \cite{haskell_maybe} while Standard ML's equality testing for \texttt{option} types must be explicitly defined using equality type variables, such as \texttt{''a option} \cite{Fluet01}. Therefore, Haskell's optional types are more reliable and intuitive than Standard ML's optional types because of the its built-in equality testing support.
+
+```haskell
+-- outputs x's contained value if it holds a
+--  value y, or False if no value is held
+f :: Maybe Bool -> Bool
+f x = case x of
+        Just y -> y
+        Nothing -> False
+        
+-- True
+f (Just True)
+
+-- False
+f (Just False)
+
+-- False
+f (Nothing)
+```
+\caption{Optional types in Haskell.}
+
+### Expressions
+
+Haskell and Standard ML implement most common logical and arithmetic operators, though Standard ML's operators tend to be less syntactically conventional. Haskell's boolean operators use the readable and well-known syntax \texttt{\&\&} and \texttt{||}, while Standard ML uses \texttt{andalso} and \texttt{orelse}, respectively. Haskell equivalence operators, \texttt{==}, are also more conventional than Standard ML's, \texttt{=}, since the single equal character can be confused with the assignment operator in most modern languages. Haskell and Standard ML's do not differ semantically and the boolean operators short-circuit as expected, so the operators' syntactic differences do not ultimately affect their writability. In addition, Haskell operators can be passed as parameters to functions by just passing the operator while operator functions in Standard ML can be passed by using the \texttt{op} keyword. Haskell "infix functions can also be partially applied by using sections" \cite{haskell_higherorderfunctions} by adding parentheses around the expression, as seen in Figure \ref{fig:hs_infix} \cite{haskell_higherorderfunctions}, which makes the code slightly more writable than Standard ML since Standard ML does not implement this functionality.
+
+```haskell
+-- explicit parameter with infix notation
+divideByTen x = x / 10
+
+-- explicit parameter with prefix notation
+divideByTen x = (/) x 10
+
+-- implicit parameter applied as first
+--  division operand
+divideByTen = (/10)
+```
+\caption{Prefix and infix operator syntax in Haskell (from cited source) \cite{haskell_higherorderfunctions}.}
+
+Haskell lazily evaluates expressions: the processor does not evaluate an expression until immediately needed in a computation \cite{haskell_lazyeval}. On the other hand, Standard ML eagerly, or immediately, evaluates expressions, but lazy evaluation can manually be added to a Standard ML program \cite{Brick01}. Haskell uses lazy evaluation for every expression, which tends to consume more memory than eager evaluation in Standard ML and can decrease the reliability for programs that need to be memory-efficient. However, the Haskell compiler may optimize the program to not use lazy evaluation for specific expressions if it meets a compiler-defined case to consume less memory \cite{haskell_strictness}. Standard ML's eager evaluation, in contrast, may consume more processor cycles than needed but typically results in less memory usage. In conclusion, Haskell optimizes for processor cycles while Standard ML optimizes for memory usage and results in reliability concerns for the programmer in both languages.
+
+### Control Statements
+
+If-else statement branches in both languages must evaluate to the same type since the entire statement is a single expression. This implies that if-else statements can be embedded into parentheses and inserted anywhere where it can be properly evaluated as an expression in the program. In addition, as shown in Figure \ref{fig:control_hs}, Haskell's syntax provides more readable options than Standard ML since it provides optional syntactic sugar for if-else statements as pattern guards \cite{haskell_controlstructures}, which also makes the expressions more writable since the syntax translates from other familiar functional concepts.
+
+```haskell
+-- normal if-then-else expression
+isEven :: Int -> Bool
+isEven number =
+  if number `mod` 2 == 0
+    then True
+    else False
+	
+-- pattern guards
+isEven :: Int -> Bool
+isEven number
+  | number `mod` 2 == 0 = True 
+  | otherwise = False
+```
+\caption{Comparing Haskell pattern guard syntax to if-then-else expression syntax.}
+
+In the Haskell language, errors are not exceptions: {\it errors} are represented by \texttt{undefined} and include infinite loops \cite{haskell_error_expr} and {\it unhandled} exceptions \cite{haskell_error}, while {\it exceptions} include I/O exceptions and other side effect exceptions. Standard ML defines the general \texttt{Fail} exception with specific exceptions for divide-by-zero (\texttt{Div}), nonexhuastive matches (\texttt{Match}), and other common exceptions. \cite{ml_exceptions} Standard ML handles exceptions using the \texttt{handle} case expression in functions \cite{ml_exceptions}. Haskell enforces the use of side effect handling through monads \cite{haskell_exception} which can result in cluttered and difficult-to-read exception handlers, but they can be implemented for a function by simply adding a type annotation. Both Haskell and Standard ML user-defined exceptions are just type definitions \cite{haskell_exception_def} \cite{ml_exceptions}, although Standard ML tends to be more writable since it more conventionally handles exceptions with a general \texttt{exception} type, as in Figure \ref{fig:exception_ml}. Haskell's added complexity, however, introduces more fluid possibilities for handling side effect exceptions, as seen in Figure \ref{fig:exception_hs}. Because of Haskell's strong and reliable typing system, though, Haskell rarely even needs to handle exceptions \cite{haskell_exception}. On the other hand, Standard ML greatly simplifies exception handling and therefore may be handled simpler by the programmer at the cost of less functionality.
+
+```ml
+exception HttpExceptionContent of int
+exception StatusCodeException of string
+exception TooManyRedirects of string
+exception OverlongHeaders of int
+exception ResponseTimeout of int
+```
+\caption{Examples of Standard ML user-defined exception types.}
+
+```haskell
+data HttpExceptionContent
+   = StatusCodeException
+     (Response ()) S.ByteString
+   | TooManyRedirects [Response L.ByteString]
+   | OverlongHeaders
+   | ResponseTimeout
+```
+\caption{Examples of Haskell user-defined exception types (from cited source) \cite{haskell_exception_def}.}
+
+### Subroutines
+
+Haskell and Standard ML have similar scoping and lifetime rules. In both languages, \texttt{let} expressions always define a lexical nested scope. Neither language's scoping rules have any unusual quirks that affect readability since they both use the most local nested scope for bindings, except that Standard ML's \texttt{case} statement "bindings are visible only inside the body of the rule" \cite{ml_scoping}. Similarly, although applied to functions, Haskell \texttt{where} clauses "scope bindings over several guarded equations" \cite{haskell_patterns} in function pattern guards, as seen in Figure \ref{fig:where_hs}. Both languages are similarly reliable since they require consistent lexical scoping rules and variable lifetimes, and variable lifetimes do not necessarily apply to Haskell because its variables are immutable and functions bind to {\it values}.
+
+```haskell
+f x y 
+  | y > z  = 0
+  | y == z = 1
+  | y < z  = 2
+   where z = x * x
+```
+\caption{Haskell \texttt{where} clause bindings over pattern guards (from cited source) \cite{haskell_patterns}.}
+
+Haskell uniquely restricts side effects to be handled by monads to ensure functional purity in its programs, while Standard ML allows side effects as a "mostly-pure" language. Haskell's enforcement of monadic structures and other closures can clutter a program's code and be less readable than Standard ML, especially with type definitions. This also affects Haskell's side effect handling writability since the language may increase mental overhead in defining an appropriate monad or other functional construct, while Standard ML has a relaxed approach to handling side effects. Haskell's monad instances require three main components, as seen in Figure \ref{fig:hs_monad} with the monad instance \texttt{Maybe}: a type definition, a binding for each possible value that "combines values of that type with computations" using the bind notation \texttt{>>=}, and a function called \texttt{return} that "takes a value and embeds it in the monad" \cite{hs_monads}. Many modern programmers consider monads a notoriously difficult concept to grasp without much prior experience in functional programming because of their highly abstract nature. Despite the difficulties in reading and writing monads, Haskell's refusal of side-effects reliably ensures state safety and encourages testable functions more than Standard ML since non-pure Standard ML functions may not be testable if it has \texttt{print} statements or other side effects.
+
+```haskell
+-- Maybe type definition
+data Maybe a = Just a | Nothing
+
+-- formal definition of the Maybe monad
+--  in Prelude
+instance Monad Maybe where
+    -- value bindings
+    Nothing  >>= f = Nothing
+    (Just x) >>= f = f x
+    
+    -- build the Maybe monad when given
+    --  a value
+    return         = Just
+    
+-- the Maybe type class can now be attached
+--  to type signatures on subroutines
+f :: Maybe x -> x
+```
+\caption{Haskell \texttt{Maybe} type defined as an instance of a \texttt{Monad} (from cited source) \cite{hs_monads}.}
+
+Both languages encourage polymorphic programming through parametric polymorphism with type variables since parametric polymorphism works best with pattern-matched and recursive functional languages. Haskell's polymorphic types are slightly more readable since they look like variable name bindings, such as \texttt{a}, while Standard ML adds the extra apostrophe \texttt{'a}. Haskell's polymorphic functions must be explicitly defined through type annotations (as previously discussed in the Types section) while Standard ML's type inference system automatically generates polymorphic functions and makes them more easily writable than Haskell's polymorphic functions. Furthermore, Haskell validates equality types by checking for an associated \texttt{Eq} typeclass in the parameter type \cite{Gibiansky01}, while Standard ML enforces equality type checking when defining a polymorphic function using equality type variables, such as \texttt{''a}. In this case, Haskell polymorphic function definitions are more reliable than Standard ML's since the \texttt{Eq} typeclasses are more powerful and flexible than Standard ML's rigid equality type checking. Other subtypes can be applied to polymorphic parameters in Haskell to ensure type safety when applying functions to polymorphic parameters \cite{haskell_function_syntax}.
+
+Functional programming hails recursion as a critical component of its paradigm. Both languages strongly encourage recursion as opposed to iterative loops, although Standard ML provides \texttt{while} loops \cite{ml_iteration}. Programmers can easily identify base cases in recursive functions in both Haskell and Standard ML; however, Haskell's ability to separate a function's type annotation to its own line (to also provide parametric polymorphism) helps clarify immediately the input and output of each of a function's recursive cases, which makes Haskell's recursive functions -- specifically for recursive polymorphic functions as in Figure \ref{fig:recursion_hs} -- slightly more understandable than Standard ML's annotations, but it also clutters the syntax compared to the Standard ML version in Figure \ref{fig:recursion_ml}. Haskell and Standard ML have no syntactic differences in writing recursive functions as opposed to non-recursive functions. Furthermore, Haskell's recursion model is more reliable than Standard ML's model since it safely enforces looping via recursion while Standard ML's \texttt{while} loops could cause unexpected exceptions due to out-of-bounds errors or other side effects.
+
+```haskell
+sum :: (Num a) => [a] -> a  
+sum [] = 0  
+sum (x:xs) = x + sum xs
+\end{lstlisting}
+\caption{Haskell recursive function with polymorphic types (from cited source) \cite{haskell_function_syntax}.}
+\label{fig:recursion_hs}
+\end{figure}
+
+\begin{figure}
+\begin{lstlisting}[frame=single,language=ml,numbers=left]
+fun sum [] = 0
+  | sum (x::xs) = x + sum xs;
+```
+\caption{The Haskell function in Figure \ref{fig:recursion_hs} translated to Standard ML.}
+
+### "Advanced" Feature
+
+Most of this paper has discussed different key components of functional programming, and since Haskell is a purely functional language it includes some useful syntactic and semantic advantages. Lambda expressions in Haskell, as in Figure \ref{fig:hs_lambda}, use the backslash character with a binding name to define a lambda expression, and a lambda expression can also be applied by in-lining the lambda using parentheses. Lambda expressions are particularly used for function currying and with \texttt{map}, \texttt{fold}, and other list modification functions \cite{haskell_anonymousfn}. In addition, Haskell implements pattern matching, another constituent of functional programming, for functions and case expressions. Pattern matching matches a variable to a predefined pattern that binds values and simplifies polymorphic function invocation. Haskell also specially implements a {\it lazy} pattern that can be used to always match an expression \cite{haskell_patterns} to delay type checking on values that are passed to functions \cite{hs_laziness}. Types with only one constructor use lazy patterns to delay computation to prevent exhaustive pattern matching checks so that its only pattern will immediately match all cases \cite{hs_laziness}. However, because lazy patterns defer type checking to the runtime, the compiler will not attempt to type-check the pattern, which could lead to unexpected runtime errors on erroneous matches. A lazy pattern simply prefixes the pattern with a tilde: \texttt{\textasciitilde pattern}.
+
+```haskell
+-- defining a lambda expression using the
+--  binding name "y"
+plusTwo = \y -> y + 2
+
+-- applying a lambda expression inline
+(\y -> y + 2) 2
+```
+\caption{Lambda expressions in Haskell.}
+
+## Conclusion
+
+Haskell trumps Standard ML in many aspects of readability and writability with its required annotated types and syntactic sugar with more conventional and modern syntax than Standard ML. However, Standard ML's flexible inferred types and simpler side effect handling reduces the amount of mental overhead of simple tasks such as printing to \texttt{stdout}. This becomes Haskell's reliability advantage, though, since these strict language requirements guarantee type safety and robust exception prevention while Standard ML cannot provide these same guarantees.
+
+Haskell's purely functional nature results in applications well-suited for parallel programming but extends to any type of application since it is a general-purpose programming language. Haskell's strictness far outweighs other functional languages, but many developers need this guaranteed safety for mission-critical applications in finance, engineering, and other sectors \cite{haskell_why}.
+
+Haskell use has declined over the past decade, to the point that some have called it a "dead" programming language \cite{Tozzi01}, but a wide range of companies and industries still employ it today \cite{haskell_industry}. The language working group does not regularly make new announcements and has grown inactive: the last official meeting was in February 2021 \cite{haskell_wg_meeting}, and the last official update to the Haskell Report (the Haskell language definition) was in 2010 \cite{haskell_report}. At the time of publication, Haskell currently ranks #39 on the TIOBE Index with a 0.21\% usage rating among all programming languages \cite{tiobe_index}.
