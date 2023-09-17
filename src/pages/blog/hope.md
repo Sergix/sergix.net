@@ -17,7 +17,7 @@ Upon the dust of the earth,
 Reminding myself of the vale  
 From which I came.  
 
-My home resides not between the walls
+My home resides not between the walls  
 Constructed by my soul,  
 But rather in the blissful garden  
 Of which my soul desires.  
@@ -57,14 +57,8 @@ This vaporous life drowns meaning
 Within the depths of my eyes,  
 Blind to the sunset that approaches.  
 
-		 reach!
-	reach,
-Reach,   
-
-Reach aloft and seize the fading light!    
-The empty chamber narrows --
-Dark shadows lurch from the corners,  
-My chained soul writhes in dread.
+reach! reach, Reach,   
+Reach aloft and seize the fading of the light!    
 
 Free my captive being.  
 Rupture these shackles!  
@@ -86,4 +80,4 @@ And the sun no longer is dead.
 I refuse to give way to the flesh,  
 For it will burn along with the mind.  
 I now give way to the Spirit,  
-For the Water has quenched the flame.  
+For Water has quenched the burning flame.  

@@ -44,7 +44,7 @@ Each action type serves a different purpose for the user. Normally, the primary 
 
 ## Order <a name="order"></a>
 
-The presented order of actions in an interface is a hotly debated topic among UX designers (see [this UX StackExchange question](https://ux.stackexchange.com/questions/1072/ok-cancel-on-left-right) and the above tweet). The two sides of the argument are (as I have defined):
+The presented order of actions in an interface is a hotly debated topic among UX designers (see [this UX StackExchange question](https://ux.stackexchange.com/questions/1072/ok-cancel-on-left-right)). The two sides of the argument are (as I have defined):
 
 1. **Linguistic** order (*Primary action* | *Secondary action*)
 
