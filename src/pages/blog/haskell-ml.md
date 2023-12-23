@@ -5,7 +5,6 @@ subtitle: A technical comparison of two groundbreaking functional programming la
 summary: ""
 published: 29 December 2022
 last_edit: 29 December 2022
-draft: true
 ---
 
 Haskell and Standard ML are two popular functional programming languages with varying degrees of type safety and functional purity. Both languages have heralded type systems that implement compile-time static type checking with polymorphic types and pattern matching. Haskell forces the programmer to make safe decisions regarding side effects by providing mathematically-proven structures such as "monads" and enforcing complete variable immutability while Standard ML relaxes side effect management and allows mutable references which enable the programmer to think about their program with less overhead but inherently less safety guarantees than Haskell. Haskell's syntax is more modern and readable than Standard ML's syntax, but Standard ML provides some features such as polymorphic type inference that reduces the amount of code that clutters its definitions compared to Haskell. Haskell's lazy expression evaluation is considered another hallmark of the language and has many advantages compared to Standard ML's eagerly evaluated expressions by potentially reducing the amount of processing cycles that expressions consume. This makes Haskell suited for applications requiring fast parallel computing, but both languages are general-purpose languages and can be used to build a wide variety of applications using all the benefits of the functional language paradigm.
