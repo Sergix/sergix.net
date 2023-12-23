@@ -57,8 +57,8 @@ This vaporous life drowns meaning
 Within the depths of my eyes,  
 Blind to the sunset that approaches.  
 
-reach! reach, Reach,   
-Reach aloft and seize the fading of the light!    
+Reach! reach, reach,   
+Reach aloft and seize the fading light!    
 
 Free my captive being.  
 Rupture these shackles!  

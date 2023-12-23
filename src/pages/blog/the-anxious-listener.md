@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPost.astro
 title: The Anxious Listener, the Barber’s Chair, and the Summary of a Life in Half an Hour
 subtitle: ""
-summary: "pproaching the door, you glance into the glass window at the fibrous mop on the crown of your head. This has been a long time coming. Slipping into the door with five or six other customers impatiently waiting, you find the only spot open in the lobby, the wall next to the product placement, and browse anything and everything on your phone."
+summary: "Approaching the door, you glance into the glass window at the fibrous mop on the crown of your head. This has been a long time coming. Slipping into the door with five or six other customers impatiently waiting, you find the only spot open in the lobby, the wall next to the product placement, and browse anything and everything on your phone."
 published: 23 December 2023
 last_edit: 23 December 2023
 ---

@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPost.astro
 title: "UX: Illuminating Intention"
 subtitle: Effective application action design
-summary: "How do you, as a designer or developer, effectively guide the user to the action they should take?"
+summary: "A major part of interface design is providing the user with *actions*. An interface can have a variety of user actions, each with a different intention and goal, that guide the user through the application and allow the user to accomplish tasks. Each choice increases the complexity of the user's decision. How do you, as a designer or developer, effectively guide the user to the action they should take?"
 published: 5 December 2020
 edited: 15 August 2022
 ---

@@ -7,7 +7,7 @@ published: 17 February 2023
 last_edit: 17 February 2023
 ---
 
-<img src="/image/posts/on-photos/picture.JPG" alt="The Photo"/>
+<!-- <img src="/image/posts/on-photos/picture.JPG" alt="The Photo"/> -->
 
 What is the feeling of a photograph? When you look at a photograph that has crystallized a moment into a frame, it almost becomes a placeholder of emotion. For each person’s face holds the semblance of a once-felt emotion in that moment, yet simply peering at their faces through that glassy crystal of a picture frame reminds you of how it felt to be there. So, we return to those memories to feel once again.
 

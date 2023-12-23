@@ -34,10 +34,10 @@ That the floods rose and swept away
 His only daughter,  
 Never to breathe again.  
 
-Despite the unjust world against her innocence,  
+Despite the world against her innocence:   
 The rain continues to pour,  
 Unwavering and unanswered by the angry soul  
-Wanting an answer from the Rain-Maker.
+Wanting the Rain-Maker to answer.
 
 Expelling his being into the mist  
 Not far above his quivering lips and  
@@ -45,7 +45,7 @@ Bloodshot eyes,
 He rages, rages, rages --  
 Until his heart turns into sorrow.
 
-He weeps, weeps, weeps,  
+He grieves,  
 Hoping that the sorrow  
 Will leave with his tears,  
 Yet he finds no comfort  
