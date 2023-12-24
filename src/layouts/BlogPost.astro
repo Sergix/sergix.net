@@ -34,6 +34,11 @@ article.post
 
   p
     @apply text-lg leading-normal mt-4
+    code
+      @apply text-base text-neutral-100 rounded px-2
+      background-color: #0d1117
+      padding-top: 0.15rem
+      padding-bottom: 0.2rem
 
   ol, ul
     @apply ml-10 mt-4
@@ -70,6 +75,9 @@ article.post
       @apply text-left border-0 px-2
     &:last-child
       @apply border-0
+
+  .astro-code, img
+    @apply mt-8 
 
 @screen lg
   article.post

@@ -86,6 +86,7 @@ main ();
 This paper uses the GHC Haskell compiler to compile and interactively interpret Haskell programs. [3] GHCup, the Haskell installation toolchain manager, maintains and easily provides the GHC binary and its toolset. [2] A Haskell program can either be loaded interactively using GHCi, `ghci <program.hs>`, or compiled using GHC, `ghc --make <program.hs>`. For example, to execute the program in Figure 1 in a shell as in Figure 3, first save the source code of the program into `main.hs`. Second, load the program interactively by entering `$ ghci main.hs`. Third, type and enter `main` at the `Prelude>` prompt to execute the `main` function. Lastly, enter a valid program input for the program to accordingly filter the list. Last, type and enter `:quit` at the `Prelude>` prompt to exit `ghci` and return to the shell.
 
 <img src="/image/posts/haskell-ml/hs-screen_1.png" alt="Figure 3: Sample program running in GHCI on WSL2." />
+
 *Figure 3: Sample program running in GHCI on WSL2.*
 
 ## Language Features
