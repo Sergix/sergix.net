@@ -11,19 +11,19 @@ Approaching the door, you glance into the glass window at the fibrous mop on the
 
 “Same as last time? A four on the top with a fade down the sides?”
 
-You’ve never spoken to this person-with-scissors before, but she seems nice enough. At least she cared to ask.
+You’ve never spoken to this person-with-scissors before, but she seems nice enough.
 
 “Sure, sure, that sounds fine.”
 
 You have no idea if it’s actually fine, but you trust either way it will look better than it does now.
 
-In the reflection again, you instead glance into the eyes of this person-with-scissors. She looks tired but still able to go on for a bit longer. You’re hesitant to begin a conversation since once you begin, you’ll need to find more questions, and that just sounds too hard.
+In the reflection again, you instead look upwards into the eyes of this person-with-scissors. She looks tired but still able to go on for a bit longer. You’re hesitant to begin a conversation since once you begin, you’ll need to find more questions, and that just sounds too hard.
 
 “How has your day been?”, she begins.
 
 *How indeed*, you think to yourself.
 
-“It’s- been fine. Not much going on today, thankfully taking some time to rest. How about you?”
+“It’s — been fine. Not much going on today, thankfully taking some time to rest. How about you?”
 
 “Oh, it’s been alright. Just the normal stuff. Nothin’ crazy has happened yet.”
 
@@ -33,19 +33,19 @@ This is the part you’re afraid of: what to ask next? You venture a phrase:
 
 “How long have you worked here for?”
 
-“I started working here… about two years ago now. Yeah… two years ago.”
+“I started working here… about two years ago now. Yeah, two years ago.”
 
 “Oh, really? I don’t think I’ve seen you here before. But I’ve been away for a while so I’ve probably just never come in when you were working.”
 
-That could have been better, but now you’ve reached a dead-end. You pause for too long, dreading to bring up something else, but the silence seems worse. You glance at her again, and she somehow seems unbothered by the silence. *She’s definitely had worse*, you think. Looking towards the window, clear from the inside, you think quickly of something to say. Aha! A question to continue:
+That could have been better, but you’ve reached a dead-end. You pause for too long, dreading to bring up something else, but the silence seems worse. You glance at her in the mirror again, and she somehow seems unbothered by the silence. Looking out the window beside you, clear from the inside, you think quickly of something to say. Aha! A question to continue:
 
 “Are you going anywhere for Christmas?”
 
-“No, my family is here, fortunately and unfortunately. It’s nice having most everyone here, but we don’t all get along very well. Mostly the only thing that still keeps us somewhat-together is my Mom.”
+“No, my family is here, fortunately and unfortunately. It’s nice having most everyone here, but we don’t all get along very well. Mostly the only thing that still keeps us kind-of together is my Mom.”
 
 “Oh, sorry. I guess that’s sort-of good then,”
 
-“Well, yeah, especially with my uncle. He can be the *worst* sometimes, he’s really only in my life at all because of Mom, but if it were any other way I’d probably never see him again. It’s weird but at least the blood relatives are close, me and my Mom and my Dad and a couple of my cousins, though I don’t see them much at all anymore.”
+“Yeah, especially with my uncle. He can be the *worst*, he’s really only in my life at all because of Mom, and if it were any other way I’d probably never see him again. It’s weird but at least the blood relatives are close, me and my Mom and my Dad and a couple of my cousins, though I don’t see them much at all anymore.”
 
 You wonder whether she has many people to talk to about these things.
 
@@ -75,15 +75,15 @@ She vigorously nodded, and chuckled in agreement.
 
 “Yeah, they are, though definitely not perfect. Mom used to get on to me and yell at me a lot in high school cause hard as I try I just couldn’t keep up with everything. But eventually Mom understood and it’s been better since after high school. I used to be such a b——. And I’m not technically diagnosed or anything, but I have a lot of anxiety and depression probably from those relationships, but my Mom understands.”
 
-A little confused but understanding, you want to ask something that you think might help her. It may seem awkward during this brief interaction, but you decide that it’s much more important than feeling awkward. So, fumbling for words, you begin again:
+A little confused as to what she means, you want to ask something that you think might help her. It may seem awkward during this brief interaction, but you decide that it’s much more important than feeling awkward. So, fumbling for words, you begin again:
 
 “I’m sorry. I know for me, I’m a Christian, and I talk to God about all of those things and He really does help me. I don’t know if you’re a Christian or have any Christian friends —”
 
-She laughs quietly but sincerely, brushing her hair aside and seeming to remember something important from a long time ago.
+She laughs quietly but sincerely, seeming to remember something important from a long time ago.
 
 “To be honest, me and Him have a *lot* of catching up to do. It’s been a few years since we talked. But I grew up in church, just decided when I was an adult that it was my choice not to go every Sunday, but I still go every now and then when my parents ask. But yeah, I really do need to catch up with Him sometime soon.”
 
-She blushes, in some part of her heart thinking that He might still care about her.
+She softly sighs, in some part of her heart wondering whether He might still care about her.
 
 “Alright, that’ll be $22. Card?”
 
