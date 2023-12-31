@@ -47,7 +47,7 @@ main = do
 
 The listing in Figure 1 filters a list of the numbers 1 to 10 for even or odd numbers at the user's request. Most developers can much more quickly comprehend this 10-line listing than Standard ML's 30-line listing in Figure 2 (even though it is compacted for the sake of typesetting this paper). Line 1 matches an empty list and anything to an empty list; this is almost identical to the Standard ML listing. Line 2 matches a list starting with the element `x` and rest-of-list `xs` and a function `f`. Haskell's pattern matching syntactically looks like a function redefinition, while Standard ML uses the pipe symbol `|` to separate pattern-matching function clauses. Line 3 states that if the function applied to `x` returns true, add `x` to the front of the list (`++`) and recursively `select` the tail of the list, `xs`. This statement is virtually identical to Standard ML's version. Line 4 defines the `main` entry point with a `do` block that provides the `IO` monad features. In Standard ML, `main` has to be explicitly called at the end of the program because of its in-order evaluation. On Line 5, the program prints a message to the user. Standard ML's version is similar but must specify the newline character. Haskell's input stream mechanism on Line 6 is far superior to Standard ML's enforced use of the Option type to read input. Line 7 tests for string equivalence; Standard ML concisely prefers pattern matching in many cases since the language's string equality tests can be cumbersome. Line 8 then prints to `stdout` the result of calling `select` on the predefined list with the `even` function from the Prelude module. [6] Standard ML automatically prints the result of an expression evaluation to `stdout`. Haskell includes many utility functions similar to `even`, as seen on Line 9 which prints to `stdout` the result of calling `select` on the list with the `odd` function, which Prelude also contains. Standard ML does not have these utility functions and must be explicitly defined. Lastly, Line 10 defines local variables to be used in the `where` block, in this case the list to filter. Haskell uses `where` for monadic expressions and pattern guards and its scope binds to the entire function block. [38]
 
-```sml
+```ml
 fun select [] _ = []
 |   select (x :: xs) f =
   (if (f x) then [x] else [])
@@ -108,7 +108,7 @@ g x = x
 ```
 *Figure 4: Type annotations in Haskell.*
 
-```sml
+```ml
 (* tuple type annotation *)
 fun f (x: 'a * 'b) = x;
 
@@ -200,7 +200,7 @@ isEven number
 
 In the Haskell language, errors are not exceptions: *errors* are represented by `undefined` and include infinite loops [29] and *unhandled* exceptions [28], while *exceptions* include I/O exceptions and other side effect exceptions. Standard ML defines the general `Fail` exception with specific exceptions for divide-by-zero (`Div`), nonexhuastive matches (`Match`), and other common exceptions. [30] Standard ML handles exceptions using the `handle` case expression in functions. [30] Haskell enforces the use of side effect handling through monads [27] which can result in cluttered and difficult-to-read exception handlers, but they can be implemented for a function by simply adding a type annotation. Both Haskell and Standard ML user-defined exceptions are just type definitions [47] [30], although Standard ML tends to be more writable since it more conventionally handles exceptions with a general `exception` type, as in Figure 10. Haskell's added complexity, however, introduces more fluid possibilities for handling side effect exceptions, as seen in Figure 11. Because of Haskell's strong and reliable typing system, though, Haskell rarely even needs to handle exceptions. [27] On the other hand, Standard ML greatly simplifies exception handling and therefore may be handled simpler by the programmer at the cost of less functionality.
 
-```sml
+```ml
 exception HttpExceptionContent of int
 exception StatusCodeException of string
 exception TooManyRedirects of string
@@ -266,7 +266,7 @@ sum (x:xs) = x + sum xs
 ```
 *Figure 14: Haskell recursive function with polymorphic types (from cited source). [20]*
 
-```sml
+```ml
 fun sum [] = 0
   | sum (x::xs) = x + sum xs;
 ```
