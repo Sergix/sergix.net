@@ -20,6 +20,22 @@ const posts = await Astro.glob('./*.md')
         })
     );
 
+const headspace = await Astro.glob('./headspace/*.md')
+  .then(thoughts => thoughts
+    .sort((a, b) => {
+      // extract and sort dates from month.date.year format in filename
+
+      const a_dateinfo = a.url?.substring(a.url?.lastIndexOf('/') + 1).split('.') || ''
+      const a_date = new Date(parseInt(a_dateinfo[2]), parseInt(a_dateinfo[0]), parseInt(a_dateinfo[1]))
+      const b_dateinfo = b.url?.substring(b.url?.lastIndexOf('/') + 1).split('.') || ''
+      const b_date = new Date(parseInt(b_dateinfo[2]), parseInt(b_dateinfo[0]), parseInt(b_dateinfo[1]))
+
+      console.log(a_dateinfo, b_dateinfo)
+
+      if (isBefore(a_date, b_date)) return 1;
+      if (isBefore(b_date, a_date)) return -1;
+      return 0;
+    }))
 
 ---
 
@@ -28,9 +44,24 @@ const posts = await Astro.glob('./*.md')
     <h1 class="text-5xl font-medium">BLOG</h1>
     <h2 class="mt-2 border-black border p-6">Minimal, because it's not Medium.</h2>
 
+    <aside class="mt-8 absolute left-0 w-full px-7 xl:hidden">
+      <h3 class="font-medium text-xl">Headspace</h3>
+      <div class="overflow-x-scroll flex pb-4 headspace-container">
+        { headspace.map(thought => (
+          <div class="mx-4 first:ml-0">
+            <h4 class="font-medium text-sm my-2">{ thought.url }</h4>
+            <figure class=" bg-neutral-800 text-white w-80 h-auto px-4 py-3 rounded-md">
+              { thought.rawContent }
+            </figure>
+          </div>
+        ))}
+      </div>
+    </aside>
+
+    <div class="mt-72 xl:mt-0">
     { posts.map(post => (
       <article
-        class="mt-16 w-full flex flex-col lg:mt-32"
+        class="mt-16 w-full flex flex-col lg:mt-24"
       >
         <header class="flex flex-row items-center">
           <h3 class="text-2xl font-medium flex-1 leading-tight">
@@ -51,26 +82,32 @@ const posts = await Astro.glob('./*.md')
         </a>
       </article>
     )) }
-
-    <!-- pagination controls -->
-    <!-- <nav class="mt-16 lg:mt-24">
-      <h4 class="font-medium">
-        Page { page }
-      </h4>
-      <div class="mt-4 flex">
-        <a
-          class="btn rounded border-2 border-black text-sm"
-          href="previousPagePath"
-        >
-          PREVIOUS PAGE
-        </a>
-        <a
-          class="btn rounded border-2 border-black text-sm ml-auto"
-          href="nextPagePath"
-        >
-          NEXT PAGE
-        </a>
-      </div>
-    </nav> -->
+    </div>
   </main>
+  <aside class="fixed pl-6 mt-24 h-full hidden xl:inline">
+    <h3 class="font-medium text-xl">Headspace</h3>
+    <div class="h-2/3 overflow-y-scroll pr-4 headspace-container">
+      { headspace.map(thought => (
+        <div class="mt-8 first:mt-0">
+          <h4 class="font-medium text-sm my-2">{ thought.url }</h4>
+          <figure class=" bg-neutral-800 text-white w-80 h-auto px-4 py-3 rounded-md">
+            { thought.rawContent }
+          </figure>
+        </div>
+      ))}
+    </div>
+  </aside>
 </LayoutDefault>
+
+<style>
+  .headspace-container {
+    scrollbar-width: thin;
+    scrollbar-color: #ebebeb white;
+    scroll-behavior: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .headspace-container > div {
+    scroll-snap-stop: always;
+  }
+</style>

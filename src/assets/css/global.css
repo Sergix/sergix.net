@@ -60,20 +60,21 @@
   }
 
   .btn-largelink {
-    @apply gradient-primary;
-    @apply font-medium leading-none;
+    /* @apply gradient-primary; */
+    @apply font-medium;
     @apply mt-4;
     @apply px-3 pt-2 pb-1;
     @apply text-black text-5xl;
     @apply rounded-lg;
-    @apply shadow-md;
+    @apply shadow-inner;
+
   }
 
   .btn-largelink:hover {
-    @apply gradient-primary-soft;
+    @apply gradient-primary;
   }
 
   .btn-largelink:active {
-    @apply gradient-primary-reversed;
+    @apply gradient-primary-soft;
   }
 };

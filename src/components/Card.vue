@@ -1,6 +1,6 @@
 <template>
 <section class="max-w-lg mb-10 md:mb-6 border bg-white rounded-md flex flex-col hover:-translate-y-1 transform hover:shadow-lg transition-all duration-300 card">
-  <div class="w-full h-32 md:h-48 bg-white">
+  <div v-if="img" class="w-full h-32 md:h-48 bg-white">
     <img
       class="object-cover w-full h-full object-center md:object-top rounded-t-md"
       :src="src"
@@ -27,7 +27,10 @@ export default {
   props: ["title", "link", "desc", "date", "tags", "img"],
   computed: {
     src() {
-      return '/image/' + this.img
+      if (this.img)
+        return '/image/' + this.img
+      else
+        return null
     }
   }
 }

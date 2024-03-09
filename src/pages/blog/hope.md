@@ -14,7 +14,7 @@ I have been endowed.
 
 From the aperture of my being I gaze  
 Upon the dust of the earth,  
-Reminding myself of the vale  
+Reminding myself of the dust  
 From which I came.  
 
 My home resides not between the walls  
