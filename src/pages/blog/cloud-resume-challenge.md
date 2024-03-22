@@ -6,14 +6,28 @@ edited: 21 March 2024
 published: 21 March 2024
 ---
 
-> [GitHub Repository](https://github.com/Sergix/cloud-resume-challenge)  
+> [GitHub Repository](https://github.com/Sergix/cloud-resume-challenge)
 > [Completed Project](https://cloudresume.sergix.dev/)
 
-# What is the Cloud Resume Challenge?
+## 🤔 What is the Cloud Resume Challenge?
 
-In developing skills for my future career, a friend recommended the [Cloud Resume Challenge (AWS Edition)](https://cloudresumechallenge.dev/docs/the-challenge/aws/) as a practical way to develop cloud development and problem-solving skills. The challenge offers high-level instructions for building a basic serverless application with a static frontend using AWS, Google Cloud, or Azure. The AWS route took me about 3 days to complete (besides the recommended AWS certification).
+In developing skills for my future career, a friend recommended the  
 
-# Stack
+**[Cloud Resume Challenge (AWS Edition)](https://cloudresumechallenge.dev/docs/the-challenge/aws/)**
+
+as a practical way to develop cloud development and problem-solving skills. The challenge offers high-level instructions for building a basic serverless application with a static frontend using AWS, Google Cloud, or Azure. The AWS route took me about 3 days to complete (besides the recommended AWS certification).
+
+## ⚔️ Take the challenge!
+
+I highly recommend anyone else trying to improve their cloud development skills to complete this project. It teaches you:
+
+1. How to *think* cloud -- frontend, backend, API endpoints, ...
+2. How to use a cloud platform like AWS
+3. How IaC simplifies provisioning and deploying your application
+
+And, it improves your problem-solving skills and analysis of edge cases.
+
+## 📚 Stack
 
 - Backend
    - AWS SAM -- Serverless Application Model (deploys as AWS CloudFormation)
@@ -26,13 +40,13 @@ In developing skills for my future career, a friend recommended the [Cloud Resum
    - Netlify + Netlify DNS
 - CI/CD: GitHub Actions
 
-# The Challenge
+## (ง'̀-'́)ง The Challenge
 
-## Setup
+### Setup
 
 I created a basic HTML/CSS frontend with some placeholder content to start off with. I then initialized the git repo and pushed to GitHub using the GitHub CLI.
 
-## S3
+### 🪣 S3
 
 AWS S3 buckets are an inexpensive and convenient way to host static sites (plain HTML/JS/CSS). Normally I've used Netlify, but since this frontend doesn't have a build step, S3 is much easier.
 
@@ -58,13 +72,13 @@ One of the biggest difficulties with learning AWS is *policy configuration*. Eve
 
 This allows any client to `s3:GetObject` and retrieve any object (`/*`) in the bucket.
 
-## DNS Routing
+### ↪️⤵️ DNS Routing
 
 My website `sergix.dev` is hosted on Netlify, my favorite web development and deployment platform. My website's domain also routes its DNS through Netlify's DNS, and so I can configure any DNS records through Netlify.
 
 I created a CloudFront distribution to be in front of the S3 bucket and for DNS integration. The CloudFront distribution configures an *Origin*, in this case an S3 static site bucket, to redirect traffic to. I then added a CNAME record in Netlify DNS that points to the CloudFront public distribution domain name assigned by AWS. This gives HTTP-only routing, but this will be changed to HTTPS in the next step.
 
-## HTTPS
+### 🔒 HTTPS
 
 First, I created an SSL certificate in ACM (Amazon Certificate Manager) and then added a CNAME DNS record to `sergix.dev` with the required validation information. AWS uses this key/value pair in the DNS record to verify that I own the domain and to appropriately provision the SSL certificate for my domain.
 
@@ -72,11 +86,11 @@ I then added the new ACM certificate to my CloudFront distribution by just selec
 
 *Now, HTTPS is ready to go!*
 
-## DynamoDB
+### 🛢 DynamoDB
 
 AWS DynamoDB is a **document-based database** that flexibly stores items based on a primary key and each individual item can have its own defined columns. Creating a DynamoDB instance is easy to setup and only requires a primary key and primary key type. I chose `WebPropertyName: String` as my primary key since I didn't know at first how many different pieces of data the frontend would want to store and need to access.
 
-## Lambda API
+### ⚡ Lambda API
 
 AWS Lambda is a serverless function platform that runs Python, Node.js, or other server-side code whenever a request is received. I chose to write my function and tests in Python.
 
@@ -104,7 +118,7 @@ table.get_item(
 
 I also created an AWS API Gateway public endpoint that restricts any access to the function to the appropriate HTTP methods. I only have `GET` enabled for this function, and so the gateway only allows those requests.
 
-## Frontend JavaScript
+### </> Frontend JavaScript
 
 I added a classic XMLHttpRequest to the frontend (we're going pre-`Promise` here...) that just calls the endpoint once the document loads and waits for a response:
 
@@ -142,7 +156,7 @@ However, I immediately ran into the dreaded `CORS` errors when requesting the en
     },
    ```
 
-## AWS SAM
+### ⚙️ AWS SAM
 
 This challenge then asks you to reconstruct the three critical application resources into AWS's Serverless Application Model: DynamoDB, Lambda, and API Gateway.
 
@@ -150,7 +164,7 @@ SAM is a simplified frontend for AWS CloudFormation designed specifically for se
 
 This mindset shift from manually deploying resources and servers to automatic provision was difficult for me -- one of my biggest barriers was that IaC is not a procedural, batch-script-deployment way of thinking. With batch-script or Docker-style deployment, you step-by-step (1) authenticate, (2) provision, (3) upload/update, and (4) run. However, IaC brings this all together into a *declarative*, rather than procedural, environment. The declarative (YAML) configuration is then automatically provisioned and executed (deployed) by the SAM platform. The advantage of IaC, and the problem that it solves, is that all of my resources are then plainly defined with specific versioning and resource requirements, and this configuration can be easily replicated.
 
-### SAM Templates
+#### SAM Templates
 
 SAM templates are similar to other YAML configuration formats. You can run all SAM-configuration locally using the [`sam` CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html), which is packaged separately from the `aws` CLI.
 
@@ -197,7 +211,7 @@ VisitorCountTable:
 
 In this current configuration, the DynamoDB table is deleted whenever new changes are deployed. To persist, a [CloudFormation change set](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html) can be used, but I have not configured it yet.
 
-### IAM Policies
+#### 👤 IAM Policies
 
 The most tedious part about setting up SAM was applying the proper IAM roles. In more secure setups, you would configure an IAM identity, but for this project I just created a normal IAM user and authenticated SAM using the IAM access key. The IAM role attaches all necessary access policies for DynamoDB, S3, Lambda, etc. However, SAM would continuously fail to deploy because of a missing access policy, so I had to manually update the IAM policies until all necessary services were included.
 
@@ -224,11 +238,11 @@ VisitorCountFunction:
             Resource: '*'
 ```
 
-## GitHub Actions
+### 🚀 GitHub Actions
 
 This challenge requires GitHub actions pipelines for CI/CD. I thought that this would be one of the simpler parts of this project; however, it was unfortunately a painful process of trying to figure out how to setup SAM to work inside a workflow.
 
-### Backend
+#### Backend
 
 For SAM, you first have to authenticate on every workflow job using `aws-actions/configure-aws-credentials@v4`, then grabbing the environment variables defined for those secrets in the repository. I was stuck for a while on this since I forgot that GitHub repos can have [sandboxed environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment) set up that contain separate credentials, and so I had to manually add that detail to the workflow job by adding `environment: aws-sam`.
 
@@ -269,7 +283,7 @@ jobs:
     # ...
 ```
 
-### Frontend
+#### Frontend
 
 Although the challenge asks you to split the frontend and backend into two repos, I decided to just split the resources in the same repo into two different subdirectories. Each workflow runs whenever a change is pushed to its respective directory:
 
@@ -298,9 +312,9 @@ Then, if this command succeeds, it invalidates the CloudFront cache so that the 
 aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths '/*'
 ```
 
-# [Click here to see the final result!](https://cloudresume.sergix.dev/)
+## [Click here to see the final result!](https://cloudresume.sergix.dev/)
 
-# Next Steps
+## Next Steps
 
 Although the project is complete, I would still like to accomplish the following:
 
@@ -308,9 +322,9 @@ Although the project is complete, I would still like to accomplish the following
 2. Use a static endpoint for the API Gateway under my subdomain, i.e. `https://cloudresume.sergix.dev/visitor-count`
 3. Complete an AWS certification
 
-# Thank you for reading!
+## Thank you for reading!
 
-You can find me at [sergix.dev](https://sergix.dev).
+You can find me and my blog at [sergix.dev](https://sergix.dev).
 
-> [GitHub Repository](https://github.com/Sergix/cloud-resume-challenge)  
+> [GitHub Repository](https://github.com/Sergix/cloud-resume-challenge)
 > [Completed Project](https://cloudresume.sergix.dev/)
