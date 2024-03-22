@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: The Cloud Resume Challenge
+title: Conquering the Cloud Resume Challenge
 subtitle: "Developing my development skills by wrestling with AWS IAM policies and facing the wrath of YAML indentation."
 edited: 21 March 2024
 published: 21 March 2024
