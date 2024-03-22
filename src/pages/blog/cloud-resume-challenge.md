@@ -7,7 +7,7 @@ edited: 21 March 2024
 published: 21 March 2024
 ---
 
-> [GitHub Repository](https://github.com/Sergix/cloud-resume-challenge)
+> [GitHub Repository](https://github.com/Sergix/cloud-resume-challenge)  
 > [Completed Project](https://cloudresume.sergix.dev/)
 
 ## 🤔 What is the Cloud Resume Challenge?
@@ -30,16 +30,20 @@ And, it improves your problem-solving skills and analysis of edge cases.
 
 ## 📚 Stack
 
-- Backend
-   - AWS SAM -- Serverless Application Model (deploys as AWS CloudFormation)
-   - AWS API Gateway
-   - AWS Lambda
-   - AWS DynamoDB
-- Frontend
-   - AWS CloudFront
-   - AWS S3 static site
-   - Netlify + Netlify DNS
-- CI/CD: GitHub Actions
+### Backend
+
+- AWS SAM -- Serverless Application Model (deploys as AWS CloudFormation)
+- AWS API Gateway
+- AWS Lambda
+- AWS DynamoDB
+
+### Frontend
+
+- AWS CloudFront
+- AWS S3 static site
+- Netlify + Netlify DNS
+
+### CI/CD: GitHub Actions
 
 ## (ง'̀-'́)ง The Challenge
 
@@ -194,7 +198,7 @@ VisitorCountFunction:
 
 The `VisitorCountHttpApi` is an inline `EventSource` object that *defines an API Gateway*, instead of creating a separate resource definition.
 
-THe DynamoDB resource is configured in just a few lines:
+The DynamoDB resource is configured in just a few lines:
 
 ```yaml
 # aws-sam/template.yaml
