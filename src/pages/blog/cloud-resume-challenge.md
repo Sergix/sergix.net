@@ -2,6 +2,7 @@
 layout: ../../layouts/BlogPost.astro
 title: Conquering the Cloud Resume Challenge
 subtitle: "Developing my development skills by wrestling with AWS IAM policies and facing the wrath of YAML indentation."
+summary: "Developing my development skills by wrestling with AWS IAM policies and facing the wrath of YAML indentation."
 edited: 21 March 2024
 published: 21 March 2024
 ---
@@ -31,12 +32,12 @@ And, it improves your problem-solving skills and analysis of edge cases.
 
 - Backend
    - AWS SAM -- Serverless Application Model (deploys as AWS CloudFormation)
-      - AWS API Gateway
-         - AWS Lambda
-      - AWS DynamoDB
+   - AWS API Gateway
+   - AWS Lambda
+   - AWS DynamoDB
 - Frontend
    - AWS CloudFront
-      - AWS S3 static site
+   - AWS S3 static site
    - Netlify + Netlify DNS
 - CI/CD: GitHub Actions
 
@@ -321,10 +322,3 @@ Although the project is complete, I would still like to accomplish the following
 1. Persist DynamoDB table across deploys using changesets
 2. Use a static endpoint for the API Gateway under my subdomain, i.e. `https://cloudresume.sergix.dev/visitor-count`
 3. Complete an AWS certification
-
-## Thank you for reading!
-
-You can find me and my blog at [sergix.dev](https://sergix.dev).
-
-> [GitHub Repository](https://github.com/Sergix/cloud-resume-challenge)
-> [Completed Project](https://cloudresume.sergix.dev/)
