@@ -68,10 +68,11 @@
     @apply rounded-lg;
     @apply shadow-inner;
 
+    transition: background-color 0.1s linear    ;
   }
 
   .btn-largelink:hover {
-    @apply gradient-primary;
+    @apply bg-primary;
   }
 
   .btn-largelink:active {

@@ -25,12 +25,12 @@ const { title } = Astro.props as Props;
 	</head>
 	<body class="md:static">
 		<slot />
-		<aside class="fixed bottom-0 left-0 bg-zinc-900 text-white p-4 text-md w-full transition-opacity flex" id="reversible-computing-banner">
+		<!-- <aside class="fixed bottom-0 left-0 bg-zinc-900 text-white p-4 text-md w-full transition-opacity flex" id="reversible-computing-banner">
 			<span class="mx-auto">Visit my new <a href="https://reversiblecomputing.info" class="pl-1 font-bold text-purple-500 hover:text-purple-600 transition-colors underline" target="_blank">Reversible Computing Project</a></span>
 			<button id="reversible-computing-banner-close-btn" class="w-6">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>close</title><path fill="white" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
 			</button>
-		</aside>
+		</aside> -->
 	</body>
 </html>
 
@@ -48,24 +48,24 @@ const { title } = Astro.props as Props;
 
 <script>
 	// astro, not vue, layout
-	function closeBanner() {
-		const banner = document.getElementById("reversible-computing-banner")
-		if (banner)
-			banner.style.opacity = '0'
-	}
+	// function closeBanner() {
+	// 	const banner = document.getElementById("banner")
+	// 	if (banner)
+	// 		banner.style.opacity = '0'
+	// }
 
-	const banner_btn = document.getElementById("reversible-computing-banner-close-btn")
-	banner_btn?.addEventListener('click', (e) => {
-		closeBanner()
-	})
+	// const banner_btn = document.getElementById("banner-close-btn")
+	// banner_btn?.addEventListener('click', (e) => {
+	// 	closeBanner()
+	// })
 
-	// close banner on ESC key
-	window.addEventListener("keyup", (e) => {
-		console.log("ello")
-		if (e.key === "Escape") {
-			closeBanner()
-		}
-	}, true)
+	// // close banner on ESC key
+	// window.addEventListener("keyup", (e) => {
+	// 	console.log("ello")
+	// 	if (e.key === "Escape") {
+	// 		closeBanner()
+	// 	}
+	// }, true)
 	
 </script>
 
