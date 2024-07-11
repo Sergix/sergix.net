@@ -18,6 +18,7 @@
     "vue": "^3.2.30"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.1.6",
     "date-fns": "^2.29.1"
   }
 }
