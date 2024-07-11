@@ -78,4 +78,4 @@
   .btn-largelink:active {
     @apply gradient-primary-soft;
   }
-};
+}
