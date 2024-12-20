@@ -5,7 +5,6 @@
       class="absolute bg-white left-0 top-0 w-screen flex flex-col px-6 z-10 h-screen menu"
     >
       <Links class="flex-1 mt-24" @click="$emit('close')" />
-      <Contact class="mb-8" />
     </div>
   </Transition>
 </template>
