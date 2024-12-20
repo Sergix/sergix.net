@@ -20,17 +20,17 @@ const posts = await Astro.glob('./*.md')
         })
     );
 
+const extractDate = (urlString: any) => urlString.substring(urlString.lastIndexOf('/') + 1).split('.') || ''
+
+const parseDate = (customDate: string) => new Date(parseInt(customDate[2]), parseInt(customDate[0]), parseInt(customDate[1]))
+
 const headspace = await Astro.glob('./headspace/*.md')
   .then(thoughts => thoughts
     .sort((a, b) => {
       // extract and sort dates from month.date.year format in filename
 
-      const a_dateinfo = a.url?.substring(a.url?.lastIndexOf('/') + 1).split('.') || ''
-      const a_date = new Date(parseInt(a_dateinfo[2]), parseInt(a_dateinfo[0]), parseInt(a_dateinfo[1]))
-      const b_dateinfo = b.url?.substring(b.url?.lastIndexOf('/') + 1).split('.') || ''
-      const b_date = new Date(parseInt(b_dateinfo[2]), parseInt(b_dateinfo[0]), parseInt(b_dateinfo[1]))
-
-      console.log(a_dateinfo, b_dateinfo)
+      const a_date = parseDate(extractDate(a.url))
+      const b_date = parseDate(extractDate(b.url))
 
       if (isBefore(a_date, b_date)) return 1;
       if (isBefore(b_date, a_date)) return -1;
@@ -44,7 +44,7 @@ const headspace = await Astro.glob('./headspace/*.md')
     <h1 class="text-5xl font-medium">BLOG</h1>
     <h2 class="mt-2 border-black border p-6">Minimal, because it's not Medium.</h2>
 
-    <aside class="mt-8 absolute left-0 w-full px-7 xl:hidden">
+    <aside class="mt-8 left-0 w-full px-7 xl:hidden">
       <h3 class="font-medium text-xl">Headspace</h3>
       <div class="overflow-x-scroll flex pb-4 headspace-container">
         { headspace.map(thought => (
@@ -58,7 +58,7 @@ const headspace = await Astro.glob('./headspace/*.md')
       </div>
     </aside>
 
-    <div class="mt-72 xl:mt-0">
+    <div class="mt-4 xl:mt-0">
     { posts.map(post => (
       <article
         class="mt-16 w-full flex flex-col lg:mt-24"
@@ -109,5 +109,9 @@ const headspace = await Astro.glob('./headspace/*.md')
 
   .headspace-container > div {
     scroll-snap-stop: always;
+  }
+
+  .astro-code {
+    max-width: none;
   }
 </style>

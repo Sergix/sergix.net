@@ -28,15 +28,6 @@
         />
       </button>
     </a>
-    <a href="https://reversiblecomputing.info">
-      <button class="btn-largelink" @click.stop="$emit('click')">
-        PROJECT
-        <img
-          class="w-16 inline mb-2"
-          src="/image/arrow-right.svg"
-        />
-      </button>
-    </a>
   </nav>
 </template>
 

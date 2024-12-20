@@ -8,75 +8,61 @@ import LayoutDefault from "@layouts/LayoutDefault.astro";
       <h1 class="text-5xl font-medium flex-1">DESIGNS</h1>
     </div>
     <h2 class="mt-2 border-black border p-6 mr-4 md:rounded-tr-full">A small collection of part of my web design and artwork.</h2>
-    <section class="mt-16">
-      <h2 class="text-xl">
-        Websites and Web Applications
+    <section class="mt-16 grid grid-cols-2 gap-4">
+      <h2 class="text-4xl lg:text-7xl mt-auto">
+        Websites
       </h2>
       <img
-        class="max-w-64 mt-8 md:max-w-sm lg:max-w-lg lg:mt-16"
+        class="rounded"
         src="/image/designs/sparkboard-macbook-mockup_compressed.jpg"
       />
       <img
-        class="max-w-64 mt-4 ml-auto md:max-w-sm lg:max-w-lg lg:mt-32"
+        class="rounded"
         src="/image/designs/workdrop-iphone-mockup_compressed.jpg"
       />
       <img
-        class="max-w-48 mt-4 md:max-w-sm lg:max-w-lg lg:mt-32"
+        class="rounded-lg"
         src="/image/designs/northside-iphone.png"
       />
     </section>
-    <section class="mt-20 lg:mt-64">
-      <h2 class="text-xl">
+    <section class="mt-8 lg:-mt-36">
+      <h2 class="text-4xl lg:text-7xl">
         Artwork
       </h2>
       <p class="mt-4 leading-tight">
-        Some of this artwork is available for purchase at Redbubble.
+        Some artwork is available at Redbubble.
       </p>
       <a href="https://sergix7440.redbubble.com/">
-        <button class="btn btn-gradient-outline mt-6 pt-2">
+        <button class="btn btn-gradient-outline mt-2 pt-2">
           OPEN SHOP
         </button>
       </a>
-      <div class="artwork">
+      <div class="mt-8 grid grid-cols-2 gap-4">
         <img
+          class="rounded-lg"
           src="/image/designs/yearbook_2020.png"
         />
         <img
-          class="ml-auto"
+          class="rounded-lg"
           src="/image/designs/yearbook_2019.png"
         />
         <img
+          class="rounded-lg"
           src="/image/designs/something-different_web.png"
         />
         <img
-          class="ml-auto"
+          class="rounded-lg"
           src="/image/designs/something-different-hardcover-journal_compressed.jpg"
         />
         <img
+          class="rounded"
           src="/image/designs/perspective-matters.png"
         />
         <img
-          class="ml-auto"
+          class="rounded-lg"
           src="/image/designs/let-the-sky-fall-down-hardcover-journal_compressed.jpg"
         />
       </div>
     </section>
   </main>
 </LayoutDefault>
-
-<style lang="sass">
-.artwork > img
-  @apply max-w-48
-  @apply mt-8
-
-@screen md
-  .artwork > img
-    @apply max-w-sm
-
-@screen lg
-  .artwork > img
-    @apply max-w-lg mt-32
-
-    &:first-child
-      @apply mt-16
-</style>

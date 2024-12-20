@@ -82,7 +82,7 @@ export default {
   margin-top: .85rem
 
 ul > li
-  @apply px-12
+  @apply px-6
 
   & > a
     &::after

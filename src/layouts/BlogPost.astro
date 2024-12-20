@@ -26,6 +26,7 @@ const { frontmatter } = Astro.props;
 
 <style lang="sass" is:global>
 article.post
+
   h2
     @apply text-2xl mt-16
 
@@ -78,14 +79,11 @@ article.post
       @apply border-0
 
   .astro-code
-    @apply p-2 rounded
-    max-width: 79vw
+    max-width: 75vw
+    @apply mx-auto rounded p-4
 
   .astro-code, img
     @apply mt-6
-
-  .astro-code .line
-    @apply block
 
 @screen lg
   article.post
